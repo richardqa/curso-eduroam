@@ -6,6 +6,7 @@ Los siguientes pasos demostrarán una de las formas de como configurar los certi
 ## Configuración de una Autoridad Certificadora privada
 
 1. Pasos previos: Creación de un directorio ** certificados ** y archivos necesarios para el CA.
+2. Testing
 
 ```
 cp /usr/share/doc/freeradius/examples/certs/* ~/certificados/
