@@ -1,6 +1,6 @@
 # Creación de certificados digitales y archivos necesarios para la configuración del servidor Radius
 
-Los siguientes pasos demostrarán una de las formas de como configurar los certificados digitales válidos para los servidores Radius de eduroam. Estos certificados serán configurados sobre el Host final.
+Los siguientes pasos demostrarán una de las formas de como configurar los certificados digitales válidos para los servidores Radius de eduroam. Estos certificados serán creados dentro de un servidor Ubuntu 16.04 server.
 
 
 ## Configuración de una Autoridad Certificadora privada
@@ -66,13 +66,13 @@ openssl x509 -in ca.crt -noout -text
 ```
 ## Configuración de los archivos SSL necesarios para la configuración del servidor Radius
 
-- Creación de una llave privada `radius1.key` de 4096 bits usando el algoritmo simétrico AES de 256 bits.
+- Similar al paso previo de creación de una llave privada para el CA, aqui vamos a crear una llave para el servidor Radius Local.
 
 ```
 openssl genrsa -aes256 -out private/radius1.key 4096
 ```
 
-- Creación de los archivos **Diffie-Hellman** y **Random** necesarios para el servidor Radius
+- Estos pasos serían necesarios si aún no se han creado los archivos **Diffie-Hellman** y **Random** necesarios para el servidor Radius
 
 ```
 openssl dhparam -out dh 1024 
@@ -119,6 +119,7 @@ openssl ca -out radius.seciu1.edu.uy.crt -keyfile private/ca.key -config ./ca.cn
 
 Los archivos `radius1.key`, `radius.seciu1.edu.uy.crt`, `random`, `dh`, `ca.crt` serán colocado dentro de la carpeta `certs` del servidor freeradius.
 
-
-
+```
+cp ~/certificados radius1.key radius.seciu1.edu.uy.crt random dh ca.crt /etc/freeradius/certs/
+```
 
