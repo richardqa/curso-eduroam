@@ -5,9 +5,7 @@ Los siguientes pasos demostrarán una de las formas de como configurar los certi
 
 ## Configuración de una Autoridad Certificadora privada
 
-1. Pasos previos: Creación de un directorio ** certificados ** y archivos necesarios para el CA.
-2. Testing
-
+1. Pasos previos: Creación de un directorio **certificados** y archivos necesarios para el CA.
 ```
 cp /usr/share/doc/freeradius/examples/certs/* ~/certificados/
 cd ~/certificados/
@@ -15,20 +13,15 @@ mkdir private newcerts
 touch index.txt  
 echo '01' > serial 
 ```
-
 2. Creación de una llave privada para el CA `ca.key` de 4096 bits usando el algoritmo simétrico AES de 256 bits.
-
 ```
 openssl genrsa -aes256 -out private/ca.key 4096
 ```
-
-3. Creación de los archivos ** Diffie-Hellman** y **Random** necesarios para el servidor Radius
-
+3. Creación de los archivos **Diffie-Hellman** y **Random** necesarios para el servidor Radius
 ```
 openssl dhparam -out dh 1024 
 dd if=/dev/urandom of=./random count=10 
 ```
-
 4. Creación de una Autoridad Certificadora privada en Openssl
 
 Antes de crear nuestro CA, vamos a configurar el archivo ca.cnf que se encuentra dentro de nuestra carpeta de certificados. Este archivo ca.cnf contiene todos los parámetros de configuración necesarios para la construcción de una CA privada.
@@ -79,7 +72,7 @@ openssl x509 -in ca.crt -noout -text
 openssl genrsa -aes256 -out private/radius1.key 4096
 ```
 
-2. Creación de los archivos ** Diffie-Hellman** y **Random** necesarios para el servidor Radius
+2. Creación de los archivos **Diffie-Hellman** y **Random** necesarios para el servidor Radius
 
 ```
 openssl dhparam -out dh 1024 
