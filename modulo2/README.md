@@ -2,11 +2,9 @@
 
 El intercambio de claves GPG sirve para que los administradores de eduroam puedan intercambiar una misma clave compartida entre servidores Radius, lo cual permitiría que ambos Radius puedan verse como Cliente-Servidor.
 
-
-## Para este ejercicio se recomienda que la creación de llaves sea ejecutado desde un computador con modo gráfico, porque ...
+Para este ejercicio se recomienda que la creación de llaves sea ejecutado desde un computador con modo gráfico, porque ...
 
 1. Verificar que el paquete "GPG" ou "GPGv2" se encuentre instalado. Tambien verificar que el paquete "rng-tools" se encuentre instalado.
-
 
 2. Crear las llaves pública/privada usando GPG
 
@@ -64,6 +62,18 @@ We need to generate a lot of random bytes. It is a good idea to perform
 some other action (type on the keyboard, move the mouse, utilize the
 disks) during the prime generation; this gives the random number
 generator a better chance to gain enough entropy.
+
+```
+
+Una forma efectiva de generar entropia es mediante el uso de la herramienta *rng-tools* el cual genera datos *random* desde el Hardware al Kernel. Por ejemplo, desde otra terminal usar:
+
+```
+rngd -r /dev/urandom
+
+```
+
+```
+
 ...+++++
 .....+++++
 gpg: key 1285BE5B marked as ultimately trusted
@@ -76,4 +86,4 @@ pub   2048R/1285BE5B 2016-09-10
       Key fingerprint = FD2D CFB2 E2B3 6F81 90DC  5ABB BE63 1B0A 1285 BE5B
 uid                  Usuario administrador de eduroam <eduroam@institucion.edu.uy>
 sub   2048R/D65F9703 2016-09-10
-
+```
