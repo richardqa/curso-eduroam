@@ -64,16 +64,15 @@ disks) during the prime generation; this gives the random number
 generator a better chance to gain enough entropy.
 
 ```
-
 Una forma efectiva de generar entropia es mediante el uso de la herramienta *rng-tools* el cual genera datos *random* desde el Hardware al Kernel. Por ejemplo, desde otra terminal usar:
 
 ```
 rngd -r /dev/urandom
 
 ```
+Y desde la primera terminal vemos que se generó suficiente entropia para la generación de claves GPG.
 
 ```
-
 ...+++++
 .....+++++
 gpg: key 1285BE5B marked as ultimately trusted
