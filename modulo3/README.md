@@ -2,9 +2,9 @@
 
 ## Configuración de los clientes Radius (Local y Remoto)
 
-Primeramente, notar que en el archivo *clients.conf* por defecto ya se tiene creado un bloque de cliente para el Localhost (127.0.0.1) con secreto `testing123`.
+Primeramente, notar que en el archivo */etc/freeradius/clients.conf* se tiene creado un bloque de cliente para el Localhost (127.0.0.1) con secreto `testing123`.
 
-En este punto,  nosotros tenemos que crear un nuevo bloque de cliente para el servidor Federado correspondiente al Radius Local.
+En este punto, nosotros tenemos que crear un nuevo bloque de cliente para el servidor Federado correspondiente al Radius Local.
 
 ```
 client <Descripcion del servidor Federado> {
@@ -13,7 +13,7 @@ client <Descripcion del servidor Federado> {
 	shortname = org-<Siglas-Institucion>
 }
 ```
-## Configuración del Realm para el servidor Radius
+## Configuración del Realm para el servidor Radius. Dentro del archivo */etc/freeradius/proxy.conf* modificaremos las siguientes líneas:
 ```
 proxy server {
          default_fallback = yes
@@ -51,4 +51,14 @@ realm “~.+$” {
        nostrip 
 } 
 ```
+## Configuración del archivo *usuarios* para el servidor Radius local
+```
+richardqa Cleartext-Password := "inictel"
+```
 
+# Primera evaluación: Autenticación remota de usuarios locales usando *radtest*
+
+```
+radtest <usuario>@<Dominio-Institución> <clave-usuario> <IP-federado> 0 <clave-compartida-GPG>
+```
+	
