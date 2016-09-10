@@ -86,3 +86,35 @@ pub   2048R/1285BE5B 2016-09-10
 uid                  Usuario administrador de eduroam <eduroam@institucion.edu.uy>
 sub   2048R/D65F9703 2016-09-10
 ```
+Para listar las claves que nuestra llavero GPG cuenta:
+```
+gpg --list-key
+/root/.gnupg/pubring.gpg
+------------------------
+pub   2048R/1285BE5B 2016-09-10
+uid                  Usuario administrador de eduroam <eduroam@institucion.edu.uy>
+sub   2048R/D65F9703 2016-09-10
+```
+Para subir nuestra clave pública al Internt:
+```
+gpg --keyserver pgp.mit.edu --send-keys 0x1285BE5B
+gpg: sending key 1285BE5B to hkp server pgp.mit.edu
+```
+En todo el Internet existen casi más de 8 servidores GPG, en el cual podamos encontrar nuestra clave pública. El tiempo máximo para que las llaves puedan ser sincronizadas entre los servidores es de 3 minutos.
+
+Para buscar nuestra llave pública, podemos usar lo siguiente:
+```
+gpg --keyserver pgp.mit.edu --search-keys 0x1285BE5B   
+gpg: searching for "0x1285BE5B" from hkp server pgp.mit.edu
+(1)	Usuario administrador de eduroam <eduroam@institucion.edu.uy>
+	  2048 bit RSA key 1285BE5B, created: 2016-09-10
+Keys 1-1 of 1 for "0x1285BE5B".  Enter number(s), N)ext, or Q)uit > 1
+gpg: requesting key 1285BE5B from hkp server pgp.mit.edu
+gpg: key 1285BE5B: "Usuario administrador de eduroam <eduroam@institucion.edu.uy>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+```
+El motivo de usar GPG es que los administradores de los servidores Radius compartan la clave secreta con otro Radius de manera confiable. En tal sentido, es comun el uso de GPG, Thunderbirds y Engimail.
+
+
+
