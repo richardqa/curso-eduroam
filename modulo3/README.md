@@ -21,7 +21,7 @@ proxy server {
 home_server eduroam { 
         type                    = auth+acct 
         ipaddr                  = <IP-Federado>
-        port                    = 1812,1813 
+        port                    = 1812,1813
         secret                  = <clave-compartida-GPG> 
         response_windows        = 20 
         zombie_period           = 40 

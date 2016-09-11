@@ -116,5 +116,8 @@ gpg:              unchanged: 1
 ```
 El motivo de usar GPG es que los administradores de los servidores Radius compartan la clave secreta con otro Radius de manera confiable. En tal sentido, es comun el uso de GPG, Thunderbirds y Engimail.
 
-
-
+Las politicas globales de eduroam recomiendan el uso de claves de 16 caracteres y que sean creados aleatoriamente a través de un programa como por ejemplo *makepasswd*
+```
+makepasswd --chars=16
+EBY2F4LLcjtxs0FQ
+```

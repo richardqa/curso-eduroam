@@ -20,6 +20,8 @@ docker pull richardqa/curso-eduroam-proxy:v1
 
 ```
 
+Los programas que se necesitan instalarse previamente son:
 
+apt-get install rsyslog 
 
 
