@@ -180,7 +180,7 @@ Observa en el bloque de arriba que el atributo *userPassword* fue obtenido reali
 slappasswd -h {md5}
 New password: <clave-cualquiera>
 Re-enter new password: <repita-clave>
-```
+
 ldapadd -x -W -D "cn=admin,dc=institucion,dc=example,dc=com" -f eduroam.ldif 
 adding new entry "ou=usuarios,dc=institucion,dc=example,dc=com"
 
