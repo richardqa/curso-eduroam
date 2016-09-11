@@ -181,15 +181,53 @@ slappasswd -h {md5}
 New password: <clave-cualquiera>
 Re-enter new password: <repita-clave>
 ```
-ldapadd -x -w unicamp -D "cn=admin,dc=institucion,dc=example,dc=com" -f eduroam.ldif 
+ldapadd -x -W -D "cn=admin,dc=institucion,dc=example,dc=com" -f eduroam.ldif 
 adding new entry "ou=usuarios,dc=institucion,dc=example,dc=com"
 
-ldapadd -x -w unicamp -D "cn=admin,dc=institucion,dc=example,dc=com" -f users.ldif 
+ldapadd -x -W -D "cn=admin,dc=institucion,dc=example,dc=com" -f users.ldif 
 adding new entry "cn=test test,ou=usuarios,dc=institucion,dc=example,dc=com"
 
 service slapd restart
  * Stopping OpenLDAP slapd                                                                                                              [ OK ] 
  * Starting OpenLDAP slapd                                                                                                              [ OK ] 
 ```
+- Configuración del cliente LDAP para el servidor Radius local
+
+Ahora editaremos el módulo ldap del servidor Radius <Institución> para que éste pueda
+conectarse con el servidor LDAP y así poder “logearse” con los usuarios creados del mismo.
+El archivo para configuración el modulo “ldap”, se encuentra en la ruta:
+/etc/freeradius/modules/ldap
+
+```
+ldap {
+...
+server = 127.0.0.1
+port = 389
+basedn = "ou=usuarios,dc=institucion,dc=example,dc=com"
+filter = "(uid=%{%{Stripped-User-Name}:-% {User-Name}})"
+base_filter = "(objectclass=radiusprofile)"
+...
+}
+```
+Editamos el servidor virtual default del Radius (archivos ../sites-enables/default y ../sites-
+enabled/inner-tunnel)
+
+El archivo de configuración es: /etc/freeradius/sites-enabled/default, y /etc/freeradius/sites-
+enabled/inner-tunnel
+```
+authorize {
+...
+ldap
+...
+}
+authenticate {
+...
+Auth-Type LDAP {
+ldap
+}
+... }
+```
+## Evaluacion 3: Validación de sus usuarios LDAP hacia su servidor Radius.
+
 
 
