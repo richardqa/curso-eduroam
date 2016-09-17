@@ -1,6 +1,6 @@
 # Creación de certificados digitales usando Openssl
 
-Los siguientes pasos demostrarán una de las formas de como configurar los certificados digitales válidos para los servidores Radius de eduroam. Estos certificados serán creados dentro de su servidor Ubuntu 16.04 server.
+Los siguientes pasos demostrarán una de las formas de como configurar los certificados digitales válidos para los servidores Radius de eduroam. Los siguientes pasos fueron probados en un servidor Ubuntu 16.04 server. Para los objetivos del curso se ha considerado lo siguiente: Top level del dominio pais como **XY**, nombre del estado o provincia como **Estado**, localidad como **Localidad**, organización como **EXAMPLE** y dominio de la organización como **example.com**.
 
 ## Configuración de una Autoridad Certificadora privada
 
@@ -29,7 +29,7 @@ dd if=/dev/urandom of=./random count=10
 [ req ]
 prompt                  = no
 distinguished_name      = certificate_authority
-default_bits            = 2048
+# default_bits            = 2048
 # input_password        = whatever
 # output_password       = whatever
 x509_extensions         = v3_req
