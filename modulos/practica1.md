@@ -35,12 +35,12 @@ default_bits            = 2048
 x509_extensions         = v3_req
 
 [certificate_authority]
-countryName             = **<dominio-pais>**
-stateOrProvinceName     = **<ciudad>**
-localityName            = **<ciudad>**
-organizationName        = **<nombre-organización>**
-emailAddress            = eduroam@**<dominio-organización>**
-commonName              = Autoridad Certificadora privada de **<nombre-institución>**
+countryName             = XY
+stateOrProvinceName     = Estado
+localityName            = Localidad
+organizationName        = EXAMPLE
+emailAddress            = eduroam@example.com
+commonName              = Autoridad Certificadora privada de EXAMPLE
 ...
 [v3_req]
 basicConstraints        = CA:FALSE
@@ -83,12 +83,12 @@ default_bits            = 2048
 x509_extensions         = v3_ca  # Notar que esta línea fue agregado al bloque [req]
 
 [server]
-countryName             = **dominio-pais**
-stateOrProvinceName     = **ciudad**
-localityName            = **<ciudad>**
-organizationName        = **<nombre-organización>**
-emailAddress            = eduroam@**<dominio-organización>**
-commonName              = radius.**dominio-institución>**
+countryName             = XY
+stateOrProvinceName     = Estado
+localityName            = Localidad
+organizationName        = EXAMPLE
+emailAddress            = eduroam@example.com
+commonName              = radius.example.com
 
 [v3_ca]
 subjectKeyIdentifier    = hash
@@ -106,12 +106,12 @@ openssl req -new -nodes -out radius1.csr -key private/radius.key -config ./radiu
 5. Luego, firmamos la solicitud del certificado usando el CA creado previamente.
 
  ```
-openssl ca -out radius.seciu1.edu.uy.crt -keyfile private/ca.key -config ./ca.cnf -infiles radius1.csr 
+openssl ca -out radius.example.com.crt -keyfile private/ca.key -config ./ca.cnf -infiles radius1.csr 
  ```
 
 6. Los archivos `radius1.key`, `radius.seciu1.edu.uy.crt`, `random`, `dh`, `ca.crt` serán colocado dentro de la carpeta `certs` del servidor freeradius.
 
  ```
-cp ~/certificados radius1.key radius.seciu1.edu.uy.crt random dh ca.crt /etc/freeradius/certs/
+cp ~/certificados radius1.key radius.example.com.crt random dh ca.crt /etc/freeradius/certs/
  ```
 
