@@ -1,7 +1,9 @@
-# Nuevo curso de *eduroam* para instituciones de Latino América
+# Nuevo curso de *eduroam* para América Latina
 
 # Introducción (Falta completar)
 Este curso esta dirigido a ...
+
+eduroam
 
 # Configuración de las maquinas virtuales para el curso
 
@@ -32,7 +34,7 @@ Para instalar los paquetes necesarios para la configuración del servidor Radius
  ```
 bash scripts/inicio.sh
  ```
-6. Para los siguientes pasos seguir al [modulo1](https://github.com/richardqa/curso-eduroam/blob/master/modulos/practica1.md).
+6. Para los siguientes pasos seguir al [modulo1](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad1.md).
 
 
 
