@@ -7,21 +7,23 @@ Los siguientes pasos demostrarán una de las formas de como configurar los certi
 Los pasos a continuación mostrarán la forma de como crear correctamente los certificados digitales para tu Radius Local.
 
 1. Creación de una llave privada llamada *ca.key* de 4096 bits y usando el algoritmo simétrico AES de 256 bits.
+ 
  ```
 openssl genrsa -aes256 -out private/ca.key 4096
  ```
 2. Creación de los archivos *Diffie-Hellman* y *Random* necesarios para el servidor Radius
+
  ```
 openssl dhparam -out dh 1024 
 dd if=/dev/urandom of=./random count=10 
  ```
 3. Creación de la Autoridad Certificadora privada (CA)
 
-Antes de crear nuestro CA, vamos a configurar el archivo *ca.cnf* que se encuentra dentro de nuestra carpeta *certificados* creado en el paso anterior (archivo [Readme](https://www.github.com/richardqa/curso-eduroam). Este archivo contiene todos los parámetros de configuración necesarios para la construcción de una CA privada.
+ Antes de crear nuestro CA, vamos a configurar el archivo *ca.cnf* que se encuentra dentro de nuestra carpeta *certificados* creado en el paso anterior (archivo [Readme](https://www.github.com/richardqa/curso-eduroam). Este archivo contiene todos los parámetros de configuración necesarios para la construcción de una CA privada.
 
-Notar que por defecto el servidor del CA usa el Hash de tipo "sha256". También notamos que las líneas **input_password** y **output_password** son comentadas porque el *passphrase* usado por el CA será generado usando *Openssl*. Finalmente, vemos que en el bloque **[certificate_authority]** se ha configurado los parámetros para su institución, en este caso RAU. 
+ Notar que por defecto el servidor del CA usa el Hash de tipo "sha256". También notamos que las líneas **input_password** y **output_password** son comentadas porque el *passphrase* usado por el CA será generado usando *Openssl*. Finalmente, vemos que en el bloque **[certificate_authority]** se ha configurado los parámetros para su institución, en este caso RAU. 
 
-A continuación se muestra los parámetros más importantes en la configuración del servidor Radius.
+ A continuación se muestra los parámetros más importantes en la configuración del servidor Radius.
 
  ```
 [ req ]
