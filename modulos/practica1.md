@@ -72,7 +72,7 @@ dd if=/dev/urandom of=./random count=10
  ```
 3. En este paso vamos a crear una copia del archivo *server.cnf* con nombre *radius1.cnf*, luego editamos éste nuevo archivo *radius.conf* con la información relacionada al servidor Radiusi Local. 
 
-Similar al paso 3, el hash por defecto usado es "sha256". También fueron comentadas las líneas **default_bits**, **input_password** y **output_password**.
+ Similar al paso 3, el hash por defecto usado es "sha256". También fueron comentadas las líneas **default_bits**, **input_password** y **output_password**.
 
  ```
 [ req ]
