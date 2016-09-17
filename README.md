@@ -12,9 +12,9 @@ Pre-requisito:
 
 A través de la aplicación __putty__ em Windows o el terminal de comandos de Linux, cada usuario se deberá conectar al servidor Radius de su Institución.
 
-2. Para los usuarios que no consigan conectarse remotamente a su servidor, podrán descargar su imagen en Docker el cual viene ya pre-configurado los paquetes necesarios para su uso. Algunas referencias de la instalación y configuración de Docker en Linux [1].
+2. Para los usuarios que no consigan conectarse remotamente a su servidor, podrán descargar su imagen en Docker el cual viene ya pre-configurado los paquetes necesarios para su uso. Algunas referencias de la instalación y configuración de Docker en Linux se muestra aqui: [docker](https://docs.docker.com/engine/installation/).
 
-3. Instalar GIT desde [2]
+3. Instalar GIT y GITHUB desde aqui: [Git](https://help.github.com/articles/set-up-git/).
 
 4. 
 
