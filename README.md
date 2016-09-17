@@ -3,7 +3,7 @@
 # Introducción (Falta completar)
 Este curso esta dirigido a ...
 
-## Configuración de las maquinas virtuales para el curso
+# Configuración de las maquinas virtuales para el curso
 
 Pre-requisito:
 
@@ -16,7 +16,7 @@ Pre-requisito:
 
 4. Las imágenes en Docker pueden ser descargadas desde aquí: 
 
-```
+..```
 docker pull richardqa/curso-eduroam-radius1:v1
 docker pull richardqa/curso-eduroam-radius2:v1
 docker pull richardqa/curso-eduroam-proxy:v1
