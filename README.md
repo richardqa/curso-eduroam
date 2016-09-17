@@ -3,12 +3,9 @@
 # Introducción (Falta completar)
 Este curso esta dirigido a ...
 
-![alt text](https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam1.png)
-
-
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=qk9aljqu20A
 " target="_blank"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam1.png" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
 # Configuración de las maquinas virtuales para el curso
 
