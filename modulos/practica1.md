@@ -35,12 +35,12 @@ default_bits            = 2048
 x509_extensions         = v3_req
 
 [certificate_authority]
-countryName             = UY
-stateOrProvinceName     = Montevideo
-localityName            = Montevideo
-organizationName        = RAU
-emailAddress            = eduroam@seciu.edu.uy
-commonName              = Autoridad Certificadora privada de RAU
+countryName             = **<dominio-pais>**
+stateOrProvinceName     = **<ciudad>**
+localityName            = **<ciudad>**
+organizationName        = **<nombre-organización>**
+emailAddress            = eduroam@**<dominio-organización>**
+commonName              = Autoridad Certificadora privada de **<nombre-institución>**
 ...
 [v3_req]
 basicConstraints        = CA:FALSE
@@ -56,15 +56,15 @@ openssl req -key private/ca.key -new -x509 -extensions v3_ca -out ca.crt -days 3
  ```
 openssl x509 -in ca.crt -noout -text
  ```
-## Configuración de los archivos SSL necesarios para la configuración del servidor Radius
+## Configuración de certificados para el Radius Local
 
-1. Similar al paso previo de creación de una llave privada para el CA, aqui vamos a crear una llave para el servidor Radius Local.
+1. Similar al paso 1, vamos a crear un para de llaves pública/privada para el servidor Radius Local.
 
  ```
 openssl genrsa -aes256 -out private/radius1.key 4096
  ```
 
-2. Estos pasos serían necesarios si aún no se han creado los archivos **Diffie-Hellman** y **Random** necesarios para el servidor Radius
+2. Estos pasos serían necesarios si aún no se han creado los archivos **Diffie-Hellman** y **Random** del paso 2 necesarios para el servidor Radius
 
  ```
 openssl dhparam -out dh 1024 
@@ -83,12 +83,12 @@ default_bits            = 2048
 x509_extensions         = v3_ca  # Notar que esta línea fue agregado al bloque [req]
 
 [server]
-countryName             = UY
-stateOrProvinceName     = Montevideo
-localityName            = Montevideo
-organizationName        = RAU
-emailAddress            = eduroam@seciu1.edu.uy
-commonName              = radius.seciu1.edu.uy
+countryName             = **<dominio-pais>**
+stateOrProvinceName     = **<ciudad>**
+localityName            = **<ciudad>**
+organizationName        = **<nombre-organización>**
+emailAddress            = eduroam@**<dominio-organización>**
+commonName              = radius.**dominio-institución>**
 
 [v3_ca]
 subjectKeyIdentifier    = hash
@@ -97,7 +97,7 @@ basicConstraints        = CA:true
 extendedKeyUsage        = serverAuth, clientAuth
 
  ```
-4. Una vez que tengamos nuestro archivo `radius1.cnf` listo, vamos a crear una solicitud de certificado de la siguiente forma:
+4. Una vez que tengamos nuestro archivo `radius1.cnf` configurado correctamente, vamos a crear una solicitud de certificado de la siguiente forma:
 
  ```
 openssl req -new -nodes -out radius1.csr -key private/radius.key -config ./radius1.cnf
