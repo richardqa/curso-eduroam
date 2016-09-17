@@ -116,4 +116,4 @@ openssl ca -out radius.example.com.crt -keyfile private/ca.key -config ./ca.cnf 
  ```
 cp ~/certificados radius1.key radius.example.com.crt random dh ca.crt /etc/freeradius/certs/
  ```
-
+7. Una vez terminado los pasos anteriores, haz click en [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad2.md) para continuar con la actividad 2.

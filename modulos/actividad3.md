@@ -61,4 +61,6 @@ richardqa Cleartext-Password := "inictel"
 ```
 radtest <usuario>@<Dominio-Institución> <clave-usuario> <IP-federado> 0 <clave-compartida-GPG>
 ```
+7. Una vez terminado los pasos anteriores, haz click en [modulo4](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad4.md) para c
+ontinuar con la actividad 4.
 	

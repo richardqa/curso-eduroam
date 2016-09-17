@@ -121,3 +121,6 @@ Las politicas globales de eduroam recomiendan el uso de claves de 16 caracteres 
 makepasswd --chars=16
 EBY2F4LLcjtxs0FQ
 ```
+7. Una vez terminado los pasos anteriores, haz click en [modulo3](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad2.md) para c
+ontinuar con la actividad 3.
+
