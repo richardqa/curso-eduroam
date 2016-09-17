@@ -98,6 +98,7 @@ basicConstraints        = CA:true
 extendedKeyUsage        = serverAuth, clientAuth
 
  ```
+
 4. Una vez que tengamos nuestro archivo *radius1.cnf* configurado correctamente y nueva llave pública/privada, vamos a crear una solicitud de certificado de la siguiente forma:
 
  ```
