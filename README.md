@@ -24,9 +24,13 @@ docker pull richardqa/curso-eduroam-proxy:v1
  ```
 5. Para los usuarios que se conecten a su servidor remotamente, seguir los siguientes pasos:
 
+ ```
 git clone https://github.com/richardqa/curso-eduroam
-
 cd curso-eduroam
-
+ ```
+Para instalar los paquetes necesarios para la configuración del servidor Radius:
+ ```
+bash script.sh
+ ```
 
 
