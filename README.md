@@ -16,12 +16,12 @@ Pre-requisito:
 
 4. Las imágenes en Docker pueden ser descargadas desde aquí: 
 
-..```
+ ```
 docker pull richardqa/curso-eduroam-radius1:v1
 docker pull richardqa/curso-eduroam-radius2:v1
 docker pull richardqa/curso-eduroam-proxy:v1
 
-```
+ ```
 5. Para los usuarios que se conecten a su servidor remotamente, seguir los siguientes pasos:
 
 git clone https://github.com/richardqa/curso-eduroam
