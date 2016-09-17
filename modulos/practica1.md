@@ -70,14 +70,15 @@ openssl genrsa -aes256 -out private/radius1.key 4096
 openssl dhparam -out dh 1024 
 dd if=/dev/urandom of=./random count=10 
  ```
-3. En este paso vamos a crear una copia del archivo **server.cnf** a **radius1.cnf** y editamos este último con la información relacionada al servidor Radius. Notar que se ha comentado las líneas que empiezan con `input_password` y `output_password`. Tambien notamos que se ha agregado todo el bloque [v3_ca].
+3. En este paso vamos a crear una copia del archivo *server.cnf* con nombre *radius1.cnf*, luego editamos éste nuevo archivo *radius.conf* con la información relacionada al servidor Radiusi Local. 
 
+Similar al paso 3, el hash por defecto usado es "sha256". También fueron comentadas las líneas **default_bits**, **input_password** y **output_password**.
 
  ```
 [ req ]
 prompt                  = no
 distinguished_name      = server
-default_bits            = 2048
+# default_bits            = 2048
 # input_password         = whatever
 # output_password        = whatever
 x509_extensions         = v3_ca  # Notar que esta línea fue agregado al bloque [req]
@@ -97,7 +98,7 @@ basicConstraints        = CA:true
 extendedKeyUsage        = serverAuth, clientAuth
 
  ```
-4. Una vez que tengamos nuestro archivo `radius1.cnf` configurado correctamente, vamos a crear una solicitud de certificado de la siguiente forma:
+4. Una vez que tengamos nuestro archivo *radius1.cnf* configurado correctamente y nueva llave pública/privada, vamos a crear una solicitud de certificado de la siguiente forma:
 
  ```
 openssl req -new -nodes -out radius1.csr -key private/radius.key -config ./radius1.cnf
@@ -109,7 +110,7 @@ openssl req -new -nodes -out radius1.csr -key private/radius.key -config ./radiu
 openssl ca -out radius.example.com.crt -keyfile private/ca.key -config ./ca.cnf -infiles radius1.csr 
  ```
 
-6. Los archivos `radius1.key`, `radius.seciu1.edu.uy.crt`, `random`, `dh`, `ca.crt` serán colocado dentro de la carpeta `certs` del servidor freeradius.
+6. Los archivos *radius1.key*, *radius.seciu1.edu.uy.crt*, *random*, *dh*, *ca.crt* serán colocado dentro de la carpeta **certs** del servidor freeradius.
 
  ```
 cp ~/certificados radius1.key radius.example.com.crt random dh ca.crt /etc/freeradius/certs/
