@@ -7,27 +7,14 @@ Este curso esta dirigido a ...
 
 Pre-requisito:
 
-1. Instalar un **X Server** y un terminal con capacidad de Cliente SSH.
-1.1 
 
-A través de la aplicación __putty__ em Windows o el terminal de comandos de Linux, cada usuario se deberá conectar al servidor Radius de su Institución.
+1. A través de la aplicación __putty__ em Windows o el terminal de comandos de Linux, cada usuario se deberá conectar al servidor Radius de su Institución.
 
-2. Para los usuarios que no consigan conectarse remotamente a su servidor, podrán descargar su imagen en Docker el cual viene ya pre-configurado los paquetes necesarios para su uso. Algunas referencias de la instalación y configuración de Docker en Linux se muestra aqui: [docker](https://docs.docker.com/engine/installation/).
+2. Para los usuarios que no consigan conectarse remotamente a su servidor, podrán descargar su imagen en Docker el cual viene ya pre-configurado los paquetes necesarios para su uso. Algunas referencias de la instalación y configuración de Docker en Linux se muestra aqui: [docker](https://docs.docker.com/engine/installation/). Docker actualmente tiene soporte para Linux, Windows y MAC OS.
 
-3. Instalar GIT y GITHUB desde aqui: [Git](https://help.github.com/articles/set-up-git/).
+3. Instalar GIT desde aqui: [Git](https://help.github.com/articles/set-up-git/).
 
-4. 
-
-
-Para conseguir usar las maquinas virtuales pre-configuradas en Docker, es necesario instalar docker en su computador (Docker soporta Linux, Mac y Windows)
-
-```
-
-apt-get install docker
-
-```
-
-Las imagenes en Docker pueden ser descargadas aqui:
+4. Las imágenes en Docker pueden ser descargadas desde aquí: 
 
 ```
 docker pull richardqa/curso-eduroam-radius1:v1
@@ -35,9 +22,11 @@ docker pull richardqa/curso-eduroam-radius2:v1
 docker pull richardqa/curso-eduroam-proxy:v1
 
 ```
+5. Para los usuarios que se conecten a su servidor remotamente, seguir los siguientes pasos:
 
-Los programas que se necesitan instalarse previamente son:
+git clone https://github.com/richardqa/curso-eduroam
 
-apt-get install rsyslog 
+cd curso-eduroam
+
 
 
