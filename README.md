@@ -30,7 +30,13 @@ cd curso-eduroam
  ```
 Para instalar los paquetes necesarios para la configuración del servidor Radius:
  ```
-bash script.sh
+bash scripts/inicio.sh
  ```
+6. Para los siguientes pasos seguir al [modulo1](https://github.com/richardqa/curso-eduroam/modulos/modulo1.md).
+
+
+
+
+
 
 
