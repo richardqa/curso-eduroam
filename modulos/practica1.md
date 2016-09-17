@@ -64,7 +64,7 @@ openssl x509 -in ca.crt -noout -text
 openssl genrsa -aes256 -out private/radius1.key 4096
  ```
 
-2. Estos pasos serían necesarios si aún no se han creado los archivos **Diffie-Hellman** y **Random** del paso 2 necesarios para el servidor Radius
+2. Éste paso 7 sería necesario si aún no se han creado los archivos **Diffie-Hellman** y **Random** del paso 2 necesarios para el servidor Radius
 
  ```
 openssl dhparam -out dh 1024 
@@ -83,8 +83,8 @@ default_bits            = 2048
 x509_extensions         = v3_ca  # Notar que esta línea fue agregado al bloque [req]
 
 [server]
-countryName             = **<dominio-pais>**
-stateOrProvinceName     = **<ciudad>**
+countryName             = **dominio-pais**
+stateOrProvinceName     = **ciudad**
 localityName            = **<ciudad>**
 organizationName        = **<nombre-organización>**
 emailAddress            = eduroam@**<dominio-organización>**
