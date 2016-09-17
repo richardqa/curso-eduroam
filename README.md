@@ -3,7 +3,8 @@
 # Introducción (Falta completar)
 Este curso esta dirigido a ...
 
-eduroam
+eduroam:
+![alt text](https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam1.png)
 
 # Configuración de las maquinas virtuales para el curso
 
