@@ -1,7 +1,10 @@
-# Nuevo curso de *eduroam* para América Latina
+# Nuevo curso de *eduroam* para las Instituciones de la Red Académica de Uruguay (RAU)
 
-# Introducción (Falta completar)
-Este curso esta dirigido a ...
+# Introducción
+Este curso esta dirigido a los administradores de redes de las instituciones académicas de Latino América.
+
+# Objetivo
+Capacitar a los administradores de redes de instituciones académicas en la instalación, configuración y mantenimiento de los servidores RADIUS. También en el mantenimiento del sistema de monitoreo de usuarios usando la herramienta F-Ticks.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=qk9aljqu20A
 " target="_blank"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam1.png" 
