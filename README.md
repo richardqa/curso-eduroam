@@ -1,4 +1,4 @@
-# Nuevo curso de *eduroam* para las Instituciones de la Red Académica de Uruguay (RAU)
+# Nuevo curso de *eduroam* para instituciones académicas de Latino América
 
 # Introducción
 Este curso esta dirigido a los administradores de redes de las instituciones académicas de Latino América.
@@ -10,26 +10,26 @@ Capacitar a los administradores de redes de instituciones académicas en la inst
 " target="_blank"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam1.png" 
 alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
-# Configuración de las maquinas virtuales para el curso
+# Pasos previos para la configuración del servidor Radius
 
-Pre-requisito:
+Pre-requisitos:
 
+1. Éste curso esta desarrollado para ser implementado en Ubuntu 16.04 LTS ó contenedor Docker. 
 
-1. A través de la aplicación __putty__ em Windows o el terminal de comandos de Linux, cada usuario se deberá conectar al servidor Radius de su Institución.
-
-2. Para los usuarios que no consigan conectarse remotamente a su servidor, podrán descargar su imagen en Docker el cual viene ya pre-configurado los paquetes necesarios para su uso. Algunas referencias de la instalación y configuración de Docker en Linux se muestra aqui: [docker](https://docs.docker.com/engine/installation/). Docker actualmente tiene soporte para Linux, Windows y MAC OS.
-
-3. Instalar GIT desde aqui: [Git](https://help.github.com/articles/set-up-git/).
-
-4. Las imágenes en Docker pueden ser descargadas desde aquí: 
-
+2. Cada usuario podrá conectarse remotamente a su servidor Local de su institución, ó podrá descargar las imágenes pre-configuradas en Docker importando los siguientes enlaces:
+ 
  ```
 docker pull richardqa/curso-eduroam-radius1:v1
 docker pull richardqa/curso-eduroam-radius2:v1
 docker pull richardqa/curso-eduroam-proxy:v1
 
  ```
-5. Para los usuarios que se conecten a su servidor remotamente, seguir los siguientes pasos:
+3. El acceso a los servidores podrán ser realizados a través de la aplicación [Putty](http://www.putty.org/) para Windows o el terminal de comandos para Linux, cada usuario se deberá conectar al servidor Radius de su institución remotamente ó a través del programa *Docker*
+
+	- Instalación y configuración de Docker en Linux [docker](https://docs.docker.com/engine/installation/). Docker actualmente tiene soporte para Linux, Windows y MAC OS.
+ 	- Instalación de [Git](https://help.github.com/articles/set-up-git/)
+
+4. Para los usuarios que se conecten a su servidor remotamente, seguir directamente los siguientes pasos:
 
  ```
 git clone https://github.com/richardqa/curso-eduroam
@@ -39,11 +39,17 @@ Para instalar los paquetes necesarios para la configuración del servidor Radius
  ```
 bash scripts/inicio.sh
  ```
-6. Para los siguientes pasos seguir al [modulo1](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad1.md).
+5. Para la configuración de los certificados digitales X509, ir al [modulo1](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad1.md).
 
+6. Para la configuración de claves públicas y privadas usando GPG, ir al [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad2.md)
 
+7. Para la configuración del servidor Radius Local, ir al [modulo3](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad3.md)
 
+8. Para la configuración de los servidores LDAP y Rsyslog Centralizado, ir al [modulo4](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad4.md)
 
+9. Para la configuración de Radsecproxy, ir al [modulo4](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad4.md)
+
+10. Para la configuración del sistema de monitoramiento F-Ticks, ir al [modulo5](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad4.md)
 
 
 
