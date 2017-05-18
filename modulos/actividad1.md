@@ -9,8 +9,12 @@ Los pasos a continuación mostrarán la forma de como crear correctamente los ce
 1. Creación de una llave privada llamada *ca.key* de 4096 bits y usando el algoritmo simétrico AES de 256 bits.
  
  ```
-openssl genrsa -aes256 -out private/ca.key 4096
+mkdir certificados  // creación de la carpeta "certificados"
+cd certificados     
+mkdir private	    // creación de la carpeta "private" en donde se almacenerá las claves privadas
+openssl genrsa -aes256 -out private/ca.key 4096	 	// Creación de la clave privada del CA de 4096 bits
  ```
+
 2. Creación de los archivos *Diffie-Hellman* y *Random* necesarios para el servidor Radius
 
  ```
@@ -70,7 +74,7 @@ openssl genrsa -aes256 -out private/radius1.key 4096
 openssl dhparam -out dh 1024 
 dd if=/dev/urandom of=./random count=10 
  ```
-3. En este paso vamos a crear una copia del archivo *server.cnf* con nombre *radius1.cnf*, luego editamos éste nuevo archivo *radius.conf* con la información relacionada al servidor Radiusi Local. 
+3. En este paso vamos a consultar el archivo que se encuentra dentro del directorio ../certs/radius.cnf, luego editamos éste nuevo archivo *radius.conf* con la información relacionada al servidor Radius Local. 
 
  Similar al paso 3, el hash por defecto usado es "sha256". También fueron comentadas las líneas **default_bits**, **input_password** y **output_password**.
 
@@ -84,12 +88,12 @@ distinguished_name      = server
 x509_extensions         = v3_ca  # Notar que esta línea fue agregado al bloque [req]
 
 [server]
-countryName             = XY
-stateOrProvinceName     = Estado
-localityName            = Localidad
-organizationName        = EXAMPLE
-emailAddress            = eduroam@example.com
-commonName              = radius.example.com
+countryName             = <Country-CC>
+stateOrProvinceName     = <State>
+localityName            = <Locality>
+organizationName        = <Organization>
+emailAddress            = eduroam@<domain>
+commonName              = radius.<domain>
 
 [v3_ca]
 subjectKeyIdentifier    = hash
