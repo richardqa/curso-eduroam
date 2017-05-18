@@ -72,7 +72,9 @@ openssl genrsa -aes256 -out private/radius.key 4096
 
  ```
 openssl dhparam -out dh 1024 
-dd if=/dev/urandom of=./random count=10 
+dd if=/dev/urandom of=./random count=10
+touch index.txt
+echo '01' > serial
  ```
 3. En este paso vamos a consultar el archivo que se encuentra dentro del directorio ../certs/radius.cnf, luego editamos éste nuevo archivo *radius.conf* con la información relacionada al servidor Radius Local. 
 
