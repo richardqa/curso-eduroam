@@ -65,7 +65,7 @@ openssl x509 -in ca.crt -noout -text
 1. Similar al paso 1, vamos a crear un para de llaves pública/privada para el servidor Radius Local.
 
  ```
-openssl genrsa -aes256 -out private/radius1.key 4096
+openssl genrsa -aes256 -out private/radius.key 4096
  ```
 
 2. Éste paso 7 sería necesario si aún no se han creado los archivos **Diffie-Hellman** y **Random** del paso 2 necesarios para el servidor Radius
@@ -115,7 +115,7 @@ openssl req -new -nodes -out radius.csr -key private/radius.key -config ./radius
 openssl ca -out radius.example.com.crt -keyfile private/ca.key -config ./ca.cnf -infiles radius.csr 
  ```
 
-6. Los archivos *radius1.key*, *radius.<domain>.crt*, *random*, *dh*, *ca.crt* serán colocado dentro de la carpeta **certs** del servidor freeradius.
+6. Los archivos *radius.key*, *radius.<domain>.crt*, *random*, *dh*, *ca.crt* serán colocado dentro de la carpeta **certs** del servidor freeradius.
 
  ```
 cp ~/certificados radius1.key radius.example.com.crt random dh ca.crt /etc/freeradius/certs/
