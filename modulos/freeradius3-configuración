@@ -1,0 +1,24 @@
+# INSTALACIÓN DEL FREERADIUS 3.X PARA RADIUS LOCAL
+# ------------------------------------------------
+
+# Instalar éste programa
+apt-get install software-properties-common python-software-properties
+
+# Verificar que algun programa antiguo de freeradius esté instalado
+apt-get purge libfreeradius2 freeradius-common; rm -rf /etc/freeradius
+
+# Instalar el repositorio que contiene el freeradius 3.x
+add-apt-repository ppa:freeradius/stable-3.0
+
+# Click en Enter cuando te lo solicita
+# Actualizar repositorio e instalar el freeradius 3.x
+apt-get update
+apt-get install freeradius
+
+# Verificar la versión instalada del Freeradius
+freeradius -v
+   Freeradiusd: FreeRADIUS Version 3.0.12, for host x86_64-pc-linux-gnu, built on Dec  3 2016 at 15:55:32
+
+# Configuración del archivo /etc/freeradius/clients.conf
+
+
