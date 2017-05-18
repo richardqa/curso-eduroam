@@ -35,12 +35,12 @@ distinguished_name      = certificate_authority
 x509_extensions         = v3_req
 
 [certificate_authority]
-countryName             = XY
-stateOrProvinceName     = Estado
-localityName            = Localidad
-organizationName        = EXAMPLE
-emailAddress            = eduroam@example.com
-commonName              = Autoridad Certificadora privada de EXAMPLE
+countryName             = <Country-CC>
+stateOrProvinceName     = <State>
+localityName            = <Locality>
+organizationName        = <Organization>
+emailAddress            = eduroam@<Domain>
+commonName              = Autoridad Certificadora privada de <NREN>
 ...
 [v3_req]
 basicConstraints        = CA:FALSE
@@ -99,19 +99,19 @@ extendedKeyUsage        = serverAuth, clientAuth
 
  ```
 
-4. Una vez que tengamos nuestro archivo *radius1.cnf* configurado correctamente y nueva llave pública/privada, vamos a crear una solicitud de certificado de la siguiente forma:
+4. Una vez que tengamos nuestro archivo *radius.cnf* configurado correctamente y nueva llave pública/privada, vamos a crear una solicitud de certificado de la siguiente forma:
 
  ```
-openssl req -new -nodes -out radius1.csr -key private/radius.key -config ./radius1.cnf
+openssl req -new -nodes -out radius.csr -key private/radius.key -config ./radius.cnf
  ```
 
 5. Luego, firmamos la solicitud del certificado usando el CA creado previamente.
 
  ```
-openssl ca -out radius.example.com.crt -keyfile private/ca.key -config ./ca.cnf -infiles radius1.csr 
+openssl ca -out radius.example.com.crt -keyfile private/ca.key -config ./ca.cnf -infiles radius.csr 
  ```
 
-6. Los archivos *radius1.key*, *radius.seciu1.edu.uy.crt*, *random*, *dh*, *ca.crt* serán colocado dentro de la carpeta **certs** del servidor freeradius.
+6. Los archivos *radius1.key*, *radius.<domain>.crt*, *random*, *dh*, *ca.crt* serán colocado dentro de la carpeta **certs** del servidor freeradius.
 
  ```
 cp ~/certificados radius1.key radius.example.com.crt random dh ca.crt /etc/freeradius/certs/
