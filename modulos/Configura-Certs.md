@@ -20,6 +20,8 @@ openssl genrsa -aes256 -out private/ca.key 4096	 	// Creación de la clave priva
  ```
 openssl dhparam -out dh 1024 
 dd if=/dev/urandom of=./random count=10 
+touch index.txt
+echo '01' > serial
  ```
 3. Creación de la Autoridad Certificadora privada (CA)
 
@@ -73,8 +75,6 @@ openssl genrsa -aes256 -out private/radius.key 4096
  ```
 openssl dhparam -out dh 1024 
 dd if=/dev/urandom of=./random count=10
-touch index.txt
-echo '01' > serial
  ```
 3. En este paso vamos a consultar el archivo que se encuentra dentro del directorio ../certs/radius.cnf, luego editamos éste nuevo archivo *radius.conf* con la información relacionada al servidor Radius Local. 
 
@@ -117,9 +117,12 @@ openssl req -new -nodes -out radius.csr -key private/radius.key -config ./radius
 openssl ca -out radius.example.com.crt -keyfile private/ca.key -config ./ca.cnf -infiles radius.csr 
  ```
 
-6. Los archivos *radius.key*, *radius.<domain>.crt*, *random*, *dh*, *ca.crt* serán colocado dentro de la carpeta **certs** del servidor freeradius.
+6. Similar a los pasos 3,4,5 usted va firmar un certificado con el CA. El certificado debe tener esta sintaxis: federado.key, federado.example.com.crt
+
+7. Los archivos *radius.key*, *radius.<domain>.crt*, *random*, *dh*, *ca.crt* serán colocado dentro de la carpeta **certs** del servidor freeradius.
 
  ```
 cp ~/certificados radius1.key radius.example.com.crt random dh ca.crt /etc/freeradius/certs/
  ```
-7. Una vez terminado los pasos anteriores, haz click en [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad2.md) para continuar con la actividad 2.
+
+8. Una vez terminado los pasos anteriores, haz click en [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad2.md) para continuar con la actividad 2.
