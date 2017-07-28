@@ -9,7 +9,6 @@ apt-get install wget bzip2 gcc make libtalloc-dev libssl-dev libldap2-dev
 wget ftp://ftp.freeradius.org/pub/freeradius/freeradius-server-3.0.15.tar.bz2
 tar -xjvf freeradius-server-3.0.15.tar.bz2
 cd freeradius-server-3.0.15.
-
  ```
 ## Instalar Freeradius
  ```
@@ -22,8 +21,7 @@ make install
  ```
 radiusd -X
  ```
-
-Aparece error?,  Desinstale el programa Openssl versión antigua e instale la última versión de Openssl
+¿Apareció error?,  Desinstale la versión antigua del OpenSSL e instale su versión más reciente
 
 ## Parchar la versión actual del OpenSSL
 
@@ -42,7 +40,7 @@ openssl version -a
 
 ## Corregir la vulnerabilidad de OpenSSL
 
-Dentro do /usr/local/etc/raddb/radiusd.conf vamos a colar o seguinte dentro do bloco "security":
+Dentro do /usr/local/etc/raddb/radiusd.conf vamos a colar o seguinte dentro do bloco **security**:
 
  ```
     ...
@@ -52,30 +50,34 @@ Dentro do /usr/local/etc/raddb/radiusd.conf vamos a colar o seguinte dentro do b
            max_attributes = 200
            reject_delay = 1
            status_server = yes
-           allow_vulnerable_openssl = 'CVE-2016-6304'
+           **allow_vulnerable_openssl = 'CVE-2016-6304'**
     ...
     }
  ```
-Finalmente, executamos "radiusd -fxx -l stdout"
+Finalmente, executamos **radiusd -fxx -l stdout**
 
 ## Versión Antigua
 
 ## Instalar éste programa
+ ```
 apt-get install software-properties-common python-software-properties
-
+ ```
 ## Verificar que algun programa antiguo de freeradius esté instalado
+ ```
 apt-get purge libfreeradius2 freeradius-common; rm -rf /etc/freeradius
-
+ ```
 ## Instalar el repositorio que contiene el freeradius 3.x
+ ```
 add-apt-repository ppa:freeradius/stable-3.0
-
+ ```
 ## Click en Enter cuando te lo solicita
 ## Actualizar repositorio e instalar el freeradius 3.x
+ ```
 apt-get update
 apt-get install freeradius
-
+ ```
 ## Verificar la versión instalada del Freeradius
+ ```
 freeradius -v
    Freeradiusd: FreeRADIUS Version 3.0.12, for host x86_64-pc-linux-gnu, built on Dec  3 2016 at 15:55:32
-
-## Configuración del archivo /etc/freeradius/clients.conf
+ ```
