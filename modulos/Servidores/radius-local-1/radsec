@@ -5,6 +5,11 @@ listen {
     proto = tcp
     virtual_server = default
     clients = radsec
+    limit {
+           max_connections = 0
+           lifetime = 0
+           idle_timeout = 3600
+           }
     tls {
         certdir = ${confdir}/certs/radsec
         cadir = ${confdir}/certs/radsec
@@ -14,7 +19,7 @@ listen {
         ca_file = ${cadir}/ca.crt
         dh_file = ${certdir}/dh
         random_file = ${certdir}/random
-        fragment_size = 1024
+        fragment_size = 8192
         include_length = yes
         cipher_list = "DEFAULT"
         cache {
@@ -42,7 +47,7 @@ listen {
         ca_file = ${cadir}/ca.crt
         dh_file = ${certdir}/dh
         random_file = ${certdir}/random
-        fragment_size = 1024
+        fragment_size = 8192
         include_length = yes
         cipher_list = "DEFAULT"
         cache {
@@ -55,6 +60,11 @@ listen {
     }
 }
 clients radsec {
+    limit {
+        max_connections = 0
+        lifetime = 0
+        idle_timeout = 3600
+    }
     client 127.0.0.1 {
         ipaddr = 127.0.0.1
         proto = tls
@@ -64,6 +74,11 @@ clients radsec {
         ipaddr = 172.17.0.4
         proto = tls
         secret = eduroam
+        limit {
+                max_connections = 0
+                lifetime = 0
+                idle_timeout = 3600
+        }
     }
 }
 listen {

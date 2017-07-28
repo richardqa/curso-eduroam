@@ -4,6 +4,7 @@ ListenUDP *:1812
 SourceTLS *:33001
 LogLevel 4
 LogDestination file:///var/log/radsecproxy.log
+LoopPrevention on
 tls default {
         CACertificateFile /etc/freeradius/certs/radsec/ca.crt
         CertificateFile /etc/freeradius/certs/radsec/federado.redclara.mx.crt
