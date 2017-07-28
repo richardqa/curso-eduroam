@@ -46,9 +46,10 @@ Para el servidor Federado: radius.federado.pe
  ```
 radsecproxy -c /etc/radsecproxy.conf -d 5 -f
  ```
-Nota: ** Verificar que el servico LDAP esta activo:  "service slapd status". Si no estuviera activo, usar *service slapd start*. El usuario de testing pre-configurado en LDAP es richardqa@redclara.pe (clave:inictel) para Radius1, e richardqa@redclara2.pe (clave: inictel) para Radius2 **
+Nota: 
+1. Verificar que el servico LDAP esta activo:  *service slapd status*. Si no estuviera activo, usar *service slapd start*. El usuario de testing pre-configurado en LDAP es richardqa@redclara.pe (clave:inictel) para Radius1, e richardqa@redclara2.pe (clave: inictel) para Radius2
 
-## Activar el servico SSH de cada servidor Radius. Existe un usuario creado (user: richardqa,  clave: inictel). Acceder desde la consola al servidor Radius1 usando SSH,
+2. Activar el servico SSH de cada servidor Radius. Existe un usuario creado (user: richardqa,  clave: inictel). Acceder desde la consola al servidor Radius1 usando SSH,
  ```
 ssh richardqa@172.17.0.2
 radtest richardqa@redclara.pe inictel 127.0.0.1 0 eduroam   (Verificar OK)
