@@ -4,20 +4,30 @@
 apt-get install wget bzip2 gcc make libtalloc-dev libssl-dev libldap2-dev
 
 ## Descargar el paquete freeradius 3.0.15 desde el repositorio oficial
-wget ftp://ftp.freeradius.org/pub/freeradius/freeradius-server-3.0.15.tar.bz2.
-tar -xjvf freeradius-server-3.0.15.tar.bz2.
+
+ ```
+wget ftp://ftp.freeradius.org/pub/freeradius/freeradius-server-3.0.15.tar.bz2
+tar -xjvf freeradius-server-3.0.15.tar.bz2
 cd freeradius-server-3.0.15.
 
+ ```
 ## Instalar Freeradius
+ ```
 ./configure
 make
 make install
-
+ ```
 ## Iniciar Freeradius
+
+ ```
 radiusd -X
+ ```
+
 Aparece error?,  Desinstale el programa Openssl versión antigua e instale la última versión de Openssl
 
 ## Parchar la versión actual del OpenSSL
+
+ ```
 apt-get purge openssl
 apt-get autoremove && apt-get autoclean
 wget --no-check-certificate https://www.openssl.org/source/openssl-1.0.2l.tar.gz
@@ -28,9 +38,13 @@ make
 make install
 cp /usr/local/ssl/bin/openssl /usr/bin/
 openssl version -a
+ ```
 
 ## Corregir la vulnerabilidad de OpenSSL
+
 Dentro do /usr/local/etc/raddb/radiusd.conf vamos a colar o seguinte dentro do bloco "security":
+
+ ```
     ...
     security {
 
@@ -41,6 +55,7 @@ Dentro do /usr/local/etc/raddb/radiusd.conf vamos a colar o seguinte dentro do b
            allow_vulnerable_openssl = 'CVE-2016-6304'
     ...
     }
+ ```
 Finalmente, executamos "radiusd -fxx -l stdout"
 
 ## Versión Antigua
