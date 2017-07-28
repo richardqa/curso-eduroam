@@ -1,6 +1,6 @@
-# INSTALACIÓN DEL FREERADIUS 3.0.15 PARA EL SERVIDOR RADIUS INSTITUCIONAL
+## INSTALACIÓN DEL FREERADIUS 3.0.15 PARA EL SERVIDOR RADIUS INSTITUCIONAL
 
-# Instalando pacotes necessarios:
+*** Instalando pacotes necessarios ***
 apt-get install wget bzip2 gcc make libtalloc-dev libssl-dev libldap2-dev
 
 # Descargar o pacote freeradius 3.0.15
