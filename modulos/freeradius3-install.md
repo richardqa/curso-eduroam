@@ -4,9 +4,9 @@
 apt-get install wget bzip2 gcc make libtalloc-dev libssl-dev libldap2-dev
 
 ## Descargar el paquete freeradius 3.0.15 desde el repositorio oficial
-wget ftp://ftp.freeradius.org/pub/freeradius/freeradius-server-3.0.15.tar.bz2
-tar -xjvf freeradius-server-3.0.15.tar.bz2
-cd freeradius-server-3.0.15
+wget ftp://ftp.freeradius.org/pub/freeradius/freeradius-server-3.0.15.tar.bz2.
+tar -xjvf freeradius-server-3.0.15.tar.bz2.
+cd freeradius-server-3.0.15.
 
 ## Instalar Freeradius
 ./configure
