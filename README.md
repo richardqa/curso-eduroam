@@ -1,7 +1,7 @@
 # Nuevo curso de *eduroam* para instituciones académicas de Latino América
 
 # Introducción
-Este curso esta dirigido a los administradores de redes de las instituciones académicas de Latino América.
+Este curso esta dirigido a los administradores de redes de las instituciones académicas (NRENs) de Latino América.
 
 # Objetivo
 Capacitar a los administradores de redes de instituciones académicas en la instalación, configuración y mantenimiento de los servidores RADIUS. También en el mantenimiento del sistema de monitoreo de usuarios usando la herramienta F-Ticks.
@@ -14,9 +14,9 @@ alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
 Pre-requisitos:
 
-1. Éste curso esta desarrollado para ser implementado en Ubuntu 16.04 LTS ó contenedor Docker. 
+1. Éste curso esta desarrollado para ser implementado en Ubuntu 16.04 LTS y en contenedores Docker. 
 
-2. Cada usuario podrá conectarse remotamente a su servidor Local de su institución, ó podrá descargar las imágenes pre-configuradas en Docker importando los siguientes enlaces:
+2. Cada usuario podrá conectarse remotamente a su servidor Local de su institución y seguir el procedimiento del curso. También se dispone de una imagen .OVA y de imágenes pre-configuradas en Docker. Para descargar la imágen ir AQUI, y para importar las imágenes en Docker ir a los siguientes enlaces:
  
  ```
 docker pull richardqa/curso-eduroam-radius1:v1
