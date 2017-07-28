@@ -50,13 +50,13 @@ Dentro do /usr/local/etc/raddb/radiusd.conf vamos a colar o seguinte dentro do b
            max_attributes = 200
            reject_delay = 1
            status_server = yes
-           **allow_vulnerable_openssl = 'CVE-2016-6304'**
+           allow_vulnerable_openssl = 'CVE-2016-6304'
     ...
     }
  ```
-Finalmente, executamos **radiusd -fxx -l stdout**
+Finalmente, para probar que nuestro radius esta correctamente instalado, executamos **radiusd -fxx -l stdout**. Deberías ver que no aparece algun error
 
-## Versión Antigua
+## Versión Antigua (¡No usar esto!)
 
 ## Instalar éste programa
  ```
