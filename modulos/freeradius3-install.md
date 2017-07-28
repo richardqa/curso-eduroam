@@ -1,23 +1,23 @@
-## INSTALACIÓN DEL FREERADIUS 3.0.15 PARA EL SERVIDOR RADIUS INSTITUCIONAL
+# Instalación del Freeradius 3.0.15
 
-*** Instalando pacotes necessarios ***
+## Instalando los paquetes necessarios
 apt-get install wget bzip2 gcc make libtalloc-dev libssl-dev libldap2-dev
 
-# Descargar o pacote freeradius 3.0.15
+## Descargar el paquete freeradius 3.0.15 desde el repositorio oficial
 wget ftp://ftp.freeradius.org/pub/freeradius/freeradius-server-3.0.15.tar.bz2
 tar -xjvf freeradius-server-3.0.15.tar.bz2
 cd freeradius-server-3.0.15
 
-# Instalar Freeradius
+## Instalar Freeradius
 ./configure
 make
 make install
 
-# Iniciar Freeradius
+## Iniciar Freeradius
 radiusd -X
 Aparece error?,  Desinstale el programa Openssl versión antigua e instale la última versión de Openssl
 
-# Parchar la versión actual del OpenSSL
+## Parchar la versión actual del OpenSSL
 apt-get purge openssl
 apt-get autoremove && apt-get autoclean
 wget --no-check-certificate https://www.openssl.org/source/openssl-1.0.2l.tar.gz
@@ -29,7 +29,7 @@ make install
 cp /usr/local/ssl/bin/openssl /usr/bin/
 openssl version -a
 
-# Corregir la vulnerabilidad de OpenSSL
+## Corregir la vulnerabilidad de OpenSSL
 Dentro do /usr/local/etc/raddb/radiusd.conf vamos a colar o seguinte dentro do bloco "security":
     ...
     security {
@@ -43,27 +43,24 @@ Dentro do /usr/local/etc/raddb/radiusd.conf vamos a colar o seguinte dentro do b
     }
 Finalmente, executamos "radiusd -fxx -l stdout"
 
-# Versión Antigua
-# ---------------
+## Versión Antigua
 
-# Instalar éste programa
+## Instalar éste programa
 apt-get install software-properties-common python-software-properties
 
-# Verificar que algun programa antiguo de freeradius esté instalado
+## Verificar que algun programa antiguo de freeradius esté instalado
 apt-get purge libfreeradius2 freeradius-common; rm -rf /etc/freeradius
 
-# Instalar el repositorio que contiene el freeradius 3.x
+## Instalar el repositorio que contiene el freeradius 3.x
 add-apt-repository ppa:freeradius/stable-3.0
 
-# Click en Enter cuando te lo solicita
-# Actualizar repositorio e instalar el freeradius 3.x
+## Click en Enter cuando te lo solicita
+## Actualizar repositorio e instalar el freeradius 3.x
 apt-get update
 apt-get install freeradius
 
-# Verificar la versión instalada del Freeradius
+## Verificar la versión instalada del Freeradius
 freeradius -v
    Freeradiusd: FreeRADIUS Version 3.0.12, for host x86_64-pc-linux-gnu, built on Dec  3 2016 at 15:55:32
 
-# Configuración del archivo /etc/freeradius/clients.conf
-
-
+## Configuración del archivo /etc/freeradius/clients.conf
