@@ -10,16 +10,16 @@ docker pull richardqa/radius3-federado
 ## Acceder a cada imágen Docker desde una terminal diferente:
 
  ```
-docker run -it --name=Radius1 --hostname=Radius1 richardqa/radius3-vmlocal /bin/bash
-docker run -it --name=Radius2 --hostname=Radius2 richardqa/radius3-vmlocal2 /bin/bash
-docker run -it --name=Federado --hostname=Federado richardqa/radius3-federado /bin/bash
+docker run -it --name=Radius1 --hostname=radius.redclara.xy richardqa/radius3-vmlocal /bin/bash
+docker run -it --name=Radius2 --hostname=radius.redclara2.xy richardqa/radius3-vmlocal2 /bin/bash
+docker run -it --name=Federado --hostname=radius.federado.xy richardqa/radius3-federado /bin/bash
  ```
 ## Verificar que el Hostname de cada Docker corresponda a su dominio respectivo (Ver Figura)
 
  ```
-radius3-VMLocal: 172.17.0.2 == radius.redclara.xy
-radius3-VMLocal2: 172.17.0.4 == radius.redclara2.xy
-radius3-federado: 172.17.0.3 == radius.federado.xy
+Para radius3-VMLocal (172.17.0.2)  => hostname radius.redclara.xy
+Para radius3-VMLocal2 (172.17.0.4) => hostname radius.redclara2.xy
+Para radius3-federado (172.17.0.3) => hostname radius.federado.xy
  ```
 ## Verificar que el archivo */etc/hosts* de cada Docker tenga mapeado las IPs y Dominio de cada Servidor:
  ```
@@ -27,12 +27,16 @@ radius3-federado: 172.17.0.3 == radius.federado.xy
 172.17.0.3 federado.redclara.xy
 172.17.0.4 radius.redclara2.xy
  ```
+## Para configurar los certificados digitales de cada servidor, ir a [certificados](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-Certs.md)
+
 ## Verificar el valor CN de las claves públicas de cada servidor Radius. Por exemplo, para el Radius1, el valor CN da clave publica radius.redclara.pe.crt es:
  ```
 openssl x509 -in radius.redclara.pe.crt -noout -text |grep CN
 Issuer: C=PE, ST=Lima, L=Lima, O=DIDT/emailAddress=eduroam@redclara.pe, CN=Autoridad Certificadora privada de RAAP
 Subject: C=PE, ST=Lima, O=DIDT, CN=172.17.0.2/emailAddress=eduroam@redclara.pe
  ```
+## Para configurar los archivos *clients.conf*, *proxy.conf*, *users*, *radsec*, entre otros ir a [certificados](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/Readme.md)
+
 ## Iniciar los servidores Radius de la seguiente manera:
 
 Para el servidor Radius1: radius.redclara.pe

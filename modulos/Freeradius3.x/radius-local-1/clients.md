@@ -1,3 +1,5 @@
+# Configuración simple de bloques para un Cliente Localhost, y un Cliente para la Federación
+
 client localhost {
         ipaddr = 127.0.0.1
         proto = *
