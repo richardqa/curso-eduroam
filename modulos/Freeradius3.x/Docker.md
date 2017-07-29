@@ -1,4 +1,5 @@
 # Importando Imágenes Pre-configuradas en Docker
+Las siguientes maquinas virtualizadas en Docker han sido ejecutads sobre Ubuntu 16.04 server y ya tienen instalado la versión reciente del Freeradius 3.0.15
 
 ## Descargar las imágenes Docker usadas en el Curso
  ```
@@ -13,18 +14,18 @@ docker run -it --name=Radius1 --hostname=Radius1 richardqa/radius3-vmlocal /bin/
 docker run -it --name=Radius2 --hostname=Radius2 richardqa/radius3-vmlocal2 /bin/bash
 docker run -it --name=Federado --hostname=Federado richardqa/radius3-federado /bin/bash
  ```
-## Verificar las configuraciones de red de cada Docker
+## Verificar que el Hostname de cada Docker corresponda a su dominio respectivo (Ver Figura)
 
  ```
-radius3-VMLocal: 172.17.0.2 == radius.redclara.pe
-radius3-VMLocal2: 172.17.0.4 == radius.redclara2.pe
-radius3-federado: 172.17.0.3 == radius.federado.pe
+radius3-VMLocal: 172.17.0.2 == radius.redclara.xy
+radius3-VMLocal2: 172.17.0.4 == radius.redclara2.xy
+radius3-federado: 172.17.0.3 == radius.federado.xy
  ```
-## Verificar /etc/hosts de cada VM, verificar que las tres VMs tengan lo seguiente:
+## Verificar que el archivo */etc/hosts* de cada Docker tenga mapeado las IPs y Dominio de cada Servidor:
  ```
-172.17.0.2 radius.redclara.pe
-172.17.0.3 federado.redclara.pe
-172.17.0.4 radius.redclara2.pe
+172.17.0.2 radius.redclara.xy
+172.17.0.3 federado.redclara.xy
+172.17.0.4 radius.redclara2.xy
  ```
 ## Verificar el valor CN de las claves públicas de cada servidor Radius. Por exemplo, para el Radius1, el valor CN da clave publica radius.redclara.pe.crt es:
  ```
