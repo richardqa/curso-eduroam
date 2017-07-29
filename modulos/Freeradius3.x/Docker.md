@@ -9,9 +9,9 @@ docker pull richardqa/radius3-federado
 ## Acceder a cada imágen Docker desde una terminal diferente:
 
  ```
-docker run -it --name=Radius1 --hostname=Radius1 richardqa3-vmlocal /bin/bash
-docker run -it --name=Radius2 --hostname=Radius2 richardqa3-vmlocal2 /bin/bash
-docker run -it --name=Federado --hostname=Federado richardqa3-federado /bin/bash
+docker run -it --name=Radius1 --hostname=Radius1 richardqa/radius3-vmlocal /bin/bash
+docker run -it --name=Radius2 --hostname=Radius2 richardqa/radius3-vmlocal2 /bin/bash
+docker run -it --name=Federado --hostname=Federado richardqa/radius3-federado /bin/bash
  ```
 ## Verificar las configuraciones de red de cada Docker
 
