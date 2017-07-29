@@ -35,7 +35,7 @@ openssl x509 -in radius.redclara.pe.crt -noout -text |grep CN
 Issuer: C=PE, ST=Lima, L=Lima, O=DIDT/emailAddress=eduroam@redclara.pe, CN=Autoridad Certificadora privada de RAAP
 Subject: C=PE, ST=Lima, O=DIDT, CN=172.17.0.2/emailAddress=eduroam@redclara.pe
  ```
-## Para configurar los archivos *clients.conf*, *proxy.conf*, *users*, *radsec*, entre otros ir a [certificados](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/Readme.md)
+## Para configurar los archivos *clients.conf*, *proxy.conf*, *users*, *radsec*, entre otros ir a [radius3](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/Readme.md)
 
 ## Iniciar los servidores Radius de la seguiente manera:
 
