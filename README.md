@@ -7,7 +7,7 @@ Este curso esta dirigido a los administradores de redes de las instituciones aca
 Capacitar a los administradores de redes de instituciones académicas en la instalación, configuración y mantenimiento de los servidores RADIUS. También en el mantenimiento del sistema de monitoreo de usuarios usando la herramienta F-Ticks.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=qk9aljqu20A
-" target="_blank"><img align="center" src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam1.png" alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
+" target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam1.png" alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></p></a>
 
 ## Pasos previos para la configuración del servidor Radius
 
