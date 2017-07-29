@@ -1,4 +1,4 @@
-## En esta sección se va describir las configuraciones de los archivos *clients.conf*, *proxy.conf*, *users* y *radsec* para cada servidor Radius.
+#### En esta sección se va describir las configuraciones de los archivos *clients.conf*, *proxy.conf*, *users* y *radsec* para cada servidor Radius.
 
 Para ir a la configuración del archivo Clientes, ir a [clientes](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/radius-local-2/clients.md)
 
