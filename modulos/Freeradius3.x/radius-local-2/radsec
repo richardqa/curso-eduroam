@@ -1,3 +1,4 @@
+ ```
 listen {
     ipaddr = *
     port = 2083
@@ -115,3 +116,4 @@ realm "~.+$" {
        auth_pool = NREN
        nostrip
 }
+ ```

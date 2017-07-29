@@ -1,3 +1,4 @@
+ ```
 proxy server {
         default_fallback = no
 }
@@ -82,3 +83,4 @@ realm "~(.*\.)*redclara\.<Country-CC>$" {
         auth_pool       = my_localhost
         secret          = eduroam
 }
+ ```
