@@ -1,4 +1,4 @@
-# Nuevo curso de *eduroam* para instituciones académicas de Latino América
+# Nuevo curso de **eduroam** para instituciones académicas de Latino América
 
 ## Objetivo del curso
 
