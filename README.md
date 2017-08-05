@@ -7,7 +7,7 @@ Este curso esta dirigido a los responsables de servicio de red inalámbrica de l
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=qk9aljqu20A
 " target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam1.png" alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></p></a>
 
-## Modulo 1: Servidor Radius Local
+## Modulo 1: Configuración del Radius Local y Certificados Digitales (Miercoles 27 Setiembre)
 
 - Introducción: Visión general de eduroam (09:00-09:40h)
 - Protocolo RADIUS: Aspectos Generales (09:40-10:20h)
@@ -34,10 +34,7 @@ Break: 16:00-16:20hrs
 - Fail-over y Balanceamiento de carga en el Radius Local (16:20-17:00h)
 - Proceso de integración del servidor Radius con otras bases de Datos (Google, Microsoft, Zimbra, etc) (17:00-18:00h)
 
-## Modulo 2: 
-
-
-2. Redes Inalámbricas
+## Modulo 2: Redes Inalámbricas y Pruebas de Autenticación TTLS (Jueves 28 Setiembre)
 
 - Introducción a 802.11 y 802.1x (09:00-09:40h)
 - Seguridad en Redes WiFi (WEP, WPA y WPA2) (09:40-10:00h)
@@ -58,9 +55,7 @@ Break: 16:00-16:20hrs
 - Configuración del módulo y servicios F-ticks para el servidor Radius Local (16:40-17:00h)
 - Evaluación 5: Pruebas de Monitoreo del servicio Radius Local usando F-ticks (17:00-18:00h)
 
-## Modulo 3: 
-
-3. Roaming entre Instituciones
+## Modulo 3: Políticas de eduroam y su Futuro (Viernes 29 Setiembre)
 
 - Políticas Locales y globales de eduroam (09:00-09:40h)
 - Adherencia del servidor Radius Local a eduroam (CAT eduroam) (09:40-10:40h)
@@ -71,7 +66,7 @@ Break: 11:20 a 11:40hrs
 - Reportes de Incidentes en eduroam (11:40-12:00)
 - Visión al Futuro de eduroam (12:00-12:30)
 - Preguntas abiertas para el debate (12:30-13:00h)
-- Clausura del Curso de eduroam
+- Clausura del Curso de eduroam (13:00-13:10h)
 
 ## Pasos previos para la configuración del servidor Radius
 
