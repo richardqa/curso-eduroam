@@ -1,15 +1,17 @@
 # Creación de certificados digitales usando Openssl
 
-En los siguientes pasos se muestra una de las formas de como configurar los certificados digitales X509 válidos para los servidores Radius de eduroam. fueron probados en un servidor Ubuntu 16.04 server. Para los objetivos del curso se ha considerado lo siguiente: Top level del dominio pais como **XY**, nombre del estado o provincia como **Estado**, localidad como **Localidad**, organización como **EXAMPLE** y dominio de la organización como **example.com**.
+Éste tutorial muestra una de las formas de como configurar certificados digitales X509 válidos para los servidores Radius de eduroam. Nosotros usamos Ubuntu 16.04 server, sin embargo estos pasos funcionan bien para cualquier otro sistema operativo. 
+
+Para los objetivos del curso se ha considerado lo siguiente: Top level del dominio pais como **XY**, nombre del estado o provincia como **Estado**, localidad como **Localidad**, organización como **EXAMPLE** y dominio de la organización como **example.com**.
 
 ## Configuración de una Autoridad Certificadora privada
 
-Los pasos a continuación mostrarán la forma de como crear correctamente los certificados digitales para tu Radius Local.
+Los siguientes pasos mostrarán la forma de como crear correctamente los certificados digitales para tu Radius Local.
 
-1. Creación de una llave privada llamada *ca.key* de 4096 bits y usando el algoritmo simétrico AES de 256 bits.
+1. Creación de una llave privada llamada *ca.key* de 4096 bits usando el algoritmo simétrico AES de 256 bits.
  
  ```
-mkdir certificados  // creación de la carpeta "certificados"
+mkdir certificados  // En la carpeta "certificados" se almacenarán todos los archivos a crearse
 cd certificados     
 mkdir private	    // creación de la carpeta "private" en donde se almacenerá las claves privadas
 openssl genrsa -aes256 -out private/ca.key 4096	 	// Creación de la clave privada del CA de 4096 bits
@@ -25,9 +27,9 @@ echo '01' > serial
  ```
 3. Creación de la Autoridad Certificadora privada (CA)
 
- Antes de crear nuestro CA, vamos a configurar el archivo *ca.cnf* que se encuentra dentro de nuestra carpeta *certificados* creado en el paso anterior (archivo [Readme](https://www.github.com/richardqa/curso-eduroam). Este archivo contiene todos los parámetros de configuración necesarios para la construcción de una CA privada.
+ Antes de crear nuestro CA, vamos a configurar el archivo *ca.cnf* que puede ser descargado [Aquí](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/certs/ca.cnf). Este archivo contiene todos los parámetros de configuración necesarios para la construcción de una CA privada.
 
- Notar que por defecto el servidor del CA usa el Hash de tipo "sha256". También notamos que las líneas **input_password** y **output_password** son comentadas porque el *passphrase* usado por el CA será generado usando *Openssl*. Finalmente, vemos que en el bloque **[certificate_authority]** se ha configurado los parámetros para su institución, en este caso RAU. 
+ Notar que por defecto los parámetros de configuración del CA usa el Hash de tipo "sha256". También notamos que las líneas **input_password** y **output_password** son comentadas porque el *passphrase* usado por el CA será generado usando los parámetros del *Openssl* (Por Seguridad). Finalmente, vemos que en el bloque **[certificate_authority]** se ha configurado los parámetros para su institución, en este caso RAU. 
 
  A continuación se muestra los parámetros más importantes en la configuración del servidor Radius.
 
