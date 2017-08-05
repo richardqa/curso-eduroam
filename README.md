@@ -16,60 +16,62 @@ Este curso esta dirigido a los responsables de servicio de red inalámbrica de l
 
 Break: 11:20 a 11:40hrs
 
-        - Práctica 2: Generar claves GPG para el intercambio de claves entre servidores Radius (11:40-12:00h)
-        - Protocolos de Autenticación y Clientes Radius (12:00-12:30h)
-        - Evaluación 1: Pruebas de autenticación PAP y MsCHAPv2 usando Radtest y Eapol_Test (12:30-13:00h)
+- Práctica 2: Generar claves GPG para el intercambio de claves entre servidores Radius (11:40-12:00h)
+- Protocolos de Autenticación y Clientes Radius (12:00-12:30h)
+- Evaluación 1: Pruebas de autenticación PAP y MsCHAPv2 usando Radtest y Eapol_Test (12:30-13:00h)
 
 Almuerzo: 13:00 a 14:00hrs
 
-        - Base de Datos SysLog: Aspectos generales (14:00-14:20)
-        - Práctica 3: Configuración básica de un servidor Rsyslog (14:20-14:40h)
-        - Servicios LDAP: Aspectos generales (14:40-15:00h)
-        - Practica 4: Configurar archivo de cliente y usuarios en LDAP (15:00-15:20h)
-        - Práctica 5: Configurar PHPLdapAdmin para administrar usuarios LDAP (15:20-15:40h)
-        - Evaluación 2: Validación Local Radius usando usuarios Ldap (15:40-16:00h)
+- Base de Datos SysLog: Aspectos generales (14:00-14:20)
+- Práctica 3: Configuración básica de un servidor Rsyslog (14:20-14:40h)
+- Servicios LDAP: Aspectos generales (14:40-15:00h)
+- Practica 4: Configurar archivo de cliente y usuarios en LDAP (15:00-15:20h)
+- Práctica 5: Configurar PHPLdapAdmin para administrar usuarios LDAP (15:20-15:40h)
+- Evaluación 2: Validación Local Radius usando usuarios Ldap (15:40-16:00h)
 
 Break: 16:00-16:20hrs
-	- Fail-over y Balanceamiento de carga en el Radius Local (16:20-17:00h)
-	- Proceso de integración del servidor Radius con otras bases de Datos (Google, Microsoft, Zimbra, etc) (17:00-18:00h)
+
+- Fail-over y Balanceamiento de carga en el Radius Local (16:20-17:00h)
+- Proceso de integración del servidor Radius con otras bases de Datos (Google, Microsoft, Zimbra, etc) (17:00-18:00h)
 
 ## Modulo 2: 
 
 
 2. Redes Inalámbricas
 
-        - Introducción a 802.11 y 802.1x (09:00-09:40h)
-        - Seguridad en Redes WiFi (WEP, WPA y WPA2) (09:40-10:00h)
-        - Métodos de autenticación EAP (10:00-10:30)
-        - Configuración 802.1x y Radius en Access Points (10:30-11:00h)
-        - Configuración de métodos de autenticación EAP-TTLS y EAP-PEAP en el Radius (11:00-11:20h)
+- Introducción a 802.11 y 802.1x (09:00-09:40h)
+- Seguridad en Redes WiFi (WEP, WPA y WPA2) (09:40-10:00h)
+- Métodos de autenticación EAP (10:00-10:30)
+- Configuración 802.1x y Radius en Access Points (10:30-11:00h)
+- Configuración de métodos de autenticación EAP-TTLS y EAP-PEAP en el Radius (11:00-11:20h)
 Break: 11:20 a 11:40hrs
-        - Configuración del software del suplicante en Linux, Windows y MAC (11:40-12:20h)
-	- Evaluación 3: Pruebas de autenticación Local EAP-TTLS desde los suplicantes en Linux, Windows y MAC (12:20-13:00h)
+- Configuración del software del suplicante en Linux, Windows y MAC (11:40-12:20h)
+- Evaluación 3: Pruebas de autenticación Local EAP-TTLS desde los suplicantes en Linux, Windows y MAC (12:20-13:00h)
 Almuerzo: 13:00 a 14:00hrs
-	- Radsec: Aspectos Generales (14:00-14:40h)
-	- Configuración del servicio RadSec para el Radius Local (14:40-15:10h)
-	- Evaluación 4: Pruebas de autenticación Local y remota usando EAP-TTLS y Radsec (Android, Iphone, MacOSx, Linux, Windows) (15:10-16:00h)
+- Radsec: Aspectos Generales (14:00-14:40h)
+- Configuración del servicio RadSec para el Radius Local (14:40-15:10h)
+- Evaluación 4: Pruebas de autenticación Local y remota usando EAP-TTLS y Radsec (Android, Iphone, MacOSx, Linux, Windows) (15:10-16:00h)
+
 Break: 16:00-16:20hrs
-	- Monitoreo del Radius usando F-ticks (16:20-16:40h)
-	- Configuración del módulo y servicios F-ticks para el servidor Radius Local (16:40-17:00h)
-	- Evaluación 5: Pruebas de Monitoreo del servicio Radius Local usando F-ticks (17:00-18:00h)
+
+- Monitoreo del Radius usando F-ticks (16:20-16:40h)
+- Configuración del módulo y servicios F-ticks para el servidor Radius Local (16:40-17:00h)
+- Evaluación 5: Pruebas de Monitoreo del servicio Radius Local usando F-ticks (17:00-18:00h)
 
 ## Modulo 3: 
 
+3. Roaming entre Instituciones
 
-2. Roaming entre Instituciones
+- Políticas Locales y globales de eduroam (09:00-09:40h)
+- Adherencia del servidor Radius Local a eduroam (CAT eduroam) (09:40-10:40h)
+- Nuevos servicios de eduroam (radsec y radiator) (10:40-11:20h)
 
-        - Políticas Locales y globales de eduroam (09:00-09:40h)
-	- Adherencia del servidor Radius Local a eduroam (CAT eduroam) (09:40-10:40h)
-	- Nuevos servicios de eduroam (radsec y radiator) (10:40-11:20h)
 Break: 11:20 a 11:40hrs
-	- Reportes de Incidentes en eduroam (11:40-12:00)
-	- Visión al Futuro de eduroam (12:00-12:30)
-	- Preguntas abiertas para el debate (12:30-13:00h)
-	- Clausura del Curso de eduroam
 
-
+- Reportes de Incidentes en eduroam (11:40-12:00)
+- Visión al Futuro de eduroam (12:00-12:30)
+- Preguntas abiertas para el debate (12:30-13:00h)
+- Clausura del Curso de eduroam
 
 ## Pasos previos para la configuración del servidor Radius
 
