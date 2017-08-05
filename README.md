@@ -46,7 +46,9 @@ Este curso esta dirigido a los responsables de servicio de red inalámbrica de l
 
 - Práctica 8: Configuración del software del suplicante en Linux, Windows y MAC (11:40-12:20h)
 - **Evaluación 3**: Pruebas de autenticación Local EAP-TTLS desde los suplicantes en Linux, Windows y MAC (12:20-13:00h)
-Almuerzo: 13:00 a 14:00hrs
+
+**Almuerzo: 13:00 a 14:00hrs**
+
 - Radsec: Aspectos Generales (14:00-14:40h)
 - Práctica 9: Configuración del servicio RadSec para el Radius Local (14:40-15:10h)
 - **Evaluación 4**: Pruebas de autenticación Local y remota usando EAP-TTLS y Radsec (Android, Iphone, MacOSx, Linux, Windows) (15:10-16:00h)
@@ -70,9 +72,9 @@ Almuerzo: 13:00 a 14:00hrs
 - Preguntas abiertas para el debate (12:30-13:00h)
 - Clausura del Curso de eduroam (13:00-13:10h)
 
-## Pasos previos para la configuración del servidor Radius
+# Pasos previos para la configuración del servidor Radius
 
-Pre-requisitos:
+##Pre-requisitos:
 
 1. Éste curso esta desarrollado para ser implementado en Ubuntu 16.04 LTS.
 
