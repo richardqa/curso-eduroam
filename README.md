@@ -9,10 +9,10 @@ Este curso esta dirigido a los responsables de servicio de red inalámbrica de l
 
 ## Modulo 1: Servidor Radius Local
 
-        - Introducción: Visión general de eduroam (09:00-09:40h)
-        - Protocolo RADIUS: Aspectos Generales (09:40-10:20h)
-        - Certificados digitales X509 y GPG (10:20-10:50)
-        - Práctica 1: Crear una autoridad certificadora (CA) privada y certificados digitales para el Radius (10:50-11:20)
+- Introducción: Visión general de eduroam (09:00-09:40h)
+- Protocolo RADIUS: Aspectos Generales (09:40-10:20h)
+- Certificados digitales X509 y GPG (10:20-10:50)
+- Práctica 1: Crear una autoridad certificadora (CA) privada y certificados digitales para el Radius (10:50-11:20)
 
 Break: 11:20 a 11:40hrs
 
