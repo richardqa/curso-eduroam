@@ -7,7 +7,7 @@ Este curso esta dirigido a los responsables de servicio de red inalámbrica de l
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=qk9aljqu20A
 " target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam1.png" alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></p></a>
 
-## Modulo 1: Configuración del Radius Local y Certificados Digitales (Miercoles 27 Setiembre)
+## Modulo 1: Radius Local y Certificados Digitales (Miercoles 27 Setiembre)
 
 - Introducción: Visión general de eduroam (09:00-09:40h)
 - Protocolo RADIUS: Aspectos Generales (09:40-10:20h)
@@ -29,7 +29,7 @@ Este curso esta dirigido a los responsables de servicio de red inalámbrica de l
 - Práctica 5: Configurar PHPLdapAdmin para administrar usuarios LDAP (15:20-15:40h)
 - Evaluación 2: Validación Local Radius usando usuarios Ldap (15:40-16:00h)
 
-**Break: 16:00-16:20hrs**
+**Break: 16:00 a 16:20hrs**
 
 - Fail-over y Balanceamiento de carga en el Radius Local (16:20-17:00h)
 - Proceso de integración del servidor Radius con otras bases de Datos (Google, Microsoft, Zimbra, etc) (17:00-18:00h)
@@ -51,13 +51,13 @@ Almuerzo: 13:00 a 14:00hrs
 - Configuración del servicio RadSec para el Radius Local (14:40-15:10h)
 - Evaluación 4: Pruebas de autenticación Local y remota usando EAP-TTLS y Radsec (Android, Iphone, MacOSx, Linux, Windows) (15:10-16:00h)
 
-**Break: 16:00-16:20hrs**
+**Break: 16:00 a 16:20hrs**
 
 - Monitoreo del Radius usando F-ticks (16:20-16:40h)
 - Configuración del módulo y servicios F-ticks para el servidor Radius Local (16:40-17:00h)
 - Evaluación 5: Pruebas de Monitoreo del servicio Radius Local usando F-ticks (17:00-18:00h)
 
-## Modulo 3: Políticas de eduroam y su Futuro (Viernes 29 Setiembre)
+## Modulo 3: Políticas y Futuro de eduroam (Viernes 29 Setiembre)
 
 - Políticas Locales y globales de eduroam (09:00-09:40h)
 - Adherencia del servidor Radius Local a eduroam (CAT eduroam) (09:40-10:40h)
