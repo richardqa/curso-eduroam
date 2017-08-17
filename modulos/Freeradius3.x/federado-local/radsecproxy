@@ -1,0 +1,59 @@
+ ```
+listenTLS *:2083
+SourceUDP *:33000
+ListenUDP *:1812
+SourceTLS *:33001
+LogLevel 4
+LogDestination file:///var/log/radsecproxy.log
+LoopPrevention on
+tls default {
+        CACertificateFile /etc/freeradius/certs/radsec/ca.crt
+        CertificateFile /etc/freeradius/certs/radsec/federado.redclara.mx.crt
+        CertificateKeyFile /etc/freeradius/certs/radsec/private/federado.key
+}
+rewrite defaultclient {
+        removeAttribute 64
+        removeAttribute 65
+        removeAttribute 81
+}
+client radius1 {
+        host <IP-radius1>
+        type tls
+        secret eduroam
+        certificateNameCheck off
+}
+client radius2 {
+        host <IP-radius2>
+        type tls
+        secret eduroam
+        certificateNameCheck off
+}
+server radius1 {
+        host <IP-radius1>
+        type tls
+        secret eduroam
+        certificateNameCheck off
+        statusserver on
+}
+server radius2 {
+        host <IP-radius2>
+        type tls
+        secret eduroam
+        certificateNameCheck off
+        statusserver on
+}
+server tlr {
+        host <IP-latlr>
+        type udp
+        secret eduroam
+        certificateNameCheck off
+        statusserver on
+}
+realm  /@<REALM>\.<Domain-CC>$ {
+        server radius1
+        server radius2
+}
+realm * {
+        server tlr
+}
+ ```
