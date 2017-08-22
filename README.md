@@ -11,7 +11,7 @@ Este curso esta dirigido a los responsables de servicio de red inalámbrica de l
 
 1. Éste curso esta desarrollado para ser implementado en Ubuntu 16.04 LTS
 
-// 2.	Cada usuario podrá conectarse remotamente a su servidor Local de su institución y seguir el procedimiento del curso. También se dispone de una imagen .OVA y de imágenes pre-configuradas en Docker. Para descargar la imágen ir AQUI, y para importar las imágenes en Docker ir a los siguientes enlaces:
+<!-- 2.	Cada usuario podrá conectarse remotamente a su servidor Local de su institución y seguir el procedimiento del curso. También se dispone de una imagen .OVA y de imágenes pre-configuradas en Docker. Para descargar la imágen ir AQUI, y para importar las imágenes en Docker ir a los siguientes enlaces:
 
  ```
 docker pull richardqa/radius3-vmlocal
@@ -19,7 +19,7 @@ docker pull richardqa/radius3-vmlocal2
 docker pull richardqa/radius3-federado
 
  ```
-
+-->
 3. El acceso a los servidores podrán ser realizados a través de la aplicación [Putty](http://www.putty.org/) para Windows o el terminal de comandos para Linux, cada usuario se deberá conectar al servidor Radius de su institución remotamente ó a través del programa *Docker*
 
         - Instalación y configuración de Docker en Linux [docker](https://docs.docker.com/engine/installation/). Docker actualmente tiene soporte para Linux, Windows y MAC OS.
