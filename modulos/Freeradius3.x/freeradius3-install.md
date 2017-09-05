@@ -56,6 +56,9 @@ Dentro do /usr/local/etc/raddb/radiusd.conf vamos a colar o seguinte dentro do b
  ```
 Finalmente, para probar que nuestro radius esta correctamente instalado, executamos **radiusd -fxx -l stdout**. Deberías ver que no aparece algun error
 
+Una vez instalado el Freeradius 3.0.15, haz click en [modulo4](https://github.com/richardqa/curso-eduroa m/blob/master/modulos/Freeradius3.x/README.md) para iniciar la configuración del Radius Local.
+
+<!--
 ## Versión Antigua (¡No usar esto!)
 
 ## Instalar éste programa
@@ -81,3 +84,4 @@ apt-get install freeradius
 freeradius -v
    Freeradiusd: FreeRADIUS Version 3.0.12, for host x86_64-pc-linux-gnu, built on Dec  3 2016 at 15:55:32
  ```
+-->

@@ -48,10 +48,10 @@ default_bits            = 2048
 x509_extensions         = v3_req
 
 [certificate_authority]
-countryName             = **XY**
-stateOrProvinceName     = **Estado**
-localityName            = **Localidad**
-organizationName        = **EXAMPLE**
+countryName             = XY
+stateOrProvinceName     = Estado
+localityName            = Localidad
+organizationName        = EXAMPLE
 emailAddress            = eduroam@example.edu.xy
 commonName              = Autoridad Certificadora privada de **EXAMPLE**
 
@@ -94,10 +94,10 @@ distinguished_name      = server
 x509_extensions         = v3_ca
 
 [server]
-countryName             = **XY**
-stateOrProvinceName     = **Estado**
-localityName            = **Localidad**
-organizationName        = **EXAMPLE**
+countryName             = XY
+stateOrProvinceName     = Estado
+localityName            = Localidad
+organizationName        = EXAMPLE
 emailAddress            = eduroam@example.edu.xy
 commonName              = radius.example.edu.xy
 
