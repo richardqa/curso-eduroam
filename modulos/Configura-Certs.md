@@ -4,6 +4,9 @@
 
 Para los objetivos del curso se ha considerado lo siguiente: Top level del dominio pais como **XY**, nombre del estado o provincia como **Estado**, localidad como **Localidad**, organización como **EXAMPLE** y dominio de la organización como **example.com**.
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=qk9aljqu20A
+" target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam_gpg.png" alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></p></a>
+
 ## Configuración de una Autoridad Certificadora privada
 
 Los siguientes pasos muestran la forma de como crear certificados digitales X509
@@ -84,7 +87,6 @@ openssl dhparam -out dh 1024
 dd if=/dev/urandom of=./random count=10
  ```
 3. En este paso vamos a consultar el archivo que se encuentra dentro del directorio ~/newcerts/radius.cnf, editamos éste nuevo archivo *radius.conf* con la información relacionada al servidor Radius Local.
-
  ```
 [ req ]
 prompt                  = no

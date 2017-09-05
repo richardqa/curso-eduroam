@@ -18,7 +18,7 @@ default_days            = 3650
 default_crl_days        = 30
 default_md              = sha256
 preserve                = no
-policy                  = policy_match
+policy                  = policy_anything
 crlDistributionPoints   = URI:http://www.example.com/example_ca.crl
 
 [ policy_match ]
@@ -28,6 +28,7 @@ organizationName        = match
 organizationalUnitName  = optional
 commonName              = supplied
 emailAddress            = optional
+
 [ policy_anything ]
 countryName             = optional
 stateOrProvinceName     = optional
@@ -44,12 +45,12 @@ default_bits            = 2048
 x509_extensions         = v3_req
 
 [certificate_authority]
-countryName             = <Country-CC>
+countryName             = <TLD>
 stateOrProvinceName     = <State>
-localityName            = <Locality>
-organizationName        = <Organization>
-emailAddress            = eduroam@<domain>
-commonName              = Autoridad Certificadora privada de <NREN>
+localityName            = <Localidad>
+organizationName        = <Organizacion>
+emailAddress            = eduroam@<dominio_institucion>
+commonName              = Autoridad Certificadora privada de <Nombre_NREN>
 
 [v3_ca]
 subjectKeyIdentifier    = hash
@@ -59,6 +60,5 @@ crlDistributionPoints   = URI:http://www.example.com/example_ca.crl
 extendedKeyUsage        = serverAuth, clientAuth
 
 [v3_req]
-basicConstraints        = CA:FALSE
+basicConstraints        = CA:true
 subjectKeyIdentifier    = hash
-extendedKeyUsage        = serverAuth, clientAuth
