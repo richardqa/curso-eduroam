@@ -2,7 +2,7 @@
 
 Éste tutorial describe una de las formas de configurar certificados digitales X509 válidos para los servidores Radius de eduroam. Nosotros usamos Ubuntu 16.04 server, sin embargo estos pasos funcionan bien para cualquier otro sistema operativo. 
 
-Para los objetivos del curso, se ha considerado lo siguiente: Top level del dominio pais como **xy**, nombre del estado o provincia como **Estado**, localidad como **Localidad**, organización como **EXAMPLE** y dominio de la organización como **example.com.xy**.
+Para los objetivos del curso, se ha considerado lo siguiente: Top level del dominio pais como **XY**, nombre del estado o provincia como **Estado**, localidad como **Localidad**, organización como **EXAMPLE** y dominio de la organización como **example.com.xy**.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=qk9aljqu20A
 " target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam_gpg.png" alt="IMAGE ALT TEXT HERE" width="660" height="360" border="10" /></p></a>
@@ -48,12 +48,12 @@ default_bits            = 2048
 x509_extensions         = v3_req
 
 [certificate_authority]
-countryName             = <TLD>
-stateOrProvinceName     = <State>
-localityName            = <Localidad>
-organizationName        = <Organizacion>
-emailAddress            = eduroam@<dominio_institucion>
-commonName              = Autoridad Certificadora privada de <Nombre_NREN>
+countryName             = **XY**
+stateOrProvinceName     = **Estado**
+localityName            = **Localidad**
+organizationName        = **EXAMPLE**
+emailAddress            = eduroam@example.edu.xy
+commonName              = Autoridad Certificadora privada de **EXAMPLE**
 
 [v3_ca]
 subjectKeyIdentifier    = hash
@@ -94,12 +94,12 @@ distinguished_name      = server
 x509_extensions         = v3_ca
 
 [server]
-countryName             = <TLD>
-stateOrProvinceName     = <State>
-localityName            = <Localidad>
-organizationName        = <Organizacion>
-emailAddress            = eduroam@<domain_institucion>
-commonName              = radius.<domain_institucion>
+countryName             = **XY**
+stateOrProvinceName     = **Estado**
+localityName            = **Localidad**
+organizationName        = **EXAMPLE**
+emailAddress            = eduroam@example.edu.xy
+commonName              = radius.example.edu.xy
 
 [v3_ca]
 subjectKeyIdentifier   = hash
@@ -117,14 +117,14 @@ openssl req -new -nodes -out radius.csr -key private/radius.key -config ./radius
 5. Luego, firmamos la solicitud del certificado usando el CA creado previamente.
 
  ```
-openssl ca -out radius.example.com.crt -keyfile private/ca.key -config ./ca.cnf -infiles radius.csr 
+openssl ca -out radius.example.edu.xy.crt -keyfile private/ca.key -config ./ca.cnf -infiles radius.csr 
  ```
 
-7. Los archivos *radius.key*, *radius.<domain_institucion>.crt*, *random*, *dh*, *ca.crt* deberán ser colocados dentro de la carpeta **/usr/local/etc/raddb/certs/radsec/** del servidor freeradius.
+7. Los archivos *radius.key*, *radius.example.edu.xy.crt*, *random*, *dh*, *ca.crt* deberán ser colocados dentro de la carpeta **/usr/local/etc/raddb/certs/radsec/** del servidor freeradius.
 
  ```
 cd ~/newcerts
-cp -r radius.key radius.example.xx.crt random dh ca.crt /usr/local/etc/raddb/certs/radsec/
+cp -r radius.key radius.example.edu.xy.crt random dh ca.crt /usr/local/etc/raddb/certs/radsec/
  ```
 
 8. Una vez terminado los pasos anteriores, haz click en [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad2.md) para continuar con la actividad 2.
