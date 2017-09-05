@@ -1,11 +1,11 @@
 # Creación de certificados digitales usando Openssl
 
-Éste tutorial muestra una de las formas de como configurar certificados digitales X509 válidos para los servidores Radius de eduroam. Nosotros usamos Ubuntu 16.04 server, sin embargo estos pasos funcionan bien para cualquier otro sistema operativo. 
+Éste tutorial describe una de las formas de configurar certificados digitales X509 válidos para los servidores Radius de eduroam. Nosotros usamos Ubuntu 16.04 server, sin embargo estos pasos funcionan bien para cualquier otro sistema operativo. 
 
-Para los objetivos del curso se ha considerado lo siguiente: Top level del dominio pais como **XY**, nombre del estado o provincia como **Estado**, localidad como **Localidad**, organización como **EXAMPLE** y dominio de la organización como **example.com**.
+Para los objetivos del curso, se ha considerado lo siguiente: Top level del dominio pais como **xy**, nombre del estado o provincia como **Estado**, localidad como **Localidad**, organización como **EXAMPLE** y dominio de la organización como **example.com.xy**.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=qk9aljqu20A
-" target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam_gpg.png" alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></p></a>
+" target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam_gpg.png" alt="IMAGE ALT TEXT HERE" width="660" height="360" border="10" /></p></a>
 
 ## Configuración de una Autoridad Certificadora privada
 
