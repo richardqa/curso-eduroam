@@ -127,4 +127,4 @@ cd ~/newcerts
 cp -r radius.key radius.example.edu.xy.crt random dh ca.crt /usr/local/etc/raddb/certs/radsec/
  ```
 
-8. Una vez terminado los pasos anteriores, haz click en [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/actividad2.md) para continuar con la actividad 2.
+8. Una vez terminado los pasos anteriores, haz click en [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-GPG.md) para continuar con la actividad 2.
