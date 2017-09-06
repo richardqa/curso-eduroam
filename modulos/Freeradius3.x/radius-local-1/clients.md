@@ -1,9 +1,13 @@
-#### Configuración simple de bloques para un Cliente Localhost, y un Cliente para la Federación
+#### Configuración simple de bloques para clientes Radius
  ```
+En este bloque de configuración, cada servidor Radius inscribe a tres tipos de clientes: (1) Localhost, (2) Punto de Acceso, (3) Federación.
+
+# Clients Localhost
+# -----------------
 client localhost {
         ipaddr = 127.0.0.1
         proto = *
-        secret = eduroam
+        secret = eduroam // Podría cambiar a otra clave
         require_message_authenticator = no
         shortname = localhost
         nas_type         = other 
@@ -14,7 +18,7 @@ client localhost {
         }
 }
 client 127.0.1.1 {
-    secret = eduroam
+    secret = eduroam // Podría cambiar a otra clave
     shortname = localhost
 }
 client localhost_ipv6 {
@@ -22,9 +26,23 @@ client localhost_ipv6 {
         secret          = eduroam
 }
 
+# Clientes Punto de Acceso
+# ------------------------
+
+client <nombre-AP> {
+       ipaddr = <IP>
+       netmask = 32
+       secret = <clave-AP>
+       shortname = ap-INICTEL-UNI
+       nastype = aruba
+}
+
+# Clientes Federados
+# ------------------------
+
 client federacao {
-        ipaddr          = <IP-Federado-NREN>
+        ipaddr          = 138.73.128.76
         secret          = eduroam
-        shortname       = federacao
+        shortname       = org-EXAMPLE
 }
  ```
