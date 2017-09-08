@@ -28,11 +28,11 @@ home_server localhost {
               idle_timeout = 0
         }
 }
-home_server federacao {
+home_server FTLR-UY {
         type = auth
-        ipaddr = <IP-Federado-NREN>
+        ipaddr = 164.73.128.76
         port = 1812
-        secret = eduroam
+        secret = <clave-secreta>
         response_window = 20
         zombie_period = 40
         revive_interval = 120
@@ -79,8 +79,8 @@ realm NULL {
         secret          = eduroam
 }
 
-realm "~(.*\.)*redclara\.<Country-CC>$" {
+realm "~(.*\.)*example\.edu\.uy$" {
         auth_pool       = my_localhost
-        secret          = eduroam
+        secret          = <clave-secreta>
 }
  ```

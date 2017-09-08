@@ -7,19 +7,19 @@ listen {
     virtual_server = default
     clients = radsec
     limit {
-           max_connections = 0
-           lifetime = 0
-           idle_timeout = 3600
-           }
+        max_connections = 0
+        lifetime = 0
+        idle_timeout = 3600
+    }
     tls {
         certdir = ${confdir}/certs/radsec
         cadir = ${confdir}/certs/radsec
-        private_key_password = eduroam
-        private_key_file = ${certdir}/private/<PrivKey-cert>.key
-        certificate_file = ${certdir}/radius.<Domain>.crt
-        ca_file = ${cadir}/ca.crt
-        dh_file = ${certdir}/dh
-        random_file = ${certdir}/random
+        private_key_password = <clave-secreta>
+        private_key_file = /usr/local/etc/raddb/certs/radsec/private/radius.key
+        certificate_file = /usr/local/etc/raddb/certs/radsec/radius.example.edu.uy.crt
+        ca_file = /usr/local/etc/raddb/certs/radsec/ca.crt
+        dh_file = /usr/local/etc/raddb/certs/radsec/dh
+        random_file = /usr/local/etc/raddb/certs/radsec/random
         fragment_size = 8192
         include_length = yes
         cipher_list = "DEFAULT"
@@ -42,12 +42,12 @@ listen {
     tls {
         certdir = ${confdir}/certs/radsec
         cadir = ${confdir}/certs/radsec
-        private_key_password = eduroam
-        private_key_file = ${certdir}/private/<PrivKey-cert>.key
-        certificate_file = ${certdir}/radius.<Domain>.crt
-        ca_file = ${cadir}/ca.crt
-        dh_file = ${certdir}/dh
-        random_file = ${certdir}/random
+        private_key_password = <clave-secreta>
+        private_key_file = /usr/local/etc/raddb/certs/radsec/private/radius.key
+        certificate_file = /usr/local/etc/raddb/certs/radsec/radius.example.edu.uy.crt
+        ca_file = /usr/local/etc/raddb/certs/radsec/ca.crt
+        dh_file = /usr/local/etc/raddb/certs/radsec/dh
+        random_file = /usr/local/etc/raddb/certs/radsec/random
         fragment_size = 8192
         include_length = yes
         cipher_list = "DEFAULT"
@@ -71,10 +71,10 @@ clients radsec {
         proto = tls
         secret = eduroam
     }
-    client mx {
-        ipaddr = 172.17.0.4
+    client uy {
+        ipaddr = federado.example.edu.uy
         proto = tls
-        secret = eduroam
+        secret = <clave-secreta>
         limit {
                 max_connections = 0
                 lifetime = 0
@@ -87,33 +87,33 @@ listen {
        port = 4000
        type = auth
 }
-home_server nren1 {
-    ipaddr = <Federation-IP>
+home_server uy1 {
+    ipaddr = federado.example.edu.uy
     port = 2083
     type = auth
-    secret = eduroam
+    secret = <clave-secreta>
     proto = tcp
     status_check = none
     tls {
         certdir = ${confdir}/certs/radsec
         cadir = ${confdir}/certs/radsec
-        private_key_password = eduroam
-        private_key_file = ${certdir}/private/<PrivKey-cert>.key
-        certificate_file = ${certdir}/radius.<Domain>.crt
-        ca_file = ${cadir}/ca.crt
-        dh_file = ${certdir}/dh
-        random_file = ${certdir}/random
-        fragment_size = 1024
+        private_key_password = <clave-secreta>
+        private_key_file = /usr/local/etc/raddb/certs/radsec/private/radius.key
+        certificate_file = /usr/local/etc/raddb/certs/radsec/radius.example.edu.uy.crt
+        ca_file = /usr/local/etc/raddb/certs/radsec/ca.crt
+        dh_file = /usr/local/etc/raddb/certs/radsec/dh
+        random_file = /usr/local/etc/raddb/certs/radsec/random
+        fragment_size = 1500
         include_length = yes
         cipher_list = "DEFAULT"
     }
 }
-home_server_pool NREN {
+home_server_pool UY {
          type = fail-over
-         home_server = nren1
+         home_server = uy1
 }
 realm "~.+$" {
-       auth_pool = NREN
+       auth_pool = UY
        nostrip
 }
  ```

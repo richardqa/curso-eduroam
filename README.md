@@ -42,8 +42,6 @@ bash scripts/inicio.sh
  ```
 2. Para la configuración de los certificados digitales X509, ir al [modulo1](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-Certs.md).
 3. Para la configuración de claves públicas y privadas usando GPG, ir al [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-GPG.md)
-4. Para la configuración del servidor Radius Local usando Freeradius 2.x, ir al [modulo3-1](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius2.x/README.md)
-5. Para la configuración del servidor Radius Local usando Freeradius 3.x, ir al [modulo3-2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/README.md)
+4. Para la configuración del servidor Radius Local usando Freeradius 3.x, ir al [modulo3-2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/README.md)
 5. Para la configuración de los servidores LDAP y Rsyslog Centralizado, ir al [modulo4](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-LDAP-LOG.md)
 6. Para la configuración del sistema de monitoramiento F-Ticks, ir al [modulo5](https://github.com/richardqa/curso-eduroam/blob/master/modulos/F-ticks.md)
-~                                                                                                                                                             

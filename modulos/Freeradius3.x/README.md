@@ -8,4 +8,4 @@ También se observa en la figura que, cada servicio federado se conecta a tres s
 
 El objetivo del curso es configurar los servidores Radius Locales de Uruguay al servicio federado (FTLR-Uy), para que los usuarios de esas instituciones tengan acceso al servicio de itinerancia que ofrece eduroam. La conexión entre la federación de Uruguay y los tres servicios de la confederación ya se encuentran actualmente en funcionamiento.
 
-Para acceder a la configuración del Servidor Radius Local, haz click en [Configura_Radius](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/radius-local-1/README.md)
+Para acceder a la configuración del Servidor Radius Local, haz click en [Configura_Radius](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/README.md)
