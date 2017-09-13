@@ -3,7 +3,7 @@
 Este curso/taller esta dirigido al personal de TI de la RAU y de las instituciones de enseñanza y de investigación de Uruguay, difundiendo los conceptos y fundamentos del servicio, permitiendo que los participantes desarrollen las competencias para la administración del servicio en sus instituciones. El objetivo del curso es brindar capacitación en la instalación, configuración y mantenimiento del servidor RADIUS Local. En esta oportunidad, el curso de capacitación se ha actualizado agregando el módulo de Radsec.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=qk9aljqu20A
-" target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam_new_2017.png" alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></p></a>
+" target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam_new_2017_v2.png" alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></p></a>
 
 ## Pasos previos para la configuración del servidor Radius
 
