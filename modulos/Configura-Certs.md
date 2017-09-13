@@ -86,7 +86,7 @@ openssl genrsa -aes256 -out private/radius.key 4096
 openssl dhparam -out dh 1024 
 dd if=/dev/urandom of=./random count=10
  ```
-3. En este paso vamos a consultar el archivo que se encuentra dentro del directorio ~/newcerts/radius.cnf, editamos éste nuevo archivo *radius.conf* con la información relacionada al servidor Radius Local.
+3. En este paso vamos a consultar el archivo que se encuentra [Aquí](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/certs/radius.cnf). Copiamos el contenido y lo copiamos dentro de un nuevo archivo llamado: **radius.cnf** ubicado en ~/newcerts/radius.cnf. Finalmente, eeditamos **radius.conf** con la información relacionada al servidor Radius Local.
  ```
 [ req ]
 prompt                  = no

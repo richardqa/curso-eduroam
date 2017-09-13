@@ -1,13 +1,13 @@
 #### Configuración simple de bloques para clientes Radius
  ```
-En este bloque de configuración, cada servidor Radius inscribe a tres tipos de clientes: (1) Localhost, (2) Punto de Acceso, (3) Federación.
+En este bloque de configuración, cada servidor Radius inscribe a tres tipos de clientes: (1) Localhost, (2) Punto de Acceso, (3) Federación 
 
 # Clients Localhost
 # -----------------
 client localhost {
         ipaddr = 127.0.0.1
         proto = *
-        secret = eduroam // Podría cambiar a otra clave
+        secret = <clave-GPG>
         require_message_authenticator = no
         shortname = localhost
         nas_type         = other 
@@ -18,12 +18,12 @@ client localhost {
         }
 }
 client 127.0.1.1 {
-    secret = eduroam // Podría cambiar a otra clave
+    secret = <clave-GPG>
     shortname = localhost
 }
 client localhost_ipv6 {
         ipv6addr        = ::1
-        secret          = eduroam
+        secret          = <clave-GPG>
 }
 
 # Clientes Punto de Acceso
@@ -38,11 +38,11 @@ client <nombre-AP> {
 }
 
 # Clientes Federados
-# ------------------------
+# ------------------
 
 client federacao {
-        ipaddr          = 138.73.128.76
-        secret          = eduroam
+        ipaddr          = 164.73.128.76
+        secret          = <clave-GPG>
         shortname       = org-EXAMPLE
 }
  ```

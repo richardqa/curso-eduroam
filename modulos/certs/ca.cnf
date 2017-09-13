@@ -45,12 +45,12 @@ default_bits            = 2048
 x509_extensions         = v3_req
 
 [certificate_authority]
-countryName             = XY
+countryName             = UY
 stateOrProvinceName     = Estado
 localityName            = Localidad
 organizationName        = EXAMPLE
-emailAddress            = eduroam@example.edu.xy
-commonName              = Autoridad Certificadora privada de EXAMPLE
+emailAddress            = eduroam@example.edu.uy
+commonName              = Autoridad Certificadora privada de RAU
 
 [v3_ca]
 subjectKeyIdentifier    = hash

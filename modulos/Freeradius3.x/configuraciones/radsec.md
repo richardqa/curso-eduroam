@@ -1,3 +1,17 @@
+El archivo radsec permite la creaci√n del m√dulo de seguridad para el protocolo Radius. Este m√dulo de seguridad consiste en que el canal de comunicaci√n entre un servidor Radius Local y su servidor Federado se establezca a trav√s de un Tunel TCP/SSL, reemplazando a la comunicaci√n por default del Radius (UDP).
+
+Para la configuracion del m√dulo Radsec, es necesario seguir los siguientes pasos:
+
+1. Crear el archivo radsec: touch /usr/local/etc/raddb/sites-available/radsec
+2. Copiar el contenido debajo y pegarlo en el archivo creado *radsec*
+3. Reemplazar la informaci√n mostrada en el archivo *radsec* y cambiar las informaciones siguientes: 
+..* Cambiar **example** por el nombre de tu instituci√n. Por ejemplo, radius.**seciu**.edu.uy.crt
+..* Cambiar <clave-SSL> por la clave secreta (passphase) colocada al momento de generar las claves privada/p√blica
+..* Cambiar <clave-GPG> por la clave GPG creada en el m√dulo 2.
+4. Finalmente, es necesario crear un enlace simb√lico del archivo radsec al directorio /usr/local/etc/raddb/sites-enabled/
+..* cd /usr/local/etc/raddb/sites-enabled
+..* ln -s ../sites-available/radsec .
+
  ```
 listen {
     ipaddr = *
@@ -14,7 +28,7 @@ listen {
     tls {
         certdir = ${confdir}/certs/radsec
         cadir = ${confdir}/certs/radsec
-        private_key_password = <clave-secreta>
+        private_key_password = <clave-SSL>
         private_key_file = /usr/local/etc/raddb/certs/radsec/private/radius.key
         certificate_file = /usr/local/etc/raddb/certs/radsec/radius.example.edu.uy.crt
         ca_file = /usr/local/etc/raddb/certs/radsec/ca.crt
@@ -42,7 +56,7 @@ listen {
     tls {
         certdir = ${confdir}/certs/radsec
         cadir = ${confdir}/certs/radsec
-        private_key_password = <clave-secreta>
+        private_key_password = <clave-SSL>
         private_key_file = /usr/local/etc/raddb/certs/radsec/private/radius.key
         certificate_file = /usr/local/etc/raddb/certs/radsec/radius.example.edu.uy.crt
         ca_file = /usr/local/etc/raddb/certs/radsec/ca.crt
@@ -69,12 +83,12 @@ clients radsec {
     client 127.0.0.1 {
         ipaddr = 127.0.0.1
         proto = tls
-        secret = eduroam
+        secret = <clave-GPG>
     }
     client uy {
         ipaddr = federado.example.edu.uy
         proto = tls
-        secret = <clave-secreta>
+        secret = <clave-GPG>
         limit {
                 max_connections = 0
                 lifetime = 0
@@ -91,13 +105,13 @@ home_server uy1 {
     ipaddr = federado.example.edu.uy
     port = 2083
     type = auth
-    secret = <clave-secreta>
+    secret = <clave-GPG>
     proto = tcp
     status_check = none
     tls {
         certdir = ${confdir}/certs/radsec
         cadir = ${confdir}/certs/radsec
-        private_key_password = <clave-secreta>
+        private_key_password = <clave-SSL>
         private_key_file = /usr/local/etc/raddb/certs/radsec/private/radius.key
         certificate_file = /usr/local/etc/raddb/certs/radsec/radius.example.edu.uy.crt
         ca_file = /usr/local/etc/raddb/certs/radsec/ca.crt

@@ -1,3 +1,5 @@
+El archivo **proxy.conf** almacena las directivas de configuraci√n de los realms para el Radius Local. Estas entradas controla el comportamiento de las consultas de servidores Radius a otros servidores Radius remotos.
+
  ```
 proxy server {
         default_fallback = no
@@ -6,7 +8,7 @@ home_server localhost {
         type = auth
         ipaddr = 127.0.0.1
         port = 1812
-        secret = eduroam
+        secret = <clave-GPG>
         response_window = 20
         zombie_period = 40
         revive_interval = 120
@@ -32,7 +34,7 @@ home_server FTLR-UY {
         type = auth
         ipaddr = 164.73.128.76
         port = 1812
-        secret = <clave-secreta>
+        secret = <clave-GPG>
         response_window = 20
         zombie_period = 40
         revive_interval = 120
@@ -76,11 +78,11 @@ realm LOCAL {
 
 
 realm NULL {
-        secret          = eduroam
+        secret          = <clave-GPG>
 }
 
 realm "~(.*\.)*example\.edu\.uy$" {
         auth_pool       = my_localhost
-        secret          = <clave-secreta>
+        secret          = <clave-GPG>
 }
  ```
