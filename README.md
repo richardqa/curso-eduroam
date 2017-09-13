@@ -3,7 +3,7 @@
 Este curso esta dirigido a los responsables de servicio de red inalámbrica de las instituciones académicas de las NRENs y a los que quieran introducir mejoras en sus servicios usando las nuevas versiones del Protocolo Radius. El objetivo del curso es brindar capacitación a los asistentes en la instalación, configuración y mantenimiento de los servidores RADIUS. En esta oportunidad, el curso de capacitación se ha actualizado agregando el módulo de Radsec.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=qk9aljqu20A
-" target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam1.png" alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></p></a>
+" target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam_new_2017.png" alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></p></a>
 
 ## Pasos previos para la configuración del servidor Radius
 
