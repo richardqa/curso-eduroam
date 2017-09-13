@@ -46,4 +46,4 @@ bash scripts/inicio.sh
 5. Para la configuración de los servidores LDAP y Rsyslog Centralizado, ir al [modulo4](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-LDAP-LOG.md)
 6. Para la configuración del sistema de monitoramiento F-Ticks, ir al [modulo5](https://github.com/richardqa/curso-eduroam/blob/master/modulos/F-ticks.md)
 
-**Nota**: Los autores del curso agradece la colaboración de la RNP Brasil por el apoyo brindado en la configuración del módulo Radsec para el Radius Local de eduroam.
+**Nota**: Mi persona agradece la colaboración del Grupo de eduroam de RNP Brasil por el apoyo brindado en la configuración del módulo Radsec para el Radius Local de eduroam.
