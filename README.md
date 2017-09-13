@@ -7,7 +7,7 @@ Este curso esta dirigido a los responsables de servicio de red inalámbrica de l
 
 ## Pasos previos para la configuración del servidor Radius
 
-###Pre-requisitos:
+Pre-requisitos:
 
 1. Este curso esta basado en Ubuntu 16.04 LTS
 
@@ -20,17 +20,20 @@ docker pull richardqa/radius3-federado
 
  ```
 -->
-3. El acceso al servidor Radius podrá ser realizad a través de la aplicación [Putty](http://www.putty.org/) para Windo o usando terminal de comandos para Linux. Cada usuario deberá conectase al servidor Radius de su institución remotamnte.
+3. El acceso al servidor Radius podrá ser realizado a través de la aplicación [Putty](http://www.putty.org/) para Windows o usando terminal de comandos para Linux. Cada usuario deberá conectarse al servidor Radius de su institución remotamente.
 
-4. Para los usuarios que se conecten a su servidor remotamente, seguir directamente los siguientes pasos:
+4. Para los usuarios que se conecten directamente a su servidor remoto, ir al paso 6. Caso contrario ir al paso 5.
+
+5. Acceder a la red de servidores piloto de eduroam. Para su acceso, abrir una consola en el terminal de su preferencia acceder al puerto 22 apuntando a la siguiente IP: xx.yy.zz.pp. 
 
  ```
 git clone https://github.com/richardqa/curso-eduroam
 cd curso-eduroam
  ```
+6. 
 ## Primeros Pasos para la Instalación y Configuración de los Servidores Radius. 
 
-En esta sección se tiene las primeras configuraciones del Servidor Radius.
+En esta sección se tiene las primeras configuraciones para el Servidor Radius Local.
 
 1. Instalar el script en bash el cual instala los paquetes y políticas de seguridad básica del servidor Radius.
 
@@ -39,6 +42,6 @@ bash scripts/inicio.sh
  ```
 2. Para la configuración de los certificados digitales X509, ir al [modulo1](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-Certs.md).
 3. Para la configuración de claves públicas y privadas usando GPG, ir al [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-GPG.md)
-4. Para la configuración del servidor Radius Local usando Freeradius 3.x, i ral [modulo3](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/README.md)
+4. Para la configuración del servidor Radius Local usando Freeradius 3.x, ir al [modulo3](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/README.md)
 5. Para la configuración de los servidores LDAP y Rsyslog Centralizado, ir al [modulo4](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-LDAP-LOG.md)
 6. Para la configuración del sistema de monitoramiento F-Ticks, ir al [modulo5](https://github.com/richardqa/curso-eduroam/blob/master/modulos/F-ticks.md)
