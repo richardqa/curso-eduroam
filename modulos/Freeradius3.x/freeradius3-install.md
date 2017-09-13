@@ -40,7 +40,7 @@ openssl version -a
 
 ## Corregir la vulnerabilidad de OpenSSL
 
-Dentro do /usr/local/etc/raddb/radiusd.conf vamos a colar o seguinte dentro do bloco **security**:
+Dentro del archivo /usr/local/etc/raddb/radiusd.conf buscamos el bloque **security** y editamos la línea que empieza con **allow_vulnerable_openssl** tal como se muestra debajo:
 
  ```
     ...
