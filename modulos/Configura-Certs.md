@@ -120,7 +120,7 @@ openssl req -new -nodes -out radius.csr -key private/radius.key -config ./radius
 openssl ca -out radius.example.edu.uy.crt -keyfile private/ca.key -config ./ca.cnf -infiles radius.csr 
  ```
 
-7. Los archivos *radius.key*, *radius.example.edu.xy.crt*, *random*, *dh*, *ca.crt* deberán ser colocados dentro de la carpeta **/usr/local/etc/raddb/certs/radsec/** del servidor freeradius.
+7. Los archivos *radius.key*, *radius.example.edu.uy.crt*, *random*, *dh*, *ca.crt* deberán ser colocados dentro de la carpeta **/usr/local/etc/raddb/certs/radsec/** del servidor freeradius.
 
  ```
 cd ~/newcerts
