@@ -34,7 +34,7 @@ echo '01' > serial
  ```
 4. Creación de la Autoridad Certificadora privada (CA)
 
- Antes de crear nuestro CA, vamos a editar un archivo de configuración llamado *ca.cnf* que puede ser descargado [Aquí](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/certs/ca.cnf). Este archivo contiene todos los parámetros de configuración necesarios para la construcción de una CA privada.
+ Antes de crear nuestro CA, vamos a editar un archivo de configuración llamado *ca.cnf* que puede ser descargado aquí [ca.cnf](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/certs/ca.cnf). Este archivo contiene todos los parámetros de configuración necesarios para la construcción de una CA privada.
 
 Notar que por defecto los parámetros de configuración del CA usan el Hash "Sha256". El tiempo de caducidad de los certificados es de 3650 días. El contenido dentro del bloque **[certificate_authority]** tendrá que ser cambiado de acuerdo a la información correspondiente a su institución.
 
@@ -86,7 +86,7 @@ openssl genrsa -aes256 -out private/radius.key 4096
 openssl dhparam -out dh 1024 
 dd if=/dev/urandom of=./random count=10
  ```
-3. En este paso vamos a consultar el archivo que se encuentra [Aquí](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/certs/radius.cnf). Copiamos el contenido y lo copiamos dentro de un nuevo archivo llamado: **radius.cnf** ubicado en ~/newcerts/radius.cnf. Finalmente, eeditamos **radius.conf** con la información relacionada al servidor Radius Local.
+3. En este paso vamos a consultar el archivo que se encuentra aquí [radius.cnf](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/certs/radius.cnf). Copiamos el contenido y lo copiamos dentro de un nuevo archivo llamado: **radius.cnf** ubicado en ~/newcerts/radius.cnf. Finalmente, eeditamos **radius.conf** con la información relacionada al servidor Radius Local.
  ```
 [ req ]
 prompt                  = no
