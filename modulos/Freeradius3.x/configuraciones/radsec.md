@@ -1,6 +1,6 @@
 #### Configuraci贸n simple de bloques par RADSEC
  ```
-El archivo radsec permite la creaci贸n del modulo de seguridad para el protocolo Radius. Estem胐ulo de seguridad consiste en que el canal de comunicaci贸n entre un servidor Radius Local y su servidor Federado se establezca a traves de un Tunel TP/SSL, reemplazando a la comunicaci贸n por default del Radius (UDP).
+El archivo radsec permite la creaci贸n del modulo de seguridad para el protocolo Radius. Este m贸dulo de seguridad consiste en que el canal de comunicaci贸n entre un servidor Radius Local y su servidor Federado se establezca a traves de un Tunel TP/SSL, reemplazando a la comunicaci贸n por default del Radius (UDP).
 
 Para la configuraci贸n del m贸dulo Radsec, es necesario seguir los siguientes pasos:
 
@@ -9,7 +9,7 @@ Para la configuraci贸n del m贸dulo Radsec, es necesario seguir los siguientes pa
 3. Reemplazar la informaci贸n mostrada en el archivo *radsec* y cambiar las informaciones siguientes: 
 
  - Cambiar *example* por el nombre de tu instituci贸n. Por ejemplo, radius*seciu*.edu.uy.crt
- - Cambiar <clave-SSL> por la clave secreta (passphase) colocada al momento de generar las claves privada/p胋lica
+ - Cambiar <clave-SSL> por la clave secreta (passphase) colocada al momento de generar las claves privada/publica
  - Cambiar <clave-GPG> por la clave GPG creada en el modulo 2.
 
 4. Finalmente, es necesario crear un enlace simb贸lico del archivo radsec al directorio /usr/local/etc/raddb/sites-enabled/
