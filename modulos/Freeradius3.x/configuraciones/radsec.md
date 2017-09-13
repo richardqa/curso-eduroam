@@ -1,6 +1,6 @@
-#### Configuraci贸n simple de bloques paraRADSEC
+#### Configuraci贸n simple de bloques par RADSEC
  ```
-El archivo radsec permite la creaci贸n del modulo de seguridad para el protocolo Radius. Este 胐ulo de seguridad consiste en que el canal de comunicaci贸n entre un servidor Radius Local y su servidor Federado se establezca a traves de un Tunel TP/SSL, reemplazando a la comunicaci贸n por default del Radius (UDP).
+El archivo radsec permite la creaci贸n del modulo de seguridad para el protocolo Radius. Estem胐ulo de seguridad consiste en que el canal de comunicaci贸n entre un servidor Radius Local y su servidor Federado se establezca a traves de un Tunel TP/SSL, reemplazando a la comunicaci贸n por default del Radius (UDP).
 
 Para la configuraci贸n del m贸dulo Radsec, es necesario seguir los siguientes pasos:
 
