@@ -1,6 +1,6 @@
 # Configuración del Radius Local
 
-Según como se observa en la figura, los servidores Radius **Locales** tendrán como dominio **example.edu.xy**, el hostname de cada radius Local será: **radius.example.edu.uy** y el usuario de pruebas **testrau@example.edu.xy** con clave **rau2017**. Cada servidor Radius se conectará con el servicio Federado de Uruguay (IP: 164.73.128.76), a través de un canal de comunicación SSL usando el protocolo **Radsec**. 
+Según como se observa en la figura, los servidores Radius **Locales** tendrán como dominio **example.edu.uy**, el hostname de cada radius Local será: **radius.example.edu.uy** y el usuario de pruebas **testrau@example.edu.uy** con clave **rau2017**. Cada servidor Radius se conectará con el servicio Federado de Uruguay (IP: 164.73.128.76), a través de un canal de comunicación SSL usando el protocolo **Radsec**. 
 
 <p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam2.png" alt="IMAGE ALT TEXT HERE" border="10" /></p>
 
