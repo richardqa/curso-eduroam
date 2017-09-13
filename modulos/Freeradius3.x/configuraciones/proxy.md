@@ -1,6 +1,7 @@
-El archivo **proxy.conf** almacena las directivas de configuraci�n de los realms para el Radius Local. Estas entradas controla el comportamiento de las consultas de servidores Radius a otros servidores Radius remotos.
-
+#### Configuración simple de bloques par el Proxy Radius
  ```
+El archivo **proxy.conf** almacena las directivas de configuración de los realms para el Radius Local. Estas entradas cntrolan el comportamiento de las consultas de servidores Radius a otros servidores Radius remotos.
+
 proxy server {
         default_fallback = no
 }

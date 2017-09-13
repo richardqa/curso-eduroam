@@ -1,23 +1,24 @@
-El archivo radsec permite la creaci胣 del m胐ulo de seguridad para el protocolo Radius. Este m胐ulo de seguridad consiste en que el canal de comunicaci胣 entre un servidor Radius Local y su servidor Federado se establezca a trav胹 de un Tunel TCP/SSL, reemplazando a la comunicaci胣 por default del Radius (UDP).
+#### Configuraci贸n simple de bloques paraRADSEC
+ ```
+El archivo radsec permite la creaci贸n del modulo de seguridad para el protocolo Radius. Este 胐ulo de seguridad consiste en que el canal de comunicaci贸n entre un servidor Radius Local y su servidor Federado se establezca a traves de un Tunel TP/SSL, reemplazando a la comunicaci贸n por default del Radius (UDP).
 
-Para la configuracion del m胐ulo Radsec, es necesario seguir los siguientes pasos:
+Para la configuraci贸n del m贸dulo Radsec, es necesario seguir los siguientes pasos:
 
 1. Crear el archivo radsec: touch /usr/local/etc/raddb/sites-available/radsec
 2. Copiar el contenido debajo y pegarlo en el archivo creado *radsec*
-3. Reemplazar la informaci胣 mostrada en el archivo *radsec* y cambiar las informaciones siguientes: 
-```
- - Cambiar **example** por el nombre de tu instituci胣. Por ejemplo, radius.**seciu**.edu.uy.crt
+3. Reemplazar la informaci贸n mostrada en el archivo *radsec* y cambiar las informaciones siguientes: 
+
+ - Cambiar *example* por el nombre de tu instituci贸n. Por ejemplo, radius*seciu*.edu.uy.crt
  - Cambiar <clave-SSL> por la clave secreta (passphase) colocada al momento de generar las claves privada/p胋lica
- - Cambiar <clave-GPG> por la clave GPG creada en el m胐ulo 2.
-```
-4. Finalmente, es necesario crear un enlace simb胠ico del archivo radsec al directorio /usr/local/etc/raddb/sites-enabled/
-```
+ - Cambiar <clave-GPG> por la clave GPG creada en el modulo 2.
+
+4. Finalmente, es necesario crear un enlace simb贸lico del archivo radsec al directorio /usr/local/etc/raddb/sites-enabled/
+
  - cd /usr/local/etc/raddb/sites-enabled
  - ln -s ../sites-available/radsec .
-```
+
 Finalmente, se muestra el contenido del archivo **radsec** a ser corregido:
 
- ```
 listen {
     ipaddr = *
     port = 2083
