@@ -5,12 +5,17 @@ Para la configuracion del m√dulo Radsec, es necesario seguir los siguientes paso
 1. Crear el archivo radsec: touch /usr/local/etc/raddb/sites-available/radsec
 2. Copiar el contenido debajo y pegarlo en el archivo creado *radsec*
 3. Reemplazar la informaci√n mostrada en el archivo *radsec* y cambiar las informaciones siguientes: 
-..* Cambiar **example** por el nombre de tu instituci√n. Por ejemplo, radius.**seciu**.edu.uy.crt
-..* Cambiar <clave-SSL> por la clave secreta (passphase) colocada al momento de generar las claves privada/p√blica
-..* Cambiar <clave-GPG> por la clave GPG creada en el m√dulo 2.
+```
+ - Cambiar **example** por el nombre de tu instituci√n. Por ejemplo, radius.**seciu**.edu.uy.crt
+ - Cambiar <clave-SSL> por la clave secreta (passphase) colocada al momento de generar las claves privada/p√blica
+ - Cambiar <clave-GPG> por la clave GPG creada en el m√dulo 2.
+```
 4. Finalmente, es necesario crear un enlace simb√lico del archivo radsec al directorio /usr/local/etc/raddb/sites-enabled/
-..* cd /usr/local/etc/raddb/sites-enabled
-..* ln -s ../sites-available/radsec .
+```
+ - cd /usr/local/etc/raddb/sites-enabled
+ - ln -s ../sites-available/radsec .
+```
+Finalmente, se muestra el contenido del archivo **radsec** a ser corregido:
 
  ```
 listen {
