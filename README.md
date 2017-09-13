@@ -1,4 +1,4 @@
-# Nuevo curso de **eduroam** para instituciones académicas de Latino América
+# Nuevo curso de capacitación de **eduroam** dirigida a las Instituciones de la Red Académica de Uruguay (RAU) 
 
 Este curso esta dirigido a los responsables de servicio de red inalámbrica de las instituciones académicas de las NRENs y a los que quieran introducir mejoras en sus servicios usando las nuevas versiones del Protocolo Radius. El objetivo del curso es brindar capacitación a los asistentes en la instalación, configuración y mantenimiento de los servidores RADIUS. En esta oportunidad, el curso de capacitación se ha actualizado agregando el módulo de Radsec.
 
