@@ -1,6 +1,6 @@
 # Nuevo curso de capacitación de **eduroam** dirigida a las Instituciones de la Red Académica de Uruguay (RAU) 
 
-Este curso esta dirigido a los responsables de servicio de red inalámbrica de las instituciones académicas de las NRENs y a los que quieran introducir mejoras en sus servicios usando las nuevas versiones del Protocolo Radius. El objetivo del curso es brindar capacitación a los asistentes en la instalación, configuración y mantenimiento de los servidores RADIUS. En esta oportunidad, el curso de capacitación se ha actualizado agregando el módulo de Radsec.
+Este curso/taller esta dirigido al personal de TI de la RAU y de las instituciones de enseñanza y de investigación de Uruguay, difundiendo los conceptos y fundamentos del servicio, permitiendo que los participantes desarrollen las competencias para la administración del servicio en sus instituciones. El objetivo del curso es brindar capacitación en la instalación, configuración y mantenimiento del servidor RADIUS Local. En esta oportunidad, el curso de capacitación se ha actualizado agregando el módulo de Radsec.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=qk9aljqu20A
 " target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam_new_2017.png" alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></p></a>
@@ -45,3 +45,5 @@ bash scripts/inicio.sh
 4. Para la configuración del servidor Radius Local usando Freeradius 3.x, ir al [modulo3](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/README.md)
 5. Para la configuración de los servidores LDAP y Rsyslog Centralizado, ir al [modulo4](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-LDAP-LOG.md)
 6. Para la configuración del sistema de monitoramiento F-Ticks, ir al [modulo5](https://github.com/richardqa/curso-eduroam/blob/master/modulos/F-ticks.md)
+
+**Nota**: Los autores del curso agradece la colaboración de la RNP Brasil por el apoyo brindado en la configuración del módulo Radsec para eduroam.
