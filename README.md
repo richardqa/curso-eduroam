@@ -30,7 +30,8 @@ docker pull richardqa/radius3-federado
 git clone https://github.com/richardqa/curso-eduroam
 cd curso-eduroam
  ```
-6. 
+6. Antes de realizar la configuración de los servidores, se recomienda la lectura del siguiente [Documento1](https://github.com/richardqa/curso-eduroam/blob/master/teoria/Tutorial1.pdf): 
+
 ## Primeros Pasos para la Instalación y Configuración de los Servidores Radius. 
 
 En esta sección se tiene las primeras configuraciones para el Servidor Radius Local.
