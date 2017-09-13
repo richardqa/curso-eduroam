@@ -1,8 +1,8 @@
-### Configuraci胣 de F-ticks para eduroam
+### Configuraci贸n de F-ticks para eduroam
  ```
 1. Configuraci贸n del m贸dulo linelog en el Radius Local
 
-En este paso se agrega un nuevo bloque **fticks** al inicio del archivo /usr/local/etc/raddb/mods-available/linelog. Este bloque responde ante un evento de autenticaci贸n exitosa cn *Access-Acept* y OK, y ante un evento de autenticaci贸n fallida con *Access-Reject* y FAIL.
+En este paso se agrega un nuevo bloque *f_ticks* al inicio del archivo /usr/local/etc/raddb/mods-available/linelog. Este bloque responde ante un evento de autenticaci贸n exitosa cn *Access-Accept* y OK, y ante un evento de autenticaci贸n fallida con *Access-Reject* y FAIL.
 
 linelog f_ticks {
        filename = syslog
@@ -31,7 +31,7 @@ post-auth {
           attr_filter.access_reject
         }
 
-3. Reiniciar el servicio *radius* y hacer la prueba de autenticaci贸n local y remota cn o*radtest*,  y desde otra consola verificar los logs que se obtiene al hacer lo siguiente:
+3. Reiniciar el servicio *radius* y hacer la prueba de autenticaci贸n local y remota con *radtest*,  y desde otra consola verificar los logs que se obtiene al hacer lo siguiente:
 
 tail  -f  /root/radius-fticks.log
 
