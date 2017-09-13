@@ -5,7 +5,7 @@
 Para los objetivos del curso, se ha considerado lo siguiente: Top level del dominio pais como **UY**, nombre del estado o provincia como **Estado**, localidad como **Localidad**, organización como **EXAMPLE** y dominio de la organización como **example.edu.uy**.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=qk9aljqu20A
-" target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam_gpg.png" alt="IMAGE ALT TEXT HERE" width="660" height="360" border="10" /></p></a>
+" target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam_gpg2.png" alt="IMAGE ALT TEXT HERE" width="660" height="360" border="10" /></p></a>
 
 ## Configuración de una Autoridad Certificadora privada
 
