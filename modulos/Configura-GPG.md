@@ -2,69 +2,46 @@
 
 El intercambio de claves GPG sirve para que los administradores de eduroam puedan intercambiar una misma clave compartida entre servidores Radius, lo cual permitiría que ambos Radius puedan verse como Cliente-Servidor.
 
-Para este ejercicio se recomienda que la creación de llaves sea ejecutado desde un computador con modo gráfico, porque ...
+Los siguientes pasos describirá los pasos necesarios para la creación de las llaves públicas/privadas usando GPGv2.
 
-1. Verificar que el paquete "GPG" ou "GPGv2" se encuentre instalado. Tambien verificar que el paquete "rng-tools" se encuentre instalado.
+1. Verificar que el paquete "GPG" ou "GPGv2" se encuentre instalado. Tambien verificar que el paquete "rng-tools" se encuentre instalado. Si no estuviese instaldo, instale: 
+
+```
+apt-get install gpgv2 gnupg2 rng-tools
+```
 
 2. Crear las llaves pública/privada usando GPG
 
 ```
-gpg --gen-key
+gpg2 --gen-key
 
-gpg (GnuPG) 1.4.20; Copyright (C) 2015 Free Software Foundation, Inc.
-
+gpg (GnuPG) 2.1.11; Copyright (C) 2016 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 
-Please select what kind of key you want:
-   (1) RSA and RSA (default)
-   (2) DSA and Elgamal
-   (3) DSA (sign only)
-   (4) RSA (sign only)
-Your selection? 1
-RSA keys may be between 1024 and 4096 bits long.
-What keysize do you want? (2048) 
-Requested keysize is 2048 bits
-Please specify how long the key should be valid.
-         0 = key does not expire
-      <n>  = key expires in n days
-      <n>w = key expires in n weeks
-      <n>m = key expires in n months
-      <n>y = key expires in n years
-Key is valid for? (0) 
-Key does not expire at all
-Is this correct? (y/N) y
+gpg: directory '/home/cesar/.gnupg' created
+gpg: new configuration file '/home/cesar/.gnupg/dirmngr.conf' created
+gpg: new configuration file '/home/cesar/.gnupg/gpg.conf' created
+gpg: keybox '/home/cesar/.gnupg/pubring.kbx' created
+Note: Use "gpg2 --full-gen-key" for a full featured key generation dialog.
 
-You need a user ID to identify your key; the software constructs the user ID
-from the Real Name, Comment and Email Address in this form:
-    "Heinrich Heine (Der Dichter) <heinrichh@duesseldorf.de>"
+GnuPG needs to construct a user ID to identify your key.
 
-Real name: Usuario administrador de eduroam
-Email address: eduroam@institucion.edu.uy
-Comment: 
+Real name: Javier Quinto
+Email address: jquinto@inictel-uni.edu.pe
 You selected this USER-ID:
-    "Usuario administrador de eduroam <eduroam@institucion.edu.uy>"
+    "Javier Quinto <jquinto@inictel-uni.edu.pe>"
 
-Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
-You need a Passphrase to protect your secret key.
-
-gpg: gpg-agent is not available in this session
+Change (N)ame, (E)mail, or (O)kay/(Q)uit? O
 We need to generate a lot of random bytes. It is a good idea to perform
 some other action (type on the keyboard, move the mouse, utilize the
 disks) during the prime generation; this gives the random number
 generator a better chance to gain enough entropy.
-
-Not enough random bytes available.  Please do some other work to give
-the OS a chance to collect more entropy! (Need 57 more bytes)
-..............+++++
-......+++++
-We need to generate a lot of random bytes. It is a good idea to perform
-some other action (type on the keyboard, move the mouse, utilize the
-disks) during the prime generation; this gives the random number
-generator a better chance to gain enough entropy.
-
 ```
-Una forma efectiva de generar entropia es mediante el uso de la herramienta *rng-tools* el cual genera datos *random* desde el Hardware al Kernel. Por ejemplo, desde otra terminal usar:
+
+Luego, te aparecerá un cuadro para que ingrese una contraseña segura.
+
+Nota: Para algunas versiones de GPGv2 te pide que ingreses el tipo de clave, el cual deberían ingresar la opción 1 que es el default (RSA). También les puede pedir que ingrese la validez de la clave, el cual se sugiere que sea mayor de 1 año. Si le pidiese que ingrese más entropia para generar las clave pública/privada, una forma efectiva de generar entropia es mediante el uso de la herramienta *rng-tools* el cual genera datos *random* desde el Hardware al Kernel. Por ejemplo, desde otra terminal usar:
 
 ```
 rngd -r /dev/urandom
@@ -88,7 +65,7 @@ sub   2048R/D65F9703 2016-09-10
 ```
 Para listar las claves que nuestra llavero GPG cuenta:
 ```
-gpg --list-key
+gpg2 --list-key
 /root/.gnupg/pubring.gpg
 ------------------------
 pub   2048R/1285BE5B 2016-09-10
