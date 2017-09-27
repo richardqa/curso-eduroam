@@ -48,25 +48,3 @@ Reiniciar el demonio Rsyslog:
 service rsyslog restart
 ```
 
-Pruebas de Rsyslog:
-
-Ejecute un test de autenticación a su Localhost usando la herramienta "Radtest"
-
-En el archivo radius-notice.log se observará el evento enviado por radtest contra el Localhost
-
-```
-tail -f /home/<usuario>/radius-notice.log
-Fri Sep 30 19:06:30 2011: Auth: Login OK: [bob/hello] (from client localhost port 111)
-Usuario Aceptado user
-```
-Evaluación 2:
-
-Registro de Logs en el servidor RADIUS
-
-1. Ejecute “radt est” con su propio usuario en su servidor Radius Local y copie el resultado de
-los logs que se obtiene.
-2. Envíe este resultado a los instructores por correo electrónico.
-
-
-
-
