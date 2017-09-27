@@ -1,9 +1,10 @@
 #### Configuración simple de bloques para clientes Radius
- ```
+
 En este bloque de configuración, cada servidor Radius inscribe a tres tipos de clientes: (1) Localhost, (2) Punto de Acceso, (3) Federación.
 
 La clave **secret** del cliente **localhost** puede ser alguna clave que ustedes eligan. Esto solo es necesario para hacer pruebas de validación de usuarios desde su mismo Radius Local. Para objetivos del curso se puso que todas las claves del cliente *Localhost* tendrían que ser **eduroam**
 
+```
 # Clients Localhost
 # -----------------
 client localhost {
