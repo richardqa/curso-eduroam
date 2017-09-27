@@ -161,20 +161,21 @@ Configurar /usr/local/etc/raddb/sites-available/default
 
 ```
 authorize {
-...
+
  ldap
-...
+
 }
 authenticate {
-...
+
  Auth-Type LDAP {
   ldap
  }
-... }
+
+}
 post-auth {
-... 
+
  ldap
-...
+
 }
 ```
 
@@ -182,20 +183,21 @@ Configurar /usr/local/etc/raddb/sites-available/inner-tunnel
 
 ```
 authorize {
-...
+ 
  ldap
-...
+
 }
 authenticate {
-...
+
  Auth-Type LDAP {
   ldap
  }
-... }
+
+}
 post-auth {
-...
+
 # ldap
-...
+
 }
 ```
 
