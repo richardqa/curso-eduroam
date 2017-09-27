@@ -72,7 +72,10 @@ Nota 2: La palabra **example** de nuestra solicitud de certificado **radius.exam
 
 7. Luego, envie la solicitud de certificado generada en el paso 4 **radius.example.csr** al siguiente correo: **eduroam@rau.edu.uy**. Los instructores del curso firmarán dicha solicitud de certificado con la llave privada del CA y se les entregará el certificado firmado al e-mail que indique en el mensaje del correo.
 
-8. Finalmente, los archivos *radius.key*, *radius.example.edu.uy* (certificado firmado por RAU), *random*, *dh*, *ca.crt* deberán ser colocados dentro de la carpeta **/usr/local/etc/raddb/certs/radsec/** del servidor freeradius. Si la carpeta radsec no existiese, crearla.
+8. Finalmente, los archivos *radius.key*, *radius.example.edu.uy* (certificado firmado por RAU), *random*, *dh* y *ca.crt* deberán ser colocados dentro de la carpeta **/usr/local/etc/raddb/certs/radsec/** de su servidor Radius. 
+
+Nota 1: Si la carpeta radsec no existiese, crearla.
+Nota 2: Si aún no ha instalado el Freeradius 3.0.15, haga click [aquí](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/freeradius3-install.md) para instalarlo.
 
  ```
 cd ~/newcerts
