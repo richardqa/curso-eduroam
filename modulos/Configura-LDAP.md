@@ -63,7 +63,7 @@ can't use LDAPv3, you should select this option and 'allow bind_v2' will be adde
 Para visualizar el arbol LDAP que tenemos configurado hasta el momento:
 ```
 slapcat 
-dn: dc=example,dc=example,dc=edu,dc=uy
+dn: dc=example,dc=edu,dc=uy
 objectClass: top
 objectClass: dcObject
 objectClass: organization
@@ -77,7 +77,7 @@ entryCSN: 20160911022650.192559Z#000000#000#000000
 modifiersName: cn=admin,dc=institucion,dc=example,dc=com
 modifyTimestamp: 20160911022650Z
 
-dn: cn=admin,dc=example,dc=example,dc=edu,dc=uy
+dn: cn=admin,dc=example,dc=edu,dc=uy
 objectClass: simpleSecurityObject
 objectClass: organizationalRole
 cn: admin
@@ -102,7 +102,7 @@ ou: usuarios
 ```
 - Configuración de un usuario dentro del arbol Ldap. Para esto, crearemos otro archivo con extensión ".ldif" en donde adicionaremos las siguientes lineas:
 ```
-dn: cn=test test,ou=usuarios,dc=example,dc=example,dc=edu,dc=uy
+dn: cn=test test,ou=usuarios,dc=example,,dc=edu,dc=uy
 givenName: test
 sn: test
 cn: test test
@@ -131,40 +131,69 @@ service slapd restart
 ```
 - Configuración del cliente LDAP para el servidor Radius local
 
-Ahora editaremos el módulo ldap del servidor Radius <Institución> para que éste pueda
-conectarse con el servidor LDAP y así poder “logearse” con los usuarios creados del mismo.
-El archivo para configuración el modulo “ldap”, se encuentra en la ruta:
-/etc/freeradius/modules/ldap
+Ahora editaremos el módulo ldap del servidor Radius <Institución> para que éste pueda conectarse con el servidor LDAP y así poder “logearse” con los usuarios creados del mismo.
+El archivo para configuración el modulo “ldap”, se encuentra en la ruta: /usr/local/etc/raddb/mods-available/ldap
 
 ```
 ldap {
 ...
 server = 127.0.0.1
 port = 389
-basedn = "ou=usuarios,dc=example,dc=example,dc=edu,dc=uy"
+identity = 'cn=admin,dc=example,dc=edu,dc=pe'
+password = <clave-LDAP>
+basedn = "ou=usuarios,dc=example,dc=edu,dc=uy"
 filter = "(uid=%{%{Stripped-User-Name}:-% {User-Name}})"
 base_filter = "(objectclass=radiusprofile)"
 ...
 }
 ```
-Editamos el servidor virtual default del Radius (archivos ../sites-enables/default y ../sites-
-enabled/inner-tunnel)
 
-El archivo de configuración es: /usr/local/etc/raddb/sites-available/default, y /usr/local/etc/raddb/sites-available/inner-tunnel
+Una vez configurado, crearemos un enlace simbólico del módulo ldap (/usr/local/etc/raddb/mods-available/ldap) al directorio /usr/local/etc/raddb/mods-enabled/.
+
+```
+cd /usr/local/etc/raddb/sites-enabled
+ln -s ../sites-available/ldap .
+```
+
+Por otro lado, para la configuración de los módulos tenemos que editar los siguientes archivos:
+
+- Configurar /usr/local/etc/raddb/sites-available/default
+
 ```
 authorize {
 ...
-ldap
+ ldap
 ...
 }
 authenticate {
 ...
-Auth-Type LDAP {
-ldap
+ Auth-Type LDAP {
+  ldap
+ }
+... }
+post-auth {
+... 
+ ldap
+...
 }
+```
+
+- Configurar /usr/local/etc/raddb/sites-available/inner-tunnel
+
+```
+authorize {
+...
+ ldap
+...
+}
+authenticate {
+...
+ Auth-Type LDAP {
+  ldap
+ }
 ... }
 ```
-## Evaluacion 3: Validación de sus usuarios LDAP hacia su servidor Radius.
 
+Luego, editamos el servidor virtual default del Radius (archivos ../sites-enables/default y ../sites-enabled/inner-tunnel)
 
-
+El archivo de configuración LDAP para Raduys se encuentra en: /usr/local/etc/raddb/sites-available/default, y /usr/local/etc/raddb/sites-available/inner-tunnel
