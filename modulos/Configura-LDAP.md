@@ -102,7 +102,7 @@ ou: usuarios
 ```
 - Configuración de un usuario dentro del arbol Ldap. Para esto, crearemos otro archivo con extensión ".ldif" en donde adicionaremos las siguientes lineas:
 ```
-dn: cn=test test,ou=usuarios,dc=example,,dc=edu,dc=uy
+dn: cn=test test,ou=usuarios,dc=example,dc=edu,dc=uy
 givenName: test
 sn: test
 cn: test test
@@ -139,7 +139,7 @@ ldap {
 ...
 server = 127.0.0.1
 port = 389
-identity = 'cn=admin,dc=example,dc=edu,dc=pe'
+identity = 'cn=admin,dc=example,dc=edu,dc=uy'
 password = <clave-LDAP>
 basedn = "ou=usuarios,dc=example,dc=edu,dc=uy"
 filter = "(uid=%{%{Stripped-User-Name}:-% {User-Name}})"
