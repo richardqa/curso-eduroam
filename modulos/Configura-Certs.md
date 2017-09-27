@@ -39,7 +39,7 @@ echo '01' > serial
 openssl x509 -in ca.crt -noout -text
  ```
 
-5. En este paso vamos a crear nuevo archivo llamado **radius.cnf** dentro de la carpeta **newcerts** creada en el paso 1. El contenido de éste archivo puede ser obtenido desde aquí [radius.cnf](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/certs/radius.cnf). Copiamos el contenido y lo copiamos dentro de un nuevo archivo llamado: **radius.cnf** ubicado en ~/newcerts/radius.cnf. Finalmente, editamos **radius.conf** con la información relacionada a nuevo servidor Radius Local.
+5. En este paso vamos a crear nuevo archivo llamado **radius.cnf** dentro de la carpeta **newcerts** creada en el paso 1. El contenido de éste archivo puede ser obtenido desde aquí [radius.cnf](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/certs/radius.cnf). Editamos **radius.conf** con la información relacionada a su servidor Radius Local.
  ```
 [ req ]
 prompt                  = no

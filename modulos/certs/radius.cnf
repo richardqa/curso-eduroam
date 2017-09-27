@@ -44,9 +44,9 @@ x509_extensions         = v3_ca
 
 [server]
 countryName             = UY
-stateOrProvinceName     = Estado
-localityName            = Localidad
-organizationName        = EXAMPLE
+stateOrProvinceName     = Montevideo
+localityName            = Montevideo
+organizationName        = RAU
 emailAddress            = eduroam@example.edu.xy
 commonName              = radius.example.edu.xy
 
