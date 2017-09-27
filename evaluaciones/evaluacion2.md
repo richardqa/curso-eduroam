@@ -1,4 +1,4 @@
-## EVALUACION 2
+## EVALUACION 2: Probar el Logs en las autenticaciones
 
 Esta segunda evaluación consistirá en visualizar los Logs del servidor Radius una vez ellos autoricen o nieguen el acceso de un usuario al servidor Radius Local.
 

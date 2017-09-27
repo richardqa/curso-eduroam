@@ -1,4 +1,4 @@
-## EVALUACION 2
+## EVALUACION 3: Validar Clientes LDAP
 
 Esta tercera evaluación consistirá de probar la autenticación de usuarios creados desde una base de datos LDAP.
 

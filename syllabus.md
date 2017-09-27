@@ -14,7 +14,7 @@ Este curso esta dirigido a los responsables del servicio de red inalámbrica de 
 **Break: 11:20 a 11:40hrs**
 
 - Práctica 2: Generar claves GPG para el intercambio de claves entre servidores Radius. Ver [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-GPG.md) (11:40-12:00h)
-- Protocolo de autenticación interna y configuración del clientes Radius. Ver [Clientes](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/clients.md) y [Proxy](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/proxy.md) (12:00-12:30h).
+- Protocolo de autenticación interna y configuración del clientes Radius. Ver [Clientes](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/clients.md), [Proxy](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/proxy.md) y [Usuarios](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/users.md) (12:00-12:30h).
 - **Evaluación 1**: Pruebas de autenticación PAP y MsCHAP usando Radtest. Ver [Evaluación1](https://github.com/richardqa/curso-eduroam/blob/master/evaluaciones/evaluacion1.md) (12:30-13:00h)
 
 **Almuerzo: 13:00 a 14:00hrs**
