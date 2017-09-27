@@ -19,18 +19,18 @@ gpg (GnuPG) 2.1.11; Copyright (C) 2016 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 
-gpg: directory '/home/cesar/.gnupg' created
-gpg: new configuration file '/home/cesar/.gnupg/dirmngr.conf' created
-gpg: new configuration file '/home/cesar/.gnupg/gpg.conf' created
+gpg: directory '/home/radius/.gnupg' created
+gpg: new configuration file '/home/radius/.gnupg/dirmngr.conf' created
+gpg: new configuration file '/home/radius/.gnupg/gpg.conf' created
 gpg: keybox '/home/cesar/.gnupg/pubring.kbx' created
 Note: Use "gpg2 --full-gen-key" for a full featured key generation dialog.
 
 GnuPG needs to construct a user ID to identify your key.
 
-Real name: Javier Quinto
-Email address: jquinto@inictel-uni.edu.pe
+Real name: Usuario Usuario
+Email address: usuario@example.edu.uy
 You selected this USER-ID:
-    "Javier Quinto <jquinto@inictel-uni.edu.pe>"
+    "Usuario Usuario <usuario@example.edu.uy>"
 
 Change (N)ame, (E)mail, or (O)kay/(Q)uit? O
 We need to generate a lot of random bytes. It is a good idea to perform
@@ -39,9 +39,9 @@ disks) during the prime generation; this gives the random number
 generator a better chance to gain enough entropy.
 ```
 
-Luego, te aparecerá un cuadro para que ingrese una contraseña segura.
+Luego, te aparecerá un cuadro para que ingrese una contraseña segura. Caso contrario le pedirá que vuelva ingresa la contraseña.
 
-Nota: Para algunas versiones de GPGv2 te pide que ingreses el tipo de clave, el cual deberían ingresar la opción 1 que es el default (RSA). También les puede pedir que ingrese la validez de la clave, el cual se sugiere que sea mayor de 1 año. Si le pidiese que ingrese más entropia para generar las clave pública/privada, una forma efectiva de generar entropia es mediante el uso de la herramienta *rng-tools* el cual genera datos *random* desde el Hardware al Kernel. Por ejemplo, desde otra terminal usar:
+**Nota**: Para algunas versiones de GPGv2 te pide que ingreses el tipo de clave, el cual deberían ingresar la opción 1 que es el default (RSA). También pueden pedir que ingrese la duración en días de la clave GPG, el cual se sugiere que sea mayor de 1 año. Si les pidiese que ingrese más entropia para generar las clave pública/privada, una forma efectiva de generar entropia es mediante el uso de la herramienta *rng-tools* el cual genera datos *random* desde el Hardware al Kernel. Por ejemplo, desde otra terminal usar:
 
 ```
 rngd -r /dev/urandom
@@ -60,7 +60,7 @@ gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
 gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
 pub   2048R/1285BE5B 2016-09-10
       Key fingerprint = FD2D CFB2 E2B3 6F81 90DC  5ABB BE63 1B0A 1285 BE5B
-uid                  Usuario administrador de eduroam <eduroam@institucion.edu.uy>
+uid                  Usuario administrador de eduroam <usuario@example.edu.uy>
 sub   2048R/D65F9703 2016-09-10
 ```
 Para listar las claves que nuestra llavero GPG cuenta:
@@ -69,13 +69,13 @@ gpg2 --list-key
 /root/.gnupg/pubring.gpg
 ------------------------
 pub   2048R/1285BE5B 2016-09-10
-uid                  Usuario administrador de eduroam <eduroam@institucion.edu.uy>
+uid                  Usuario administrador de eduroam <usuario@example.edu.uy>
 sub   2048R/D65F9703 2016-09-10
 ```
-Para subir nuestra clave pública al Internt:
+Para subir nuestra clave pública al Internet:
 ```
-gpg --keyserver pgp.mit.edu --send-keys 0x1285BE5B
-gpg: sending key 1285BE5B to hkp server pgp.mit.edu
+gpg2 --keyserver pgp.mit.edu --send-keys 0x1285BE5B
+gpg2: sending key 1285BE5B to hkp server pgp.mit.edu
 ```
 En todo el Internet existen casi más de 8 servidores GPG, en el cual podamos encontrar nuestra clave pública. El tiempo máximo para que las llaves puedan ser sincronizadas entre los servidores es de 3 minutos.
 
