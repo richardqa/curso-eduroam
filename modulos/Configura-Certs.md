@@ -2,14 +2,14 @@
 
 Éste tutorial describe una de las formas de configurar certificados digitales X509 válidos para los servidores Radius de eduroam. Nosotros usamos Ubuntu 16.04 server, sin embargo estos pasos funcionan bien para cualquier otro sistema operativo tales como Debian o Centos. 
 
-Para el buen entendimiento del curso se ha considerado lo siguiente: Top level del dominio pais como **UY**, nombre del estado o provincia como **Montevideo**, localidad como **Montevideo**, organización como **RAU**, email Address como **eduroam@rau.edu.uy** y dominio de la organización como **example.edu.uy**.
+Para el buen entendimiento del curso se ha considerado lo siguiente que el dominio de su Institución sea **example.edu.uy**.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=qk9aljqu20A
 " target="_blank"><p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/eduroam_gpg2.png" alt="IMAGE ALT TEXT HERE" width="660" height="360" border="10" /></p></a>
 
 ## Configuración de una Autoridad Certificadora privada
 
-Los siguientes pasos muestran la forma de como crear certificados digitales X509
+Los siguientes pasos muestran la forma de como crear los requisitos de certificados necesarios para el Radius
 
 1. Creamos una carpeta llamada "newcerts" el cual almacenará todos los archivos necesarios para crear la solicitud del certificado digital para el Radius Local. Dentro de "newcerts" crearemos otra carpeta llamada "private", el cual contendrá las llaves privadas de los certificados a crearse.
 
@@ -24,7 +24,7 @@ cd newcerts
 openssl genrsa -aes256 -out private/radius.key 4096
  ```
 
-3. Creación de los archivos *Diffie-Hellman* y *Random* necesarios para el servidor Radius
+3. Creamos los archivos *Diffie-Hellman* y *Random* necesarios para el servidor Radius
 
  ```
 openssl dhparam -out dh 1024 
