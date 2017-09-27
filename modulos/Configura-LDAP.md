@@ -6,7 +6,7 @@
 
 Instalar los siguientes paquetes:
 ```
-apt-get installlapache2 slapd ldap-utils phpldapadmin libapache2mod-php5    
+apt-get installlapache2 slapd ldap-utils phpldapadmin libapache2-mod-php7.0 
 ```
 Como al instalar el servidor LDAP se generan parámetros por defecto, nos conviene reinstalarlo para su configuración manual.
 
@@ -93,14 +93,14 @@ modifyTimestamp: 20160911022650Z
 ```
 Configuración de usuarios y grupos LDAP
 
-- Configuración de un grupo `usuarios` dentro del arbol Ldap. Para esto crearemos un archivo con extensión ".ldif" en donde adicionaremos las siguientes lineas:
+- Configuración de un grupo `usuarios` dentro del arbol Ldap. Para esto crearemos un archivo con extensión ".ldif"  (usuarios.ldif) en donde adicionaremos las siguientes lineas:
 ```
 dn: ou=usuarios,dc=example,dc=edu,dc=uy
 objectClass: top
 objectClass: organizationalUnit
 ou: usuarios
 ```
-- Configuración de un usuario dentro del arbol Ldap. Para esto, crearemos otro archivo con extensión ".ldif" en donde adicionaremos las siguientes lineas:
+- Configuración de un usuario dentro del arbol Ldap. Para esto, crearemos otro archivo con extensión ".ldif" (users.ldif) en donde adicionaremos las siguientes lineas:
 ```
 dn: cn=test test,ou=usuarios,dc=example,dc=edu,dc=uy
 givenName: test
