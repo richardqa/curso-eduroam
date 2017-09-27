@@ -66,11 +66,11 @@ extendedKeyUsage       = serverAuth, clientAuth
  ```
 openssl req -new -nodes -out radius.example.csr -key private/radius.key -config ./radius.cnf
  ```
-Nota1: Se le pedirá que ingrese un password, digitar el password colocado en el paso 2 que es cuando creó la llave privada del Radius.
+Nota 1: Se le pedirá que ingrese un password, digitar el password colocado en el paso 2 que es cuando creó la llave privada del Radius.
  
-Nota: La palabra **example** de nuestra solicitud de certificado **radius.example.csr** debe ser reemplazado por el nombre de su **Institución**
+Nota 2: La palabra **example** de nuestra solicitud de certificado **radius.example.csr** debe ser reemplazado por el nombre de su **Institución**
 
-5. Luego, enviamos la solicitud de certificado generada en el paso 4 (radius.example.csr) al siguiente correo: eduroam@rau.edu.uy. El instructor del curso luego firmará dicha solicitud de certificado con su llave privada y se les entregará firmado al correo que indique en el mensaje del correo.
+5. Luego, envie la solicitud de certificado generada en el paso 4 **radius.example.csr** al siguiente correo: **eduroam@rau.edu.uy**. Los instructores del curso firmarán dicha solicitud de certificado con la llave privada del CA y se les entregará el certificado firmado al e-mail que indique en el mensaje del correo.
 
 6. Finalmente, los archivos *radius.key*, *radius.example.edu.uy* (certificado firmado por RAU), *random*, *dh*, *ca.crt* deberán ser colocados dentro de la carpeta **/usr/local/etc/raddb/certs/radsec/** del servidor freeradius. Si la carpeta radsec no existiese, crearla.
 
