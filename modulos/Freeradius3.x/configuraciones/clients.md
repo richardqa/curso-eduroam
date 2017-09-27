@@ -57,13 +57,13 @@ client federacao {
  ```
 Un ejemplo de configuración del archivo clients.conf puede ser descargado desde [aquí](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/clients.conf)
 
-Nota: Recuerde que cada cambio que realiza **Reiniciar su servidor Radius**. Se sugiere que se reinicie desde el modo **debug**
+Nota 1: Recuerde que cada cambio que realiza **Reiniciar su servidor Radius**. Se sugiere que se reinicie desde el modo **debug**
 
 ```
 radiusd -fxx -l stdout
 ```
 
-Nota: Si en caso el puerto del servidor Radius esta en *USO*, entonces matamos el proceso del Radius y lo reiniciamos nuevamos.
+Nota 2: Si en caso el puerto del servidor Radius esta en **uso**, entonces matamos el proceso del Radius y lo reiniciamos nuevamos.
 ```
 ps aux |grep radiusd
 kill -9 <proceso_radius_encontrado>
