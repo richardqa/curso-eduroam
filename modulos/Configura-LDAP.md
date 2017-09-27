@@ -1,16 +1,14 @@
 ## Instalación y configuración de un servidor LDAP de pruebas
 
-NOTA: Si la institución participante ya dispone de una infraestructura de LDAP, podrían usar
-dicho servidor sin necesidad de realizar éste paso.
+**NOTA**: Si la institución participante ya dispone de una infraestructura de LDAP, podrían usar dicho servidor sin necesidad de realizar éste paso.
 
-- Instalación de un servidor LDAP
+- Instalación de un servidor LDAP en el mismo servidor del Radius Local
 
 Instalar los siguientes paquetes:
 ```
 apt-get installlapache2 slapd ldap-utils phpldapadmin libapache2mod-php5    
 ```
-Como al instalar el servidor LDAP se generan parámetros por defecto, nos conviene
-reinstalarlo para su configuración manual.
+Como al instalar el servidor LDAP se generan parámetros por defecto, nos conviene reinstalarlo para su configuración manual.
 
 Ejecutar: dpkg-reconfigure slapd
 
@@ -65,7 +63,7 @@ can't use LDAPv3, you should select this option and 'allow bind_v2' will be adde
 Para visualizar el arbol LDAP que tenemos configurado hasta el momento:
 ```
 slapcat 
-dn: dc=institucion,dc=example,dc=com
+dn: dc=example,dc=example,dc=edu,dc=uy
 objectClass: top
 objectClass: dcObject
 objectClass: organization
@@ -79,7 +77,7 @@ entryCSN: 20160911022650.192559Z#000000#000#000000
 modifiersName: cn=admin,dc=institucion,dc=example,dc=com
 modifyTimestamp: 20160911022650Z
 
-dn: cn=admin,dc=institucion,dc=example,dc=com
+dn: cn=admin,dc=example,dc=example,dc=edu,dc=uy
 objectClass: simpleSecurityObject
 objectClass: organizationalRole
 cn: admin
@@ -97,35 +95,35 @@ Configuración de usuarios y grupos LDAP
 
 - Configuración de un grupo `usuarios` dentro del arbol Ldap. Para esto crearemos un archivo con extensión ".ldif" en donde adicionaremos las siguientes lineas:
 ```
-dn: ou=usuarios,dc=institucion,dc=example,dc=com
+dn: ou=usuarios,dc=example,dc=edu,dc=uy
 objectClass: top
 objectClass: organizationalUnit
 ou: usuarios
 ```
 - Configuración de un usuario dentro del arbol Ldap. Para esto, crearemos otro archivo con extensión ".ldif" en donde adicionaremos las siguientes lineas:
 ```
-dn: cn=test test,ou=usuarios,dc=institucion,dc=example,dc=com
+dn: cn=test test,ou=usuarios,dc=example,dc=example,dc=edu,dc=uy
 givenName: test
 sn: test
 cn: test test
 uid: test
-mail: test@institucion.example.com
-userPassword: {MD5}Rmmn2aOSKJIqZR7UQdxqQQ==
+mail: test@example.edu.uy
+userPassword: {SSHA}huEJT32gT+NFDHd4cucpnCBXtTh/ymYN
 objectClass: inetOrgPerson
 objectClass: top
 ```
-Observa en el bloque de arriba que el atributo *userPassword* fue obtenido realizando un hash en MD5 al password del usuario de pruebas test@institucion.example.com
+Observa en el bloque de arriba que el atributo *userPassword* fue obtenido realizando un hash de **SSHA** al password del usuario de pruebas test@example.edu.uy
 
 ```
-slappasswd -h {md5}
+slappasswd -h {SSHA}
 New password: <clave-cualquiera>
 Re-enter new password: <repita-clave>
 
-ldapadd -x -W -D "cn=admin,dc=institucion,dc=example,dc=com" -f eduroam.ldif 
-adding new entry "ou=usuarios,dc=institucion,dc=example,dc=com"
+ldapadd -x -W -D "cn=admin,dc=example,dc=edu,dc=uy" -f eduroam.ldif 
+adding new entry "ou=usuarios,dc=example,dc=edu,dc=uy"
 
-ldapadd -x -W -D "cn=admin,dc=institucion,dc=example,dc=com" -f users.ldif 
-adding new entry "cn=test test,ou=usuarios,dc=institucion,dc=example,dc=com"
+ldapadd -x -W -D "cn=admin,dc=example,dc=edu,dc=cuy" -f users.ldif 
+adding new entry "cn=test test,ou=usuarios,dc=example,dc=edu,dc=uy"
 
 service slapd restart
  * Stopping OpenLDAP slapd                                                                                                              [ OK ] 
@@ -143,7 +141,7 @@ ldap {
 ...
 server = 127.0.0.1
 port = 389
-basedn = "ou=usuarios,dc=institucion,dc=example,dc=com"
+basedn = "ou=usuarios,dc=example,dc=example,dc=edu,dc=uy"
 filter = "(uid=%{%{Stripped-User-Name}:-% {User-Name}})"
 base_filter = "(objectclass=radiusprofile)"
 ...
@@ -152,8 +150,7 @@ base_filter = "(objectclass=radiusprofile)"
 Editamos el servidor virtual default del Radius (archivos ../sites-enables/default y ../sites-
 enabled/inner-tunnel)
 
-El archivo de configuración es: /etc/freeradius/sites-enabled/default, y /etc/freeradius/sites-
-enabled/inner-tunnel
+El archivo de configuración es: /usr/local/etc/raddb/sites-available/default, y /usr/local/etc/raddb/sites-available/inner-tunnel
 ```
 authorize {
 ...
