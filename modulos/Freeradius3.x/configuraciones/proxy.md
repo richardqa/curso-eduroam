@@ -1,15 +1,21 @@
 #### Configuración simple de bloques par el Proxy Radius
- ```
-El archivo **proxy.conf** almacena las directivas de configuración de los realms para el Radius Local. Estas entradas cntrolan el comportamiento de las consultas de servidores Radius a otros servidores Radius remotos.
 
+El archivo **proxy.conf** almacena las directivas de configuración de los realms para el Radius Local. Estas entradas controlan el comportamiento de las consultas de servidores Radius a otros servidores Radius remotos.
+
+En el primer bloque ponemos **default_fallback = no** para no reenviar las consultas a un servidor cualquiera, sino a los que están escritos en nuestra configuración del Radius.
+```
 proxy server {
         default_fallback = no
 }
+```
+Este segundo bloque define un ** Home Server ** que permite recibir las consultas de otros servidores Radius para la validación de su Realm.
+
+```
 home_server localhost {
         type = auth
         ipaddr = 127.0.0.1
         port = 1812
-        secret = <clave-GPG>
+        secret = eduroam
         response_window = 20
         zombie_period = 40
         revive_interval = 120
@@ -31,11 +37,15 @@ home_server localhost {
               idle_timeout = 0
         }
 }
+```
+En este nuevo bloque definimos un nuevo **Home Server** redirigir las consultas hacia el servidor Federado de Uruguay (164.73.128.76).
+
+```
 home_server FTLR-UY {
         type = auth
         ipaddr = 164.73.128.76
         port = 1812
-        secret = <clave-GPG>
+        secret = eduroam
         response_window = 20
         zombie_period = 40
         revive_interval = 120
@@ -57,33 +67,41 @@ home_server FTLR-UY {
               idle_timeout = 0
         }
 }
+```
+Luego, definimos dos ** Pools Home Server ** para cada Home Server creado. Cada pool podría enviar más de un **Home Server**.
+
+```
 home_server_pool my_localhost {
         type            = fail-over
         home_server     = localhost
 }
 
-
 home_server_pool my_auth_failover {
         type = fail-over
         home_server = federacao
 }
+```
+Para las consultas que no puedan ser resolvidas por el Radius Local IdP, se les dejará que el Federado UY lo responda.
 
-
+```
 realm DEFAULT {
         auth_pool = my_auth_failover
         nostrip
 }
+```
 
 realm LOCAL {
 }
 
+Finalmente, para responder consultas hacia el servidor Radius Local, creamos un bloque **real** que envie las consultas hacia el Pool **my_localhost**.
 
+```
 realm NULL {
-        secret          = <clave-GPG>
+        secret          = eduroam
 }
 
 realm "~(.*\.)*example\.edu\.uy$" {
         auth_pool       = my_localhost
-        secret          = <clave-GPG>
+        secret          = eduroam
 }
  ```
