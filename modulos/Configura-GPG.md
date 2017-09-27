@@ -100,4 +100,5 @@ Las politicas globales de eduroam recomiendan el uso de claves de 16 caracteres 
 makepasswd --chars=16
 EBY2F4LLcjtxs0FQ
 ```
-7. Una vez terminado los pasos anteriores, haz click en [Configura_Radius](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/README.md) para iniciar la configuración del Radius Local.
+
+Una vez terminado los pasos anteriores, haz click en [Configura_Radius](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/README.md) para iniciar la configuración del Radius Local.
