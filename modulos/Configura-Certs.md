@@ -33,15 +33,13 @@ touch index.txt
 echo '01' > serial
  ```
 
-4. Una Autoridad Certificadora (CA) fue previamente creada y actualmente esta administrada por la Red Académica de Uruguay (RAU). Descargue la clave pública de la Autoridad Certificadora aquí [ca.crt](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/certs/ca.crt). Esta CA tendrá como función la firma de certificados digitales para los servidores Radius que quiera conectarse a eduroam. 
-
-Para ver el contenido de la clave pública del CA (*ca.crt*) creado, escribir en una nueva terminal lo siguiente:
+4. Una Autoridad Certificadora (CA) fue previamente creada y actualmente esta administrada por la Red Académica de Uruguay (RAU). Descargue la clave pública de la Autoridad Certificadora aquí [ca.crt](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/certs/ca.crt). Esta CA tendrá como función la firma de certificados digitales para los servidores Radius que quiera conectarse a eduroam. Para ver el contenido de la clave pública del CA (*ca.crt*) creado, escribir en una nueva terminal lo siguiente:
 
  ```
 openssl x509 -in ca.crt -noout -text
  ```
 
-3. En este paso vamos a crear nuevo archivo llamado **radius.cnf** dentro de la carpeta **newcerts** creada en el paso 1. El contenido de éste archivo puede ser obtenido desde aquí [radius.cnf](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/certs/radius.cnf). Copiamos el contenido y lo copiamos dentro de un nuevo archivo llamado: **radius.cnf** ubicado en ~/newcerts/radius.cnf. Finalmente, editamos **radius.conf** con la información relacionada a nuevo servidor Radius Local.
+5. En este paso vamos a crear nuevo archivo llamado **radius.cnf** dentro de la carpeta **newcerts** creada en el paso 1. El contenido de éste archivo puede ser obtenido desde aquí [radius.cnf](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/certs/radius.cnf). Copiamos el contenido y lo copiamos dentro de un nuevo archivo llamado: **radius.cnf** ubicado en ~/newcerts/radius.cnf. Finalmente, editamos **radius.conf** con la información relacionada a nuevo servidor Radius Local.
  ```
 [ req ]
 prompt                  = no
@@ -53,7 +51,7 @@ countryName             = UY
 stateOrProvinceName     = Montevideo
 localityName            = Montevideo
 organizationName        = RAU
-emailAddress            = eduroam@example.edu.uy
+emailAddress            = eduroam@rau.edu.uy
 commonName              = radius.example.edu.uy
 
 [v3_ca]
@@ -63,7 +61,7 @@ basicConstraints       = CA:true
 extendedKeyUsage       = serverAuth, clientAuth
  ```
 
-4. Una vez que tengamos nuestro archivo *radius.cnf* configurado correctamente y nuestra llave pública/privada, vamos a crear una solicitud de certificado de la siguiente forma:
+4. Una vez que tengamos nuestro archivo *radius.cnf* configurado correctamente y nuestra llave pública/privada, vamos a crear la solicitud de certificado de la siguiente forma:
 
  ```
 openssl req -new -nodes -out radius.example.csr -key private/radius.key -config ./radius.cnf
