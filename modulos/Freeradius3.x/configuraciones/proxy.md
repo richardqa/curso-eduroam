@@ -104,3 +104,6 @@ realm "~(.*\.)*example\.edu\.uy$" {
         secret          = eduroam
 }
  ```
+
+Un ejemplo de configuración del archivo proxy.conf puede ser descargado desde [aquí](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/proxy.conf)
+
