@@ -20,16 +20,15 @@ Este curso esta dirigido a los responsables del servicio de red inalámbrica de 
 **Almuerzo: 13:00 a 14:00hrs**
 
 - Base de Datos SysLog: Aspectos generales (14:00-14:20)
-- Práctica 3: Configuración básica de un servidor Rsyslog. Ver [LOG](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-LOG.md) (14:20-14:40h)
-- Servicio LDAP: Aspectos generales. [LDAP](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-LDAP.md) (14:40-15:00h)
-- Práctica 4: Configurar archivo de cliente y usuarios en LDAP (15:00-15:20h)
-- Práctica 5: Configurar PHPLdapAdmin para administrar usuarios LDAP (15:20-15:40h)
-- **Evaluación 2**:Validación Local Radius usando usuarios Ldap (15:40-16:00h)
+- Práctica 3: Configuración básica de un servidor Rsyslog. Ver [LOG](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-LOG.md) (14:20-14:50h)
+- Servicio LDAP: Aspectos generales (14:50-15:10h)
+- Práctica 4: Configurar archivo de cliente y grupos en LDAP. Ver [LDAP](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-LDAP.md) (15:10-15:40h)
+- Práctica 5: Configurar PHPLdapAdmin para administrar usuarios LDAP (15:40-16:00h)
 
 **Break: 16:00 a 16:20hrs**
 
-- Fail-over y Balanceamiento de carga en el Radius Local (16:20-17:00h)
-- Proceso de integración del servidor Radius con otras bases de Datos (Google, Microsoft, Zimbra, etc) (17:00-18:00h)
+- **Evaluación 2**: Pruebas de Radius usando Syslog. Ver [Evaluación2](https://github.com/richardqa/curso-eduroam/blob/master/evaluaciones/evaluacion2.md) (16:20-17:00h)
+- **Evaluación 3**: Validación local de usuarios LDAP. Ver [Evaluación3](https://github.com/richardqa/curso-eduroam/blob/master/evaluaciones/evaluacion3.md) (17:00-18:00h)
 
 ## Modulo 2: Redes Inalámbricas y Pruebas de Autenticación TTLS (Jueves 28 Setiembre)
 
@@ -65,6 +64,8 @@ Este curso esta dirigido a los responsables del servicio de red inalámbrica de 
 **Break: 11:20 a 11:40hrs**
 
 - Reportes de Incidentes en eduroam (11:40-12:00)
-- Visión al Futuro de eduroam (12:00-12:30)
-- Preguntas abiertas para el debate (12:30-13:00h)
+- Visión al Futuro de eduroam. (12:00-12:20)
+- Fail-over y Balanceamiento de carga en el Radius Local (12:20-12:30h)
+- Proceso de integración del servidor Radius con otras bases de Datos (Google, Microsoft, Zimbra, etc) (12:30-12:40h)
+- Preguntas abiertas para el debate (12:40-13:00h)
 - Clausura del Curso de eduroam (13:00-13:10h)
