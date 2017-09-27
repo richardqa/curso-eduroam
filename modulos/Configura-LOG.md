@@ -21,13 +21,12 @@ msg_badpass = "Usuario Rechazado"
 }
 ...
 ```
-NOTAS:
 
-``
-destination = syslog: Usaremos como destino el demonio “syslog” para los logs de autenticaciones.
-syslog_facility = local1: Tomaremos como referencia la facility “local1” según https://wiki.freeradius.org/guide/Syslog-HOWTO.
-file = ${logdir}/radius.log: Lo mantendremos para tener la opción de configuración del Log por defecto del Radius.
-```
+Nota 1: destination = syslog: Usaremos como destino el demonio “syslog” para los logs de autenticaciones.
+
+Nota 2: syslog_facility = local1: Tomaremos como referencia la facility “local1” según https://wiki.freeradius.org/guide/Syslog-HOWTO.
+
+Nota 3: file = ${logdir}/radius.log: Lo mantendremos para tener la opción de configuración del Log por defecto del Radius.
 
 ## Configurar el servidor Rsyslog localizado en el mismo Radius Local
 
