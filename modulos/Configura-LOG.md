@@ -1,6 +1,6 @@
-# Configuración de SYSLOG para el servidor Radius Local
+## SYSLOG para el servidor Radius Local
 
-## Configurar entradas para logs en el archivo de configuración principal del servidor RADIUS (radius.conf).
+### Configurar entradas para logs en el archivo de configuración principal del servidor RADIUS (radius.conf).
 
 Editar el archivo /usr/local/etc/raddb/radius.conf
 
@@ -10,7 +10,7 @@ Editar el archivo /usr/local/etc/raddb/radius.conf
 log {
 destination = syslog
 file = ${logdir}/radius.log
-# requests = ${logdir}/radiusd-%{% {Virtual-Server}:-DEFA ULT}-%Y%m%d.log
+# requests = ${logdir}/radiusd-%{% {Virtual-Server}:-DEFAULT}-%Y%m%d.log
 syslog_facility = local1
 stripped_names = yes
 auth = yes
@@ -21,10 +21,11 @@ msg_badpass = "Usuario Rechazado"
 }
 ...
 ```
-NOTA:
+NOTAS:
+
 ``
-destination = syslog: Usaremos como destino el demonio “syslog” para los logs de autenticaciones
-syslog_facility = local1: Tomaremos como referencia la facility “local1” según http://wiki.freeradius.org/Syslog-HOW TO
+destination = syslog: Usaremos como destino el demonio “syslog” para los logs de autenticaciones.
+syslog_facility = local1: Tomaremos como referencia la facility “local1” según https://wiki.freeradius.org/guide/Syslog-HOWTO.
 file = ${logdir}/radius.log: Lo mantendremos para tener la opción de configuración del Log por defecto del Radius.
 ```
 
