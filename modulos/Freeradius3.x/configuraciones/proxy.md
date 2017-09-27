@@ -88,12 +88,11 @@ realm DEFAULT {
         auth_pool = my_auth_failover
         nostrip
 }
-```
 
 realm LOCAL {
 }
-
-Finalmente, para responder consultas hacia el servidor Radius Local, creamos un bloque **real** que envie las consultas hacia el Pool **my_localhost**.
+```
+Finalmente, para responder consultas hacia el servidor Radius Local, creamos un bloque **real** que envie las consultas hacia el Pool **my_localhost**. El realm NULL es para consultas que no tienen un explicito Realm.
 
 ```
 realm NULL {
