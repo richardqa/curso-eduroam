@@ -75,6 +75,7 @@ Nota 2: La palabra **example** de nuestra solicitud de certificado **radius.exam
 8. Finalmente, los archivos *radius.key*, *radius.example.edu.uy* (certificado firmado por RAU), *random*, *dh* y *ca.crt* deberán ser colocados dentro de la carpeta **/usr/local/etc/raddb/certs/radsec/** de su servidor Radius. 
 
 Nota 1: Si la carpeta radsec no existiese, crearla.
+
 Nota 2: Si aún no ha instalado el Freeradius 3.0.15, haga click [aquí](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/freeradius3-install.md) para instalarlo.
 
  ```
