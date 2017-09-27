@@ -78,7 +78,7 @@ home_server_pool my_localhost {
 
 home_server_pool my_auth_failover {
         type = fail-over
-        home_server = federacao
+        home_server = FTLR-UY
 }
 ```
 Para las consultas que no puedan ser resolvidas por el Radius Local IdP, se les dejará que el Federado UY lo responda.
