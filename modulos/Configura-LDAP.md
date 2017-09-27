@@ -157,7 +157,7 @@ ln -s ../sites-available/ldap .
 
 Por otro lado, para la configuración de los módulos tenemos que editar los siguientes archivos:
 
-- Configurar /usr/local/etc/raddb/sites-available/default
+Configurar /usr/local/etc/raddb/sites-available/default
 
 ```
 authorize {
@@ -178,7 +178,7 @@ post-auth {
 }
 ```
 
-- Configurar /usr/local/etc/raddb/sites-available/inner-tunnel
+Configurar /usr/local/etc/raddb/sites-available/inner-tunnel
 
 ```
 authorize {
@@ -192,8 +192,23 @@ authenticate {
   ldap
  }
 ... }
+post-auth {
+...
+# ldap
+...
+}
 ```
 
-Luego, editamos el servidor virtual default del Radius (archivos ../sites-enables/default y ../sites-enabled/inner-tunnel)
+Nota 1: Ver que solamente en el archivo "/usr/local/etc/raddb/sites-available/inner-tunnel", en el bloque **post-auth** se tiene comentado la línea que hace referencia al LDAP.
 
-El archivo de configuración LDAP para Raduys se encuentra en: /usr/local/etc/raddb/sites-available/default, y /usr/local/etc/raddb/sites-available/inner-tunnel
+Nota 2: Recuerde que cada cambio que realiza **Reiniciar su servidor Radius**. Se sugiere que se reinicie desde el modo **debug**
+
+```
+radiusd -fxx -l stdout
+```
+
+Nota 3: Si en caso el puerto del servidor Radius esta en **uso**, entonces matamos el proceso del Radius y lo reiniciamos nuevamos.
+```
+ps aux |grep radiusd
+kill -9 <proceso_radius_encontrado>
+```
