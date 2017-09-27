@@ -13,59 +13,59 @@ Este curso esta dirigido a los responsables del servicio de red inalámbrica de 
 
 **Break: 11:20 a 11:40hrs**
 
-- Práctica 2: Generar claves GPG para el intercambio de claves entre servidores Radius. Ver [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-GPG.md) (11:40-12:00h)
-- Protocolo de autenticación interna y configuración del clientes Radius. Ver [Clientes](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/clients.md), [Proxy](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/proxy.md) y [Usuarios](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/users.md) (12:00-12:30h).
-- **Evaluación 1**: Pruebas de autenticación PAP y MsCHAP usando Radtest. Ver [Evaluación1](https://github.com/richardqa/curso-eduroam/blob/master/evaluaciones/evaluacion1.md) (12:30-13:00h)
+- Práctica 2: Generar claves GPG para el intercambio de claves entre servidores Radius. Ver [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-GPG.md).
+- Protocolo de autenticación interna y configuración del clientes Radius. Ver [Clientes](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/clients.md), [Proxy](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/proxy.md) y [Usuarios](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/users.md).
+- **Evaluación 1**: Pruebas de autenticación PAP y MsCHAP usando Radtest. Ver [Evaluación1](https://github.com/richardqa/curso-eduroam/blob/master/evaluaciones/evaluacion1.md).
 
 **Almuerzo: 13:00 a 14:00hrs**
 
-- Base de Datos SysLog: Aspectos generales (14:00-14:20)
-- Práctica 3: Configuración básica de un servidor Rsyslog. Ver [LOG](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-LOG.md) (14:20-14:50h)
-- Servicio LDAP: Aspectos generales (14:50-15:10h)
-- Práctica 4: Configurar archivo de cliente y grupos en LDAP. Ver [LDAP](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-LDAP.md) (15:10-15:40h)
-- Práctica 5: Configurar PHPLdapAdmin para administrar usuarios LDAP (15:40-16:00h)
+- Base de Datos SysLog: Aspectos generales.
+- Práctica 3: Configuración básica de un servidor Rsyslog. Ver [LOG](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-LOG.md).
+- Servicio LDAP: Aspectos generales.
+- Práctica 4: Configurar archivo de cliente y grupos en LDAP. Ver [LDAP](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-LDAP.md).
+- Práctica 5: Configurar PHPLdapAdmin para administrar usuarios LDAP.
 
 **Break: 16:00 a 16:20hrs**
 
-- **Evaluación 2**: Pruebas de Radius usando Syslog. Ver [Evaluación2](https://github.com/richardqa/curso-eduroam/blob/master/evaluaciones/evaluacion2.md) (16:20-17:00h)
-- **Evaluación 3**: Validación local de usuarios LDAP. Ver [Evaluación3](https://github.com/richardqa/curso-eduroam/blob/master/evaluaciones/evaluacion3.md) (17:00-18:00h)
+- **Evaluación 2**: Pruebas de Radius usando Syslog. Ver [Evaluación2](https://github.com/richardqa/curso-eduroam/blob/master/evaluaciones/evaluacion2.md).
+- **Evaluación 3**: Validación local de usuarios LDAP. Ver [Evaluación3](https://github.com/richardqa/curso-eduroam/blob/master/evaluaciones/evaluacion3.md).
 
 ## Modulo 2: Redes Inalámbricas y Pruebas de Autenticación TTLS (Jueves 28 Setiembre)
 
-- Introducción a 802.11 y 802.1x (09:00-09:40h)
-- Seguridad en Redes WiFi (WEP, WPA y WPA2) (09:40-10:00h)
-- Métodos de autenticación EAP (10:00-10:30)
-- Práctica 6: Configuración 802.1x y Radius en Access Points (10:30-11:00h)
-- Práctica 7: Configuración de métodos de autenticación EAP-TTLS y EAP-PEAP en el Radius (11:00-11:20h)
+- Introducción a 802.11 y 802.1x
+- Seguridad en Redes WiFi (WEP, WPA y WPA2).
+- Métodos de autenticación EAP.
+- Práctica 6: Configuración 802.1x y Radius en Access Points.
+- Práctica 7: Configuración de métodos de autenticación EAP-TTLS y EAP-PEAP en el Radius.
 
 **Break: 11:20 a 11:40hrs**
 
-- Práctica 8: Configuración del software del suplicante en Linux, Windows y MAC (11:40-12:20h)
-- **Evaluación 3**: Pruebas de autenticación Local EAP-TTLS desde los suplicantes en Linux, Windows y MAC (12:20-13:00h)
+- Práctica 8: Configuración del software del suplicante en Linux, Windows y MAC.
+- **Evaluación 3**: Pruebas de autenticación Local EAP-TTLS desde los suplicantes en Linux, Windows y MAC.
 
 **Almuerzo: 13:00 a 14:00hrs**
 
-- Radsec: Aspectos Generales (14:00-14:40h)
-- Práctica 9: Configuración del servicio RadSec para el Radius Local (14:40-15:10h)
-- **Evaluación 4**: Pruebas de autenticación Local y remota usando EAP-TTLS y Radsec (Android, Iphone, MacOSx, Linux, Windows) (15:10-16:00h)
+- Radsec: Aspectos Generales.
+- Práctica 9: Configuración del servicio RadSec para el Radius Local.
+- **Evaluación 4**: Pruebas de autenticación Local y remota usando EAP-TTLS y Radsec (Android, Iphone, MacOSx, Linux, Windows).
 
 **Break: 16:00 a 16:20hrs**
 
-- Monitoreo del Radius usando F-ticks (16:20-16:40h)
-- Práctica 10: Configuración del módulo y servicios F-ticks para el servidor Radius Local (16:40-17:00h)
-- **Evaluación 5**: Pruebas de Monitoreo del servicio Radius Local usando F-ticks (17:00-18:00h)
+- Monitoreo del Radius usando F-ticks.
+- Práctica 10: Configuración del módulo y servicios F-ticks para el servidor Radius Local.
+- **Evaluación 5**: Pruebas de Monitoreo del servicio Radius Local usando F-ticks.
 
 ## Modulo 3: Políticas y Futuro de eduroam (Viernes 29 Setiembre)
 
-- Políticas Locales y globales de eduroam (09:00-09:40h)
-- Prática 11: Adherencia del servidor Radius Local a eduroam (CAT eduroam) (09:40-10:40h)
-- Nuevos servicios de eduroam (radsec y radiator) (10:40-11:20h)
+- Políticas Locales y globales de eduroam
+- Prática 11: Adherencia del servidor Radius Local a eduroam (CAT eduroam).
+- Nuevos servicios de eduroam (radsec y radiator).
 
 **Break: 11:20 a 11:40hrs**
 
-- Reportes de Incidentes en eduroam (11:40-12:00)
-- Visión al Futuro de eduroam. (12:00-12:20)
-- Fail-over y Balanceamiento de carga en el Radius Local (12:20-12:30h)
-- Proceso de integración del servidor Radius con otras bases de Datos (Google, Microsoft, Zimbra, etc) (12:30-12:40h)
-- Preguntas abiertas para el debate (12:40-13:00h)
-- Clausura del Curso de eduroam (13:00-13:10h)
+- Reportes de Incidentes en eduroam.
+- Visión al Futuro de eduroam.
+- Fail-over y Balanceamiento de carga en el Radius Local.
+- Proceso de integración del servidor Radius con otras bases de Datos (Google, Microsoft, Zimbra, etc).
+- Preguntas abiertas para el debate.
+- Clausura del Curso de eduroam.
