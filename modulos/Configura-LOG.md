@@ -67,7 +67,6 @@ Registro de Logs en el servidor RADIUS
 los logs que se obtiene.
 2. Envíe este resultado a los instructores por correo electrónico.
 
-## Evaluacion 3: Validación de sus usuarios LDAP hacia su servidor Radius.
 
 
 
