@@ -61,7 +61,7 @@ basicConstraints       = CA:true
 extendedKeyUsage       = serverAuth, clientAuth
  ```
 
-4. Una vez que tengamos nuestro archivo *radius.cnf* configurado correctamente y nuestra llave pública/privada, vamos a crear la solicitud de certificado de la siguiente forma:
+6. Una vez que tengamos nuestro archivo *radius.cnf* configurado correctamente y nuestra llave pública/privada, vamos a crear la solicitud de certificado de la siguiente forma:
 
  ```
 openssl req -new -nodes -out radius.example.csr -key private/radius.key -config ./radius.cnf
@@ -70,13 +70,13 @@ Nota 1: Se le pedirá que ingrese un password, digitar el password colocado en e
  
 Nota 2: La palabra **example** de nuestra solicitud de certificado **radius.example.csr** debe ser reemplazado por el nombre de su **Institución**
 
-5. Luego, envie la solicitud de certificado generada en el paso 4 **radius.example.csr** al siguiente correo: **eduroam@rau.edu.uy**. Los instructores del curso firmarán dicha solicitud de certificado con la llave privada del CA y se les entregará el certificado firmado al e-mail que indique en el mensaje del correo.
+7. Luego, envie la solicitud de certificado generada en el paso 4 **radius.example.csr** al siguiente correo: **eduroam@rau.edu.uy**. Los instructores del curso firmarán dicha solicitud de certificado con la llave privada del CA y se les entregará el certificado firmado al e-mail que indique en el mensaje del correo.
 
-6. Finalmente, los archivos *radius.key*, *radius.example.edu.uy* (certificado firmado por RAU), *random*, *dh*, *ca.crt* deberán ser colocados dentro de la carpeta **/usr/local/etc/raddb/certs/radsec/** del servidor freeradius. Si la carpeta radsec no existiese, crearla.
+8. Finalmente, los archivos *radius.key*, *radius.example.edu.uy* (certificado firmado por RAU), *random*, *dh*, *ca.crt* deberán ser colocados dentro de la carpeta **/usr/local/etc/raddb/certs/radsec/** del servidor freeradius. Si la carpeta radsec no existiese, crearla.
 
  ```
 cd ~/newcerts
 cp -r radius.key radius.example.edu.uy.crt random dh ca.crt /usr/local/etc/raddb/certs/radsec/
  ```
 
-8. Una vez terminado los pasos anteriores, haz click en [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-GPG.md) para continuar con la actividad 2.
+9. Una vez terminado los pasos anteriores, haz click en [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-GPG.md) para continuar con la actividad 2.
