@@ -9,12 +9,12 @@ Este curso esta dirigido a los responsables del servicio de red inalámbrica de 
 - Introducción: Visión general de eduroam (09:00-09:40h)
 - Protocolo RADIUS: Aspectos Generales (09:40-10:20h)
 - Certificados digitales X509 y GPG (10:20-10:50)
-- Práctica 1: Crear una autoridad certificadora (CA) privada y certificados digitales para el Radius (10:50-11:20)
+- Práctica 1: Generar una solicitud de certificado de consulta usando X509 (10:50-11:20)
 
 **Break: 11:20 a 11:40hrs**
 
 - Práctica 2: Generar claves GPG para el intercambio de claves entre servidores Radius (11:40-12:00h)
-- Protocolo de autenticación interna y clientes Radius (12:00-12:30h)
+- Protocolo de autenticación interna y configuración del clientes Radius (12:00-12:30h).
 - **Evaluación 1**: Pruebas de autenticación PAP y MsCHAPv2 usando Radtest y Eapol_Test (12:30-13:00h)
 
 **Almuerzo: 13:00 a 14:00hrs**
