@@ -15,13 +15,13 @@ Este curso esta dirigido a los responsables del servicio de red inalámbrica de 
 
 - Práctica 2: Generar claves GPG para el intercambio de claves entre servidores Radius. Ver [modulo2](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-GPG.md) (11:40-12:00h)
 - Protocolo de autenticación interna y configuración del clientes Radius. Ver [Clientes](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/clients.md) y [Proxy](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/proxy.md) (12:00-12:30h).
-- **Evaluación 1**: Pruebas de autenticación PAP y MsCHAPv2 usando Radtest y Eapol_Test. Ver [Evaluación1](https://github.com/richardqa/curso-eduroam/blob/master/evaluaciones/evaluacion1.md) (12:30-13:00h)
+- **Evaluación 1**: Pruebas de autenticación PAP y MsCHAP usando Radtest. Ver [Evaluación1](https://github.com/richardqa/curso-eduroam/blob/master/evaluaciones/evaluacion1.md) (12:30-13:00h)
 
 **Almuerzo: 13:00 a 14:00hrs**
 
 - Base de Datos SysLog: Aspectos generales (14:00-14:20)
-- Práctica 3: Configuración básica de un servidor Rsyslog (14:20-14:40h)
-- Servicio LDAP: Aspectos generales (14:40-15:00h)
+- Práctica 3: Configuración básica de un servidor Rsyslog. Ver [LOG](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-LOG.md) (14:20-14:40h)
+- Servicio LDAP: Aspectos generales. [LDAP](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-LDAP.md) (14:40-15:00h)
 - Práctica 4: Configurar archivo de cliente y usuarios en LDAP (15:00-15:20h)
 - Práctica 5: Configurar PHPLdapAdmin para administrar usuarios LDAP (15:20-15:40h)
 - **Evaluación 2**:Validación Local Radius usando usuarios Ldap (15:40-16:00h)
