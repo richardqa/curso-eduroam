@@ -100,5 +100,10 @@ Las politicas globales de eduroam recomiendan el uso de claves de 16 caracteres 
 makepasswd --chars=16
 EBY2F4LLcjtxs0FQ
 ```
+Luego, vamos a buscar la clave GPG destino 0x1012D678 e importarla en nuestra llave GPG.
+
+gpg --keyserver pgp.mit.edu --search-keys 0x1012D678
+
+Ciframos un archivo con la información de la clave compartida y usndo la clave pública 0x1012D678
 
 Una vez terminado los pasos anteriores, haz click en [Configura_Radius](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/README.md) para iniciar la configuración del Radius Local.
