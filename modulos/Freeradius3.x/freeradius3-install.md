@@ -56,8 +56,6 @@ Dentro del archivo /usr/local/etc/raddb/radiusd.conf buscamos el bloque **securi
  ```
 Finalmente, para probar que nuestro radius esta correctamente instalado, executamos **radiusd -fxx -l stdout**. Deberías ver que no aparece algun error
 
-Una vez instalado el Freeradius 3.0.15, haz click en [Configura_Radius](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/README.md) para iniciar la configuración del Radius Local.
-
 <!--
 ## Versión Antigua (¡No usar esto!)
 

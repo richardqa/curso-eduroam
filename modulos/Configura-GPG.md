@@ -65,37 +65,39 @@ sub   2048R/D65F9703 2016-09-10
 ```
 Para listar las claves que nuestra llavero GPG cuenta:
 ```
-gpg2 --list-key
-/root/.gnupg/pubring.gpg
-------------------------
-pub   2048R/1285BE5B 2016-09-10
-uid                  Usuario administrador de eduroam <usuario@example.edu.uy>
-sub   2048R/D65F9703 2016-09-10
+root@radius:~# gpg2 --list-key
+/home/radius/.gnupg/pubring.kbx
+------------------------------
+pub   rsa2048/6E1979B6 2017-09-27 [SC]
+uid         [ultimate] Usuario Usuario <usuario@example.edu.uy>
+sub   rsa2048/5A9A062F 2017-09-27 [E]
 ```
+
 Para subir nuestra clave pública al Internet:
 ```
-gpg2 --keyserver pgp.mit.edu --send-keys 0x1285BE5B
+gpg2 --keyserver pgp.mit.edu --send-keys 0x6E1979B6
 gpg2: sending key 1285BE5B to hkp server pgp.mit.edu
 ```
-En todo el Internet existen casi más de 8 servidores GPG, en el cual podamos encontrar nuestra clave pública. El tiempo máximo para que las llaves puedan ser sincronizadas entre los servidores es de 3 minutos.
+Nota: El ID **0x6E1979B6** es personal y diferente por cada clave GPG creado, por tanto reemplaza el código **6E1979B6** por el ID de su usuario.
+
+En todo el Internet existen casi más de 8 servidores GPG, el cual podamos encontrar nuestra clave pública. El tiempo máximo para que las llaves puedan ser sincronizadas entre los servidores es de 5 minutos aproximadamente.
 
 Para buscar nuestra llave pública, podemos usar lo siguiente:
 ```
-gpg --keyserver pgp.mit.edu --search-keys 0x1285BE5B   
-gpg: searching for "0x1285BE5B" from hkp server pgp.mit.edu
-(1)	Usuario administrador de eduroam <eduroam@institucion.edu.uy>
-	  2048 bit RSA key 1285BE5B, created: 2016-09-10
-Keys 1-1 of 1 for "0x1285BE5B".  Enter number(s), N)ext, or Q)uit > 1
-gpg: requesting key 1285BE5B from hkp server pgp.mit.edu
-gpg: key 1285BE5B: "Usuario administrador de eduroam <eduroam@institucion.edu.uy>" not changed
-gpg: Total number processed: 1
-gpg:              unchanged: 1
+gpg --keyserver pgp.mit.edu --search-keys 0x6E1979B6
+gpg: keyring `/home/radius/.gnupg/secring.gpg' created
+gpg: keyring `/home/radius/.gnupg/pubring.gpg' created
+gpg: searching for "0x6E1979B6" from hkp server pgp.mit.edu
+(1)	Usuario Usuario <usuario@example.edu.uy>
+	  2048 bit RSA key 6E1979B6, created: 2017-09-27
+Keys 1-1 of 1 for "0x6E1979B6".  Enter number(s), N)ext, or Q)uit > 
 ```
-El motivo de usar GPG es que los administradores de los servidores Radius compartan la clave secreta con otro Radius de manera confiable. En tal sentido, es comun el uso de GPG, Thunderbirds y Engimail.
+
+El motivo de usar GPG es que los administradores de los servidores Radius compartan la clave secreta con otro Radius de manera confiable. En tal sentido, es comun el uso de GPG en Thunderbirds y Engimail.
 
 Las politicas globales de eduroam recomiendan el uso de claves de 16 caracteres y que sean creados aleatoriamente a través de un programa como por ejemplo *makepasswd*
 ```
 makepasswd --chars=16
 EBY2F4LLcjtxs0FQ
 ```
-7. Una vez terminado los pasos anteriores, haz click en [modulo3](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/freeradius3-install.md) para continuar con la actividad de instalación del Freeradius 3.0.15.
+7. Una vez terminado los pasos anteriores, haz click en [Configura_Radius](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/README.md) para iniciar la configuración del Radius Local.
