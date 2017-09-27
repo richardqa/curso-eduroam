@@ -151,8 +151,8 @@ base_filter = "(objectclass=radiusprofile)"
 Una vez configurado, crearemos un enlace simbólico del módulo ldap (/usr/local/etc/raddb/mods-available/ldap) al directorio /usr/local/etc/raddb/mods-enabled/.
 
 ```
-cd /usr/local/etc/raddb/sites-enabled
-ln -s ../sites-available/ldap .
+cd /usr/local/etc/raddb/mods-enabled
+ln -s ../mods-available/ldap .
 ```
 
 Por otro lado, para la configuración de los módulos tenemos que editar los siguientes archivos:
