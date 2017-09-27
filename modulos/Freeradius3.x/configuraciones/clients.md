@@ -28,9 +28,10 @@ client localhost_ipv6 {
         ipv6addr        = ::1
         secret          = eduroam
 }
-
+```
 Con respecto al Punto de Acceso, solamente vamos a dejarlo colocado de forma de comentario. Una vez llegado a configurar un Punto de Acceso se reemplazaría el valor del **<IP>** por el IP de su Punto de Acceso.
 
+```
 # Clientes Punto de Acceso
 # ------------------------
 
@@ -41,9 +42,10 @@ Con respecto al Punto de Acceso, solamente vamos a dejarlo colocado de forma de 
 #       shortname = ap-INICTEL-UNI
 #       nastype = aruba
 #}
-
+```
 Para el caso del cliente Federado, es necesario compartir una clave secreta GPG cifrada con la clave pública 0x1012D678. Sin embargo para el curso vamos a usar la misma clave **eduroam** para compartirla con la federación.
 
+```
 # Clientes Federados
 # ------------------
 
@@ -53,3 +55,5 @@ client federacao {
         shortname       = org-EXAMPLE
 }
  ```
+Un ejemplo de configuración del archivo clients.conf puede ser descargado desde [aquí](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/clients_conf.md)
+
