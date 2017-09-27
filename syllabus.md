@@ -6,10 +6,10 @@ Este curso esta dirigido a los responsables del servicio de red inalámbrica de 
 
 ## Modulo 1: Radius Local y Certificados Digitales (Miercoles 27 Setiembre)
 
-- Introducción: Visión general de eduroam (09:00-09:40h)
-- Protocolo RADIUS: Aspectos Generales (09:40-10:20h)
-- Certificados digitales X509 y GPG (10:20-10:50)
-- Práctica 1: Generar una solicitud de certificado de consulta usando X509. Ver [modulo1](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-Certs.md) (10:50-11:20)
+- Introducción: Visión general de eduroam.
+- Protocolo RADIUS: Aspectos Generales.
+- Certificados digitales X509 y GPG.
+- Práctica 1: Generar una solicitud de certificado de consulta usando X509. Ver [modulo1](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Configura-Certs.md).
 
 **Break: 11:20 a 11:40hrs**
 
