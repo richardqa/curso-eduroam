@@ -28,6 +28,18 @@ Nota 2: syslog_facility = local1: Tomaremos como referencia la facility “local
 
 Nota 3: file = ${logdir}/radius.log: Lo mantendremos para tener la opción de configuración del Log por defecto del Radius.
 
+Nota 4: Recuerde que cada cambio que realiza **Reiniciar su servidor Radius**. Se sugiere que se reinicie desde el modo **debug**
+
+```
+radiusd -fxx -l stdout
+```
+
+Nota 5: Si en caso el puerto del servidor Radius esta en **uso**, entonces matamos el proceso del Radius y lo reiniciamos nuevamos.
+```
+ps aux |grep radiusd
+kill -9 <proceso_radius_encontrado>
+```
+
 ## Configurar el servidor Rsyslog localizado en el mismo Radius Local
 
 Editar el archivo /etc/rsyslog.conf
