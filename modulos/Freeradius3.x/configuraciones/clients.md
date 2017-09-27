@@ -55,5 +55,5 @@ client federacao {
         shortname       = org-EXAMPLE
 }
  ```
-Un ejemplo de configuración del archivo clients.conf puede ser descargado desde [aquí](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/clients_conf.md)
+Un ejemplo de configuración del archivo clients.conf puede ser descargado desde [aquí](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/clients.conf)
 
