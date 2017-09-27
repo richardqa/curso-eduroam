@@ -104,6 +104,10 @@ Luego, vamos a buscar la clave GPG destino 0x1012D678 e importarla en nuestra ll
 
 gpg --keyserver pgp.mit.edu --search-keys 0x1012D678
 
-Ciframos un archivo con la información de la clave compartida y usndo la clave pública 0x1012D678
+Ciframos un archivo (file.txt) con la información de la clave compartida y usndo la clave pública 0x1012D678
+
+gpg2 -o file.asc -ae file.txt
+
+Enviamos el contenido del archivo file.asc al e-mail eduroam@rau.edu.uy
 
 Una vez terminado los pasos anteriores, haz click en [Configura_Radius](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/README.md) para iniciar la configuración del Radius Local.
