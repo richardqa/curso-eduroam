@@ -36,7 +36,7 @@ Este curso esta dirigido a los responsables del servicio de red inalámbrica de 
 - Seguridad en Redes WiFi (WEP, WPA y WPA2).
 - Métodos de autenticación EAP.
 - Práctica 6: Configuración de métodos de autenticación EAP-TTLS y EAP-PEAP en el Radius. Ver [EAP](https://github.com/richardqa/curso-eduroam/blob/master/modulos/EAP.md)
-- Práctica 7: Configuración 802.1x y Radius en Access Points. Ver [EAP](https://github.com/richardqa/curso-eduroam/blob/master/modulos/APs/configuracion.md)
+- Práctica 7: Configuración 802.1x y Radius en Access Points. Ver [APs](https://github.com/richardqa/curso-eduroam/blob/master/modulos/APs/configuracion.md)
 
 **Break: 11:20 a 11:40hrs**
 
@@ -46,13 +46,13 @@ Este curso esta dirigido a los responsables del servicio de red inalámbrica de 
 **Almuerzo: 13:00 a 14:00hrs**
 
 - Radsec: Aspectos Generales.
-- Práctica 9: Configuración del servicio RadSec para el Radius Local.
+- Práctica 9: Configuración del servicio RadSec para el Radius Local. Ver [Radsec](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/radsec.md)
 - **Evaluación 4**: Pruebas de autenticación Local y remota usando EAP-TTLS y Radsec (Android, Iphone, MacOSx, Linux, Windows).
 
 **Break: 16:00 a 16:20hrs**
 
-- Monitoreo del Radius usando F-ticks.
-- Práctica 10: Configuración del módulo y servicios F-ticks para el servidor Radius Local.
+- Logs con F-ticks usado para servidores Radius.
+- Práctica 10: Configuración del módulo y servicios F-ticks para el servidor Radius Local. Ver [Fticks](https://github.com/richardqa/curso-eduroam/blob/master/modulos/F-ticks.md)
 - **Evaluación 5**: Pruebas de Monitoreo del servicio Radius Local usando F-ticks.
 
 ## Modulo 3: Políticas y Futuro de eduroam (Viernes 29 Setiembre)
