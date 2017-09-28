@@ -4,9 +4,17 @@
 
 2. Una vez recibido el certificado digital (e.g., "radius.example.edu.uy.crt"), copiamos dicho certificado junto con los otros archivos "radius.key", "dh", "random" y "ca.crt" y lo pegamos en el directorio **/usr/local/etc/raddb/certs/radsec/**. Si en caso el directorio **radsec** no se encuentre creado, lo crean con **mkdir /usr/local/etc/raddb/certs/radsec/**.
 
+```
+cd ~/newcerts
+cp -r radius.key radius.example.edu.uy.crt random dh ca.crt /usr/local/etc/raddb/certs/radsec/
+```
 3. Configuremos los tipos EAP soportados por el protocolo Radius (TTLS, PEAP, etc). Para configurar estos procolos tenemos que editar el siguiente archivo **/usr/local/etc/raddb/mods-available/eap** cambiando las líneas correspondientes a los certificados digitales que soporta TLS de Radius tal como es mostrado debajo: 
 
 ```
+168         #  Note that you should NOT use a globally known CA here!
+169         #  e.g. using a Verisign cert as a "known CA" means that
+170         #  ANYONE who has a certificate signed by them can
+171         #  authenticate via EAP-TLS!  This is likely not what you want.
 172         tls-config tls-common {
 173                 private_key_password = <clave-privada-radius>
 174                 private_key_file = ${certdir}/radsec/private/radius.key
@@ -89,10 +97,18 @@
 
 ```
 
-#  Whatever you do, do NOT set 'Auth-Type := EAP'.  The server
-#  is smart enough to figure this out on its own.  The most
-#  common side effect of setting 'Auth-Type := EAP' is that the
-#  users then cannot use ANY other authentication method.
+Como verán en la configuración de arriba, las únicas líneas a ser modificadas son las 173,174,186,198,239. En la línea 186 es necesario cambiar el nombre del certificado digital (radius.example.edu.uy.crt) por el nombre del certificado digital que le fue entregado.
 
+El método de autenticación por defecto será EAP-TTLS. Este método es enviado por el servidor RADIUS en respuesta al mensaje "EAP-Response, Identity" por parte del usuario. Por otro lado, también es necesario configurar un tiempo de expiración para las correlaciones entre los mensajes “EAP-Request” y “EAP-Response”. El valor por defecto es de 60 segundos.
 
+Nota 1: Recuerde que cada cambio que realiza **Reiniciar su servidor Radius**. Se sugiere que se reinicie desde el modo **debug**
 
+```
+radiusd -fxx -l stdout
+```
+
+Nota 2: Si en caso el puerto del servidor Radius esta en **uso**, entonces matamos el proceso del Radius y lo reiniciamos nuevamos.
+```
+ps aux |grep radiusd
+kill -9 <proceso_radius_encontrado>
+```
