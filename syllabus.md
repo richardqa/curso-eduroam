@@ -36,11 +36,11 @@ Este curso esta dirigido a los responsables del servicio de red inalámbrica de 
 - Seguridad en Redes WiFi (WEP, WPA y WPA2).
 - Métodos de autenticación EAP.
 - Práctica 6: Configuración de métodos de autenticación EAP-TTLS y EAP-PEAP en el Radius. Ver [EAP](https://github.com/richardqa/curso-eduroam/blob/master/modulos/EAP.md)
-- Práctica 7: Configuración 802.1x y Radius en Access Points.
+- Práctica 7: Configuración 802.1x y Radius en Access Points. Ver [EAP](https://github.com/richardqa/curso-eduroam/blob/master/modulos/APs/configuracion.md)
 
 **Break: 11:20 a 11:40hrs**
 
-- Práctica 8: Configuración del software del suplicante en Linux, Windows y MAC.
+- Práctica 8: Configuración del software suplicante para los sistemas operativo Linux, Windows, MAC, Iphone y Android. Ver [Cliente_Radius](https://github.com/richardqa/curso-eduroam/blob/master/modulos/suplicante.md)
 - **Evaluación 3**: Pruebas de autenticación Local EAP-TTLS desde los suplicantes en Linux, Windows y MAC.
 
 **Almuerzo: 13:00 a 14:00hrs**
