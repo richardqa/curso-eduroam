@@ -11,14 +11,21 @@ Para la configuración del módulo Radsec, es necesario seguir los siguientes pa
 
 3. Reemplazar la información mostrada en el archivo *radsec* y cambiar las informaciones siguientes: 
 
- - Cambiar *example* por el nombre de tu institución. Por ejemplo, radius*seciu*.edu.uy.crt
- - Cambiar <clave-privada-radius> por la clave secreta (passphase) colocada al momento de generar las claves privada/publica
- - Cambiar <clave-GPG> por la clave GPG creada en el modulo 2.
+```
+Cambiar *example* por el nombre de tu institución. Por ejemplo, radius*seciu*.edu.uy.crt
 
-4. Finalmente, es necesario crear un enlace simbólico del archivo radsec al directorio /usr/local/etc/raddb/sites-enabled/
+Cambiar <clave-privada-radius> por la clave secreta (passphase) colocada al momento de generar las claves privada/publica
 
- - cd /usr/local/etc/raddb/sites-enabled
- - ln -s ../sites-available/radsec .
+Cambiar <clave-GPG> por la clave GPG creada en el modulo 2.
+```
+
+4. Es necesario crear un enlace simbólico del archivo radsec al directorio activo /usr/local/etc/raddb/sites-enabled/
+
+```
+cd /usr/local/etc/raddb/sites-enabled
+
+ln -s ../sites-available/radsec .
+```
 
 Finalmente, se muestra el contenido del archivo **radsec** a ser corregido:
 
