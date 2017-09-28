@@ -35,8 +35,8 @@ Este curso esta dirigido a los responsables del servicio de red inalámbrica de 
 - Introducción a 802.11 y 802.1x
 - Seguridad en Redes WiFi (WEP, WPA y WPA2).
 - Métodos de autenticación EAP.
-- Práctica 6: Configuración 802.1x y Radius en Access Points.
-- Práctica 7: Configuración de métodos de autenticación EAP-TTLS y EAP-PEAP en el Radius.
+- Práctica 6: Configuración de métodos de autenticación EAP-TTLS y EAP-PEAP en el Radius. Ver [EAP](https://github.com/richardqa/curso-eduroam/blob/master/modulos/EAP.md)
+- Práctica 7: Configuración 802.1x y Radius en Access Points.
 
 **Break: 11:20 a 11:40hrs**
 
