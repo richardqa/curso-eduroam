@@ -35,3 +35,14 @@ post-auth {
 
 tail  -f  /root/radius-fticks.log
 
+Nota 1: Recuerde que cada cambio que realiza **Reiniciar su servidor Radius**. Se sugiere que se reinicie desde el modo **debug**
+
+```
+radiusd -fxx -l stdout
+```
+
+Nota 2: Si en caso el puerto del servidor Radius esta en **uso**, entonces matamos el proceso del Radius y lo reiniciamos nuevamos.
+```
+ps aux |grep radiusd
+kill -9 <proceso_radius_encontrado>
+```

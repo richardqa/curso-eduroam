@@ -1,28 +1,3 @@
-#### Configuración para el servidor Radius Seguro (RADSEC)
-
-El archivo radsec permite la creación del modulo de seguridad para el protocolo Radius. Este módulo de seguridad consiste en que el canal de comunicación entre un servidor Radius Local y su servidor Federado se establezca a traves de un Tunel TCP/SSL, reemplazando a la comunicación por default del Radius (UDP).
-
-Para la configuración del módulo Radsec, es necesario seguir los siguientes pasos:
-
-
-1. Crear el archivo radsec: touch /usr/local/etc/raddb/sites-available/radsec
-
-2. Copiar éste contenido [radsec](https://www.github.com/richardqa/curso-eduroam/blob/master/modulos/radsec) y pegarlo en el archivo creado *radsec*.
-
-3. Reemplazar la información mostrada en el archivo *radsec* y cambiar las informaciones siguientes: 
-
- - Cambiar *example* por el nombre de tu institución. Por ejemplo, radius*seciu*.edu.uy.crt
- - Cambiar <clave-privada-radius> por la clave secreta (passphase) colocada al momento de generar las claves privada/publica
- - Cambiar <clave-GPG> por la clave GPG creada en el modulo 2.
-
-4. Finalmente, es necesario crear un enlace simbólico del archivo radsec al directorio /usr/local/etc/raddb/sites-enabled/
-
- - cd /usr/local/etc/raddb/sites-enabled
- - ln -s ../sites-available/radsec .
-
-Finalmente, se muestra el contenido del archivo **radsec** a ser corregido:
-
-```
 listen {
     ipaddr = *
     port = 2083
@@ -93,7 +68,7 @@ clients radsec {
     client 127.0.0.1 {
         ipaddr = 127.0.0.1
         proto = tls
-        secret = <clave-GPG>
+        secret = eduroam
     }
     client uy {
         ipaddr = 164.73.128.76
@@ -139,16 +114,4 @@ home_server_pool UY {
 realm "~.+$" {
        auth_pool = UY
        nostrip
-}
- ```
-Nota 1: Recuerde que cada cambio que realiza **Reiniciar su servidor Radius**. Se sugiere que se reinicie desde el modo **debug**
-
-```
-radiusd -fxx -l stdout
-```
-
-Nota 2: Si en caso el puerto del servidor Radius esta en **uso**, entonces matamos el proceso del Radius y lo reiniciamos nuevamos.
-```
-ps aux |grep radiusd
-kill -9 <proceso_radius_encontrado>
-```
+} 
