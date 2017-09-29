@@ -87,8 +87,8 @@ FTicksKey arandomsalt
 ```
 Los ticks finalizarán en el demonio del syslog local. Ellos no son automaticamente enviados al equipo de operaciones de eduroam. Este dependerá de las configuraciones del Syslog sobre como alcanzar el reenvio de los mensajes. Para Rsyslog, un reciente demnio de logs, lo siguiente funcionaria:
 
-# radsecproxy
 ```
+#radsecproxy
 if      ($programname == 'radsecproxy') and ($msg contains 'F-TICKS') \
 then    @192.0.2.204
 &       ~
