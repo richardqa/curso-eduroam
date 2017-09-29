@@ -128,10 +128,10 @@ post-auth {
           attr_filter.access_reject
         }
 ```
-Nota 1: Recuerde que cada cambio que realiza **Reiniciar su servidor Radius**. Se sugiere que se reinicie desde el modo **debug**
+Nota 1: Recuerde que cada cambio que realiza **Reiniciar su servidor Radius**. En este paso, se sugiere que se reinicie desde el modo **NORMAL**, caso contrario no mostrará **NADA** de F-ticks en el archivo Logs.
 
 ```
-radiusd -fxx -l stdout
+radiusd
 ```
 
 Nota 2: Si en caso el puerto del servidor Radius esta en **uso**, entonces matamos el proceso del Radius y lo reiniciamos nuevamos.
