@@ -1,13 +1,15 @@
 ### Testeando tu conexión a eduroam
 
-La forma más básica aprendida hasta el momento es usando un simple **radtest**, el cual puede apuntar a servidores remotos o al mismo
-servidor Local, lo cual las instituciones involucradas harian un simple *peering* entre ellas y verificarian la autenticidad del usuario.
+La forma más básica aprendida hasta el momento es usando un simple **radtest**, el cual puede apuntar a servidores remotos 
+o al mismo servidor Local, lo cual las instituciones involucradas harian un simple *peering* entre ellas y verificarian 
+la autenticidad del usuario.
 
-La manera ms simple de hacer testing a eduroam es usando un suplicante que soporte 802.1x y que intente validarse a eduroam. Sin embargo
-este requiere de configurar al menos un Access Point wireless para hacer broadcast al SSID de eduroam y autenticar contra el servidor Radius.
+La manera ms simple de hacer testing a eduroam es usando un suplicante que soporte 802.1x y que intente validarse a eduroam. 
+Sin embargo este requiere de configurar al menos un Access Point wireless para hacer broadcast al SSID de eduroam y autenticar 
+contra el servidor Radius.
 
-Una alternativa más sofisticada es mediante una herramienta llamada **eapol_test** incluido en el paquete **wpa_supplicant**. Adicionales
-documentaciones sobre eapol_test, compilando ello esta disponible en el siguiente [enlace](http://deployingradius.com/scripts/eapol_test/).
+Una alternativa más sofisticada es mediante una herramienta llamada **eapol_test** incluido en el paquete **wpa_supplicant**. 
+Adicionales documentaciones sobre eapol_test, compilando ello esta disponible en el siguiente [enlace](http://deployingradius.com/scripts/eapol_test/).
 
 Nomenclatura para lanzar un testing con eapol_test:
 
