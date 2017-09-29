@@ -73,6 +73,10 @@ F-TICKS/eduroam/1.0#REALM=%R#VISCOUNTRY=UY#CSI=%{Calling-Station-Id}#RESULT=OK#
 ```
 F-TICKS/eduroam/1.0#REALM=%R#VISCOUNTRY=UY#CSI=%{Calling-Station-Id}#RESULT=OK#VISINST=UDELAR#
 ```
+<p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/fticks1.png" alt="IMAGE ALT TEXT HERE" border="10" /></p>
+
+<p align="center"><img src="https://github.com/richardqa/curso-eduroam/blob/master/imagenes/fticks2.png" alt="IMAGE ALT TEXT HERE" border="10" /></p>
+
 Cada institución podra enviar, al operador de roaming nacional (RAU) información de estadistica *basica* acerca del numero de *Logins* del roaming nacional o internacional al equipo de operaciones de eduroam. El sistema puede hacer eso con F-ticks. Freeradius 3.x y Radsecproxy soportan F-ticks, compilando sus programas con **--enable-fticks**.
 
 Cuando las definiciones del cliente son establecidas, las siguientes opciones activan el F-ticks y envian los mensajes del Syslog de una manera tal que preserve la privacidad. (e.g., parte de información hasheada en la conexión de la mac-address del dispositivo de usuario).
