@@ -9,12 +9,12 @@ Sin embargo este requiere de configurar al menos un Access Point wireless para h
 contra el servidor Radius.
 
 Una alternativa más sofisticada es mediante una herramienta llamada **eapol_test** incluido en el paquete **wpa_supplicant**. 
-Adicionales documentaciones sobre eapol_test, compilando ello esta disponible en el siguiente [enlace](http://deployingradius.com/scripts/eapol_test/).
+Adicionales documentaciones sobre eapol_test, compilando ello esta disponible en el siguiente  [enlace](http://deployingradius.com/scripts/eapol_test/)
 
 Nomenclatura para lanzar un testing con eapol_test:
 
 ```
-%eapol_test -c<config file> -a<IP of your RADIUS server> -p<Port> -s<SECRET>
+eapol_test -c<config file> -a<IP of your RADIUS server> -p<Port> -s<SECRET>
 ```
 
 Por ejemplo:  
