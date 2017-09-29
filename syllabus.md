@@ -47,25 +47,24 @@ Este curso esta dirigido a los responsables del servicio de red inalámbrica de 
 
 - Radsec: Aspectos Generales.
 - Práctica 9: Configuración del servicio RadSec para el Radius Local. Ver [Radsec](https://github.com/richardqa/curso-eduroam/blob/master/modulos/Freeradius3.x/configuraciones/radsec.md)
-- **Evaluación 4**: Pruebas de autenticación Local y remota usando EAP-TTLS y Radsec (Android, Iphone, MacOSx, Linux, Windows).
 
 **Break: 16:00 a 16:20hrs**
 
-- Logs con F-ticks usado para servidores Radius.
-- Práctica 10: Configuración del módulo y servicios F-ticks para el servidor Radius Local. Ver [Fticks](https://github.com/richardqa/curso-eduroam/blob/master/modulos/F-ticks.md)
-- **Evaluación 5**: Pruebas de Monitoreo del servicio Radius Local usando F-ticks.
+- **Evaluación 4**: Pruebas de autenticación Local y remota usando EAP-TTLS y Radsec (Android, Iphone, MacOSx, Linux, Windows).
 
 ## Modulo 3: Políticas y Futuro de eduroam (Viernes 29 Setiembre)
 
 - Políticas Locales y globales de eduroam
-- Prática 11: Adherencia del servidor Radius Local a eduroam (CAT eduroam).
-- Nuevos servicios de eduroam (radsec y radiator).
+- Logs con F-ticks usado para servidores Radius.
+- Práctica 10: Configuración del módulo y servicios F-ticks para el servidor Radius Local. Ver [Fticks](https://github.com/richardqa/curso-eduroam/blob/master/modulos/F-ticks.md)
+- **Evaluación 5**: Pruebas de Monitoreo del servicio Radius Local usando F-ticks.
 
 **Break: 11:20 a 11:40hrs**
 
+
+- Práctica 11: Probar herramientas de testing a eduroam usando eapol_test y una simple Web creada por Republica Checa. Ver [Eapol_test](https://github.com/richardqa/curso-eduroam/blob/master/modulos/testing-eapol.md)
+- Práctica 12: Adherencia del servidor Radius Local a eduroam (CAT eduroam).
 - Reportes de Incidentes en eduroam.
 - Visión al Futuro de eduroam.
-- Fail-over y Balanceamiento de carga en el Radius Local.
-- Proceso de integración del servidor Radius con otras bases de Datos (Google, Microsoft, Zimbra, etc).
 - Preguntas abiertas para el debate.
 - Clausura del Curso de eduroam.
