@@ -1,5 +1,80 @@
 ### Configuración de F-ticks para eduroam
- ```
+
+Esta sección del documento describes un **log format** para federaciones de identidad que pueden ser usados como una herramienta para las mediciones y la recopilación de estadsticas.
+
+Un sistema de *stream* de log F-ticks consiste de unas series de mensajes *Logs* F-ticks, en donde cada uno representa un evento de autenticación simple. Cada mensaje *Log* es generado en la entidad de federación o en la misma IdP.
+
+Un mensaje log F-ticks es una cadena de texto que es completado de la siguiente manera:
+
+```
+   2fticks = "F-TICKS/" federation-identifier "/" version attribute-list label = ( ALPHA / DIGIT / '_' / '-' / ':' / '.' / ',' / ';')
+
+Siendo:
+   federation-identifier = label
+   version = label
+   attribute-list = 1*("#" attribute "=" value ) "#"
+   value = label
+   attribute = ( ALPHA / DIGIT )
+```
+El identificador de identidad y la versión puede ser usada por las federaciones y otras comunidades para indicar el tipo de atributos usados. Ésta documentación no describe algunos atributos mandatorios, sino en vez de eso proporciona una lista de atributos en uso en varias comunidades de hoy. Para futuras versiones del documento, podríamos querer definir un registro IANA para las deficiones del atributos F-tick. Debido a las restricciones comunes a varios sistemas Logs, se espera que los atributos del F-ticks son mantenidos corto.
+
+#### Atributos F-ticks
+
+Comunmente los administradores de Logs de las instituciones no deberán asumir que cualquier atributo estará presente en sus logs. Dependiendo de las situaciones, cualesquiera de ellos podría no ser considerados en el mensaje del F-ticks.
+
+1. Realms
+
+El atributo *Realm* es usado para transmitir el realm AAA del evento de autenticación. La presencia del atributo *Realm* implica que el mensaje fue generado por el proveedor de identidad basado en AAA.
+
+2. VISCONTRY
+
+Es el código pais ISO de la entidad que generó los mensajes logs.
+
+3. CSI
+
+Es el **Calling Station ID** del sujeto asociado con el evento de autenticación. La presencia de éste atributo implica que el mensaje fue generado por el proveedor de identidad AAA.
+
+4. Result
+
+Es el resultado del evento de autenticación: OK o FAIL.
+
+5. RP
+
+El atributo RP es un identificador de la institución en el cual se confa. Una cadena unicamente indenfica a la organización envolvido en el evento de autenticacion.
+
+6. AP
+
+Asserting party identifier.  A string uniquely identifying the party
+   making the claim towards the relying party.  For an authentication
+   event this is the identity provider.  For an attribute authority
+   lookup event this is the AA identifier.
+
+7. TS
+
+Este es un atributo asociado con el evento de autenticación en segundos. Si este atributo esta ausente, el consumidor podria escoger usar el *timestamp* proporcionado por el sistema de mensaje Log (e.g., syslog).
+
+8. AN
+
+Identificador del metodo de autenticacion
+
+9. PN
+
+Identificador unico para la organización que participa en el evento.
+
+### Configuraciones
+Si se requiere incluir *Usernames hasheados* en la salida, se deberia también suministrar un secreto *random salt* en las propiedades del Radius IdP. Sin el atributo *random salt*, el username no será incluido.
+
+If you want to include hashed usernames in the output, you must also supply a secret random salt in the idp.fticks.salt property. Without a salt, usernames will not be included.
+
+#### Información básica
+
+```
+F-TICKS/eduroam/1.0#REALM=%R#VISCOUNTRY=LU#CSI=%{Calling-Station-Id}#RESULT=OK#
+```
+#### Información avamzada
+
+F-TICKS/eduroam/1.0#REALM=%R#VISCOUNTRY=LU#CSI=%{Calling-Station-Id}#RESULT=OK#VISINST=FOO#
+
 1. Configuración del módulo linelog en el Radius Local
 
 En este paso se agrega un nuevo bloque *f_ticks* al inicio del archivo /usr/local/etc/raddb/mods-available/linelog. Este bloque responde ante un evento de autenticación exitosa cn *Access-Accept* y OK, y ante un evento de autenticación fallida con *Access-Reject* y FAIL.
