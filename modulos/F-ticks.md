@@ -61,7 +61,8 @@ Identificador del metodo de autenticacion
 
 Identificador unico para la organización que participa en el evento.
 
-### Configuraciones
+### Introducción al F-ticks
+
 Si se requiere incluir *Usernames hasheados* en la salida, se deberia también suministrar un secreto *random salt* en las propiedades del Radius IdP. Sin el atributo *random salt*, el username no será incluido.
 
 #### Información básica
@@ -94,42 +95,39 @@ if      ($programname == 'radsecproxy') and ($msg contains 'F-TICKS') \
 then    @192.0.2.204
 &       ~
 ```
+### Configuración de F-ticks en el servidor Radius Local
 
 1. Configuración del módulo linelog en el Radius Local
 
-En este paso se agrega un nuevo bloque *f_ticks* al inicio del archivo /usr/local/etc/raddb/mods-available/linelog. Este bloque responde ante un evento de autenticación exitosa cn *Access-Accept* y OK, y ante un evento de autenticación fallida con *Access-Reject* y FAIL.
+En este paso se agregará un nuevo bloque *f_ticks* al inicio del archivo **/usr/local/etc/raddb/mods-available/linelog**. Este bloque responde ante un evento de autenticación exitosa *Access-Accept* con OK, y ante un evento de autenticación fallida *Access-Reject* con FAIL.
 
+```
 linelog f_ticks {
        filename = syslog
        format = ""
        reference = "f_ticks.%{%{reply:Packet-Type}:-format}"
        f_ticks {
-          Access-Accept = "F-TICKS/eduroam-la/1.0#REALM=%{Realm}#User-eduroam=%{User-Name}#VISINST=%{Client-Shortname}#VISCOUNTRY=PE#CSI=%{Calling-Station-Id}#RESULT=OK#"
-          Access-Reject = "F-TICKS/eduroam-la/1.0#REALM=%{Realm}#User-eduroam=%{User-Name}#VISINST=%{Client-Shortname}#VISCOUNTRY=PE#CSI=%{Calling-Station-Id}#RESULT=FAIL#"
+          Access-Accept = "F-TICKS/eduroam-la/1.0#REALM=%{Realm}#User-eduroam=%{User-Name}#VISINST=%{Client-Shortname}#VISCOUNTRY=UY#CSI=%{Calling-Station-Id}#RESULT=OK#"
+          Access-Reject = "F-TICKS/eduroam-la/1.0#REALM=%{Realm}#User-eduroam=%{User-Name}#VISINST=%{Client-Shortname}#VISCOUNTRY=UY#CSI=%{Calling-Station-Id}#RESULT=FAIL#"
        }
 }
-...
+```
 
 2. Activar el modulo f-ticks en tu Radius Local
 
-En el archivo de configuración /etc/freeradius/sites-enabled/default y en /etc/freeradius/sites-enabled/inner-tunnel agregar las siguientes líneas según muestra el cuadra de abajo.
+En los archivos de configuración **/usr/local/etc/raddb/sites/available/default** y en **/usr/local/etc/raddb/sites-available/inner-tunnel** agregar las siguientes líneas **f_ticks** según como muestra el cuadra de abajo.
 
-
+```
 post-auth {
 
 	 ...
         f_ticks
 
-
         Post-Auth-Type REJECT {
          f_ticks
           attr_filter.access_reject
         }
-
-3. Reiniciar el servicio *radius* y hacer la prueba de autenticación local y remota con *radtest*,  y desde otra consola verificar los logs que se obtiene al hacer lo siguiente:
-
-tail  -f  /root/radius-fticks.log
-
+```
 Nota 1: Recuerde que cada cambio que realiza **Reiniciar su servidor Radius**. Se sugiere que se reinicie desde el modo **debug**
 
 ```
@@ -140,4 +138,9 @@ Nota 2: Si en caso el puerto del servidor Radius esta en **uso**, entonces matam
 ```
 ps aux |grep radiusd
 kill -9 <proceso_radius_encontrado>
+```
+3. Luego de hacer la prueba de autenticación local y remota con *radtest*, desde otra consola verificar los logs que se obtiene al hacer lo siguiente:
+
+```
+tail  -f  /home/<usuario>/logs/radius-fticks.log
 ```
