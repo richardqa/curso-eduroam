@@ -47,10 +47,7 @@ El atributo RP es un identificador de la institución en el cual se confia. Una 
 
 6. AP
 
-Identificar en el cual se confia. Una cadena única que identifica a la institución que se confia. Para un evento de autenticación, este es el IdP. Para un
-Asserting party identifier.  A string uniquely identifying the party
-   making the claim towards the relying party.  For an authentication
-   event this is the identity provider. Para un atributo de autoridad que busca el evento, este es un identificador AA.
+Identificar en el cual se confia. Una cadena única que identifica a la institución que se confia. Para un evento de autenticación, este es el IdP.
    
 7. TS
 
